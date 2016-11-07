@@ -1,0 +1,32 @@
+.project_pic img {
+    width: 800px;
+    height: 400px;
+}
+.project_pic {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+.descriptionProject {
+    display: flex;
+    justify-content: center;
+    padding: 10px 100px;
+}
+.nextProject {
+    display: inline-flex;
+    justify-content: center;
+}
+.nextProject {
+    width: 990px;
+    height: 100px;
+    background-image: url("../image/img.jpg");
+    margin: 30px 10px;
+}
+.nextProject p, .nextProject a {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+
+}

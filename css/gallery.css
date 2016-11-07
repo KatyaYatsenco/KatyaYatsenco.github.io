@@ -1,0 +1,45 @@
+/*.pageTitle {*/
+/*display: block;*/
+/*width: 320px;*/
+
+/*}*/
+/*.pageTitle h2 {*/
+/*font-size: 35px;*/
+/*text-align: center;*/
+/*margin-top: 55px;*/
+/*}*/
+
+
+/*}*/
+
+.projects {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    padding: 50px 20px 20px 20px;
+
+}
+.project_img img {
+    width: 300px;
+    padding: 10px;
+    /*height: 400px;*/
+}
+
+/*.proj1 img {*/
+    /*height:400px;*/
+/*}*/
+/*.proj2 img {*/
+    /*height:300px;*/
+/*}*/
+/*.proj3 img {*/
+    /*height:450px;*/
+/*}*/
+/*.proj4 img {*/
+    /*height:300px;*/
+/*}*/
+/*.proj5 img {*/
+    /*height:600px;*/
+/*}*/
+/*.proj6 img {*/
+    /*height:250px;*/
+/*}*/
