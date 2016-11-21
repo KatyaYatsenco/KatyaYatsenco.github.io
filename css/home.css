@@ -1,62 +1,114 @@
-
-#menuImg {
-    /*width: 32px;*/
-    /*height: 32px;*/
+.main_background {
+    min-height: 800px;
+    background: url("../image/main_background.jpg") right top;
+    background-size: 100% 100%;
 }
 
 #galleryMenu {
     position: relative;
-    width: 450px;
-    height: 450px;
-    border: 1px solid black;
+    width: 600px;
+    height: 600px;
     margin: 0;
     border-radius: 100%;
+    background: url("../image/gallery_menu_background.png");
+    background-size: 100% 100%;
 }
-#galleryMenu img {
-    padding-top: 35px;
-    height: 200px;
-}
+
 .sectionGallery {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    border: 1px solid black;
+    width: 35px;
+    height: 35px;
     border-radius: 100%;
     margin: 0;
     padding: 0;
-    text-align: center;
-    background-color: #80ecee;
+    background: url("../image/gallery_section_circle.png");
+    background-size: cover;
+    color: white;
+
+}
+
+.gallerySectionCircle {
+
 }
 
 .sectionOne {
-    top: 200px;
-    left: -18px;
+    bottom: 154px;
+    left: 132px;
 }
+
+.sectionGraphic {
+    position: absolute;
+    width: 304px;
+    height: 100px;
+    bottom: 94px;
+    background-image: url(../image/graphic_section_line.png);
+    background-size: cover;
+    left: -124px;
+}
+
+.sectionGraphic p {
+    color: white;
+    padding: 13px 102px;
+    font-family: 'ISOCT2';
+    text-shadow: 1px 1px 10px white;
+}
+.sectionGraphic a p {
+    position: absolute;
+    bottom: 21px;
+    left: -48px;
+    font-size: 24px;
+    text-decoration: none;
+    margin: -24px 45px;
+
+}
+
+.link_section_gallery {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+}
+
 .sectionTwo {
     top: 37px;
     left: 63px;
+    visibility: hidden;
 }
+
 .sectionThree {
     top: 0;
     left: 290px;
+    visibility: hidden;
+
 }
+
 .sectionFour {
     top: 167px;
     right: -14px;
+    visibility: hidden;
+
 }
+
 .sectionFive {
     bottom: 28px;
     right: 79px;
+    visibility: hidden;
+
 }
+
 .sectionSix {
     bottom: 29px;
     left: 76px;
+    visibility: hidden;
+
 }
+
 #galleryMenu img {
     position: absolute;
     top: 94px;
     left: 98px;
+
 }
+
 #galleryMenu a {
     position: absolute;
     bottom: 21px;
@@ -64,6 +116,7 @@
     font-size: 24px;
     text-decoration: underline;
 }
+
 .imgGallery {
     z-index: 1;
     margin: 0 auto;

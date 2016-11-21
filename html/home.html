@@ -5,16 +5,19 @@
     <title>mySite</title>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/home.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 
 
 </head>
 <body>
 
 
-    <main class="container_flex">
-        <div class="container_contents">
+<main class="container_flex main_background">
+    <div class="container_contents">
 
-            <div class="navigation">
+        <div class="navigation">
+            <h1 class="logo_name">BOGDAN GORPINICH</h1>
+            <div class="navWrapper">
                 <nav id="navList">
                     <a href="home.html">Home</a>
                     <a href="aboutMe.html">About Me</a>
@@ -22,26 +25,38 @@
                 </nav>
 
                 <div class="menuIcon">
-                    <img id="menuImg" src="../image/menu.png">
+                    <div id="menu_img_box">
+                        <div id="menu_img1"></div>
+                        <div id="menu_img2"></div>
+                        <div id="menu_img3"></div>
+                    </div>
                 </div>
             </div>
-
-            <div class="position_center_flex">
-                <div id="galleryMenu">
-                    <div class="sectionGallery sectionOne">1</div>
-                    <div class="sectionGallery sectionTwo">2</div>
-                    <div class="sectionGallery sectionThree">3</div>
-                    <div class="sectionGallery sectionFour">4</div>
-                    <div class="sectionGallery sectionFive">5</div>
-                    <div class="sectionGallery sectionSix">6</div>
-                    <img src="../image/img.jpg">
-                    <a href="gallery.html">Illustration   </a>
-                </div>
-            </div>
-
         </div>
 
-    </main>
+        <div class="position_center_flex ">
+            <div id="galleryMenu">
+                <div class="sectionGallery sectionOne"></div>
+                <a href="gallery.html" class="link_section_gallery">
+                    <div class="sectionGraphic">
+                        <a href="gallery.html">
+                            <p>GRAPHIC</p>
+                        </a>
+                    </div>
+                </a>
+
+                <div class="sectionGallery sectionTwo">2</div>
+                <div class="sectionGallery sectionThree">3</div>
+                <div class="sectionGallery sectionFour">4</div>
+                <div class="sectionGallery sectionFive">5</div>
+                <div class="sectionGallery sectionSix">6</div>
+
+            </div>
+        </div>
+
+    </div>
+
+</main>
 
 <script src="../js/main.js"></script>
 </body>

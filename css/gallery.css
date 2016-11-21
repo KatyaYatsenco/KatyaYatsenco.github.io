@@ -24,22 +24,7 @@
     padding: 10px;
     /*height: 400px;*/
 }
-
-/*.proj1 img {*/
-    /*height:400px;*/
-/*}*/
-/*.proj2 img {*/
-    /*height:300px;*/
-/*}*/
-/*.proj3 img {*/
-    /*height:450px;*/
-/*}*/
-/*.proj4 img {*/
-    /*height:300px;*/
-/*}*/
-/*.proj5 img {*/
-    /*height:600px;*/
-/*}*/
-/*.proj6 img {*/
-    /*height:250px;*/
-/*}*/
+.graphic_background {
+    background-image: url("../image/graphic_gallery_background.png");
+    background-size: 100% 100%;
+}

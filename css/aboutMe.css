@@ -1,8 +1,14 @@
+.about_me_background {
+    background: url(../image/about_me_background.jpg) right top;
+    background-size: 100% 100%;
+}
+
 .aboutMeInfo {
     display: flex;
     margin: auto;
     flex-direction: column;
 }
+
 .aboutMeInfo p {
     width: 800px;
     font-size: 25px;
@@ -10,9 +16,12 @@
     margin: auto;
     padding: 20px 10px;
 }
+
 /*.imgAboutMe img{*/
-    /*display: flex;*/
-    /*width: 800px;*/
-    /*height: 450px;*/
-    /*margin: auto;*/
+/*display: flex;*/
+/*width: 800px;*/
+/*height: 450px;*/
+/*margin: auto;*/
 /*}*/
+
+
