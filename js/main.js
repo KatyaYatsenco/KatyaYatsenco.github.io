@@ -35,8 +35,12 @@ for (var i = 0; i < galleryMenuCategories.length; i++) {
         if(findLindCurrentCategory.id === 'section3D') {
             galleryMenuPageBackground.style.backgroundImage = 'url("../image/gallery_background_3d.png")';
         }
+        else if(findLindCurrentCategory.id === 'sectionPainting') {
+            galleryMenuPageBackground.style.backgroundImage = 'url("../image/gallery_background_painting.png")';
+        }
         else {
             galleryMenuPageBackground.style.backgroundImage = 'url("../image/main_background.jpg")';
+
         }
 
     });
@@ -45,6 +49,11 @@ for (var i = 0; i < galleryMenuCategories.length; i++) {
         findLindCurrentCategory.style.display = 'none';
         if(findLindCurrentCategory.id === 'section3D') {
             galleryMenuPageBackground.style.backgroundImage = 'url("../image/main_background.jpg")';
+
+        }
+        else if(findLindCurrentCategory.id === 'sectionPainting') {
+            galleryMenuPageBackground.style.backgroundImage = 'url("../image/main_background.jpg")';
+
         }
     })
 }

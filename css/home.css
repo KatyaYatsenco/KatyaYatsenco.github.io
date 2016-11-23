@@ -1,7 +1,7 @@
 .main_background {
     min-height: 800px;
-    background: url("../image/main_background.jpg") right top;
     background-size: 100% 100%;
+    background: url("../image/main_background.jpg") right top;
 }
 
 #galleryMenu {
@@ -74,7 +74,17 @@
     right: -263px;
     /*opacity: 0;*/
     display: none;
+
 }
+
+/*#mainBackground {*/
+
+/*}*/
+/*#3dBackground{*/
+    /*background: url("../image/gallery_background_3d.png") right top;*/
+
+/*}*/
+
 #section3D span {
     display: flex;
     font-family: 'ISOCT2';
@@ -86,12 +96,13 @@
     margin: 61px 0 0 105px;
 
 }
+
 .sectionThree {
     top: 243px;
     right: 151px;
 }
 
-#sectionIllustration {
+#sectionPainting {
     position: absolute;
     width: 304px;
     height: 100px;
@@ -103,7 +114,8 @@
     display: none;
 
 }
-#sectionIllustration span {
+
+#sectionPainting span {
     display: flex;
     font-family: 'ISOCT2';
     font-size: 24px;
