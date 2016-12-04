@@ -1,152 +1,132 @@
 .main_background {
     min-height: 800px;
-    background-size: 100% 100%;
-    background: url("../image/main_background.jpg") right top;
+    background-size: cover;
+    /*background: url("../image/main_background.jpg") right top;*/
 }
 
-#galleryMenu {
+
+.link {
+    font-size: 26px;
+    position: absolute;
+    color: white;
+
+}
+
+.gallery_menu {
     position: relative;
-    width: 600px;
-    height: 600px;
-    margin: 0;
-    border-radius: 100%;
-    background: url("../image/gallery_menu_background.png");
-    background-size: 100% 100%;
 }
 
-.sectionGallery {
-    position: absolute;
-    width: 35px;
-    height: 35px;
-    border-radius: 100%;
-    margin: 0;
-    padding: 0;
-    background: url("../image/gallery_section_circle.png");
-    background-size: cover;
-    color: white;
-
+#designLink {
+    top: 9%;
+    left: -18%;
+    animation: moveDesignLink 5s;
 }
 
-.gallerySectionCircle {
-
+@keyframes moveDesignLink {
+from {
+top: -60%;
+left: -60%;
+opacity: 0;
+}
+to {
+top: 9%;
+left: -18%;
+opacity: 1;
+}
 }
 
-.sectionOne {
-    bottom: 154px;
-    left: 132px;
+#paintingLink {
+    top: 30%;
+    left: -40%;
+    animation: movePaintingLink 5s;
 }
 
-#sectionGraphic {
-    position: absolute;
-    width: 304px;
-    height: 100px;
-    background-image: url(../image/graphic_section_line.png);
-    background-size: cover;
-    bottom: -63px;
-    left: -260px;
-    /*opacity: 0;*/
-    display: none;
+@keyframes movePaintingLink {
+from {
+top: 0;
+left: -100%;
+opacity: 0;
+}
+to {
+top: 30%;
+left: -40%;
+opacity: 1;
+}
 }
 
-#sectionGraphic span {
-    display: flex;
-    font-family: 'ISOCT2';
-    font-size: 24px;
-    text-shadow: 1px 1px 10px white;
-    text-decoration: none;
-    color: white;
-    justify-content: center;
-    margin: 43px 0 0 -50px;
-}
-
-.sectionTwo {
-    bottom: 130px;
-    right: 172px;
-}
-
-#section3D {
-    position: absolute;
-    width: 304px;
-    height: 100px;
-    bottom: -55px;
-    background-image: url(../image/3d_section_line.png);
-    background-size: cover;
-    right: -263px;
-    /*opacity: 0;*/
-    display: none;
+#graphicLink {
+    bottom: 17%;
+    left: -43%;
+    animation: moveGraphicLink 5s;
 
 }
 
-/*#mainBackground {*/
-
-/*}*/
-/*#3dBackground{*/
-    /*background: url("../image/gallery_background_3d.png") right top;*/
-
-/*}*/
-
-#section3D span {
-    display: flex;
-    font-family: 'ISOCT2';
-    font-size: 24px;
-    text-shadow: 1px 1px 10px white;
-    text-decoration: none;
-    color: black;
-    justify-content: center;
-    margin: 61px 0 0 105px;
-
+@keyframes moveGraphicLink {
+from {
+bottom: 0;
+left: -100%;
+opacity: 0;
+}
+to {
+bottom: 17%;
+left: -43%;
+opacity: 1;
+}
 }
 
-.sectionThree {
-    top: 243px;
-    right: 151px;
+#digitalArtLink {
+    top: -21%;
+    right: -11%;
+    animation: moveDigitalArtLink 5s;
 }
 
-#sectionPainting {
-    position: absolute;
-    width: 304px;
-    height: 100px;
-    top: -20px;
-    background-image: url(../image/3d_section_line.png);
-    background-size: cover;
-    right: -265px;
-    /*opacity: 0;*/
-    display: none;
-
+@keyframes moveDigitalArtLink {
+    from {
+        top: -100%;
+        right: -100%;
+        opacity: 0;
+    }
+    to {
+        top: -21%;
+        right: -11%;
+        opacity: 1;
+    }
 }
 
-#sectionPainting span {
-    display: flex;
-    font-family: 'ISOCT2';
-    font-size: 24px;
-    text-shadow: 1px 1px 10px white;
-    text-decoration: none;
-    color: white;
-    justify-content: center;
-    margin: 61px 0 0 105px;
+#othersLink {
+    top: 46%;
+    right: -47%;
+    animation: moveOthersLink 5s;
 }
 
-.sectionFour {
-    top: 167px;
-    right: -14px;
-    visibility: hidden;
-
+@keyframes moveOthersLink {
+    from {
+        top: -20%;
+        right: -100%;
+        opacity: 0;
+    }
+    to {
+        top: 46%;
+        right: -47%;
+        opacity: 1;
+    }
 }
 
-.sectionFive {
-    bottom: 28px;
-    right: 79px;
-    visibility: hidden;
-
+#_3dLink {
+    bottom: 17%;
+    right: -28%;
+    animation: move_3dLink 5s;
 }
 
-.sectionSix {
-    bottom: 29px;
-    left: 76px;
-    visibility: hidden;
-
+@keyframes move_3dLink {
+    from {
+        bottom: 0;
+        right: -100%;
+        opacity: 0;
+    }
+    to {
+        bottom: 17%;
+        right: -28%;
+        opacity: 1;
+    }
 }
-
-
-
-
