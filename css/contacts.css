@@ -1,8 +1,9 @@
 .contactsInfo {
     display: none;
     flex-direction: column;
-    width: 100%;
+    width: 1000px;
     margin: auto;
+
 }
 .contactsInfo p {
     font-family: ISOCT2, 'sans-serif';

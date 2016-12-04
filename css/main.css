@@ -41,13 +41,13 @@ a {
 }
 
 html {
-
+    /*height: 100%;*/
 }
 
 body {
     background: url(../image/main_background.jpg) right;
-    height: 100%;
     background-size: cover;
+    min-height: 800px;
 }
 
 main {
@@ -70,12 +70,13 @@ main {
 /* */
 .container_flex {
     display: flex;
-    height: 100%
+    height: 100%;
 }
 
 .container_contents {
-    width: 1000px;
+    width: 100%;
     height: 100%;
+    /*margin: auto;*/
 }
 
 .position_center_flex {
@@ -99,7 +100,16 @@ main {
     color: white;
     margin: 30px 10px;
     text-shadow: 1px 1px 10px white;
+    animation: showLogoName 1.2s;
+}
 
+@keyframes showLogoName {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .navWrapper {
@@ -120,6 +130,16 @@ main {
 .menuIcon {
     margin: 30px 10px;
     display: inline-flex;
+    animation: showMenuIcon 1.5s;
+}
+
+@keyframes showMenuIcon {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 #navList {

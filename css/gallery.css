@@ -2,7 +2,7 @@
 .projects {
     justify-content: space-around;
     padding: 0 20px 20px 20px;
-    /*visibility: hidden;*/
+    width: 1000px;
     display: none;
     /*display: flex;*/
 
@@ -26,14 +26,17 @@
     /*background-image: url("../image/graphic_gallery_background.png");*/
     background-size: cover;
 }
+
 #titleGalleryDivision {
     display: flex;
     justify-content: center;
     width: 1000px;
 }
+
 .positionStatic {
     position: static;
 }
+
 .styleTitleGallery {
     font-family: ISOCT2, 'sans-serif';
     font-size: 28px;
