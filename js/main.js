@@ -105,6 +105,73 @@ navigationLinksContactsInfo.addEventListener('click', function () {
     }
 });
 
+
+//Main animation when window onload
+var derevo = document.querySelector('#derevo');
+var str0 = derevo.querySelectorAll('.str0');
+var str1 = derevo.querySelectorAll('.str1');
+
+function changeColor(color) {
+    str0.forEach(function (str) {
+        str.style.fill = color;
+    });
+    str1.forEach(function (str) {
+        str.style.stroke = color;
+    });
+}
+var body = document.querySelector("body");
+
+
+var epilepsy = setInterval(function () {
+    changeColor(getRandomColor());
+    bodyBlendMode();
+}, 100);
+
+//Twinkle background and tree
+setTimeout(function () {
+    bodyBlendMode();
+    body.style.backgroundColor = 'none';
+    body.style.backgroundBlendMode = 'normal';
+    clearInterval(epilepsy);
+    changeColor('#fff');
+}, 4000);
+
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+var blendModes = [
+    "normal",
+    "multiply",
+    "screen",
+    "overlay",
+    "darken",
+    "lighten",
+    "color-dodge",
+    "color-burn",
+    "hard-light",
+    "soft-light",
+    "difference",
+    "exclusion",
+    "hue",
+    "saturation",
+    "color",
+    "luminosity"
+];
+
+function bodyBlendMode() {
+    mode = blendModes[Math.floor(Math.random() * blendModes.length)];
+    body.style.backgroundBlendMode = mode;
+    body.style.backgroundColor = getRandomColor();
+}
+
+
 // }
 //
 // openProject();
@@ -145,8 +212,4 @@ navigationLinksContactsInfo.addEventListener('click', function () {
 //         }
 //     })
 // }
-
-
-
-
 
