@@ -22,11 +22,12 @@ menuImg.addEventListener('click', function () {
 });
 
 // open target category
-var galleryMenuLinks = document.querySelectorAll('.link');
-var svgSliceOfWood = document.querySelector('#svgSliceOfWood');
+var galleryMenuLinks = document.querySelectorAll('.linkGallerySubcategory');
+var svgDerevo = document.querySelector('#derevo');
 var mainContent = document.querySelector('.position_center_flex');
-var containerContents = document.querySelector('.container_contents');
+var containerContents = document.querySelector('.mainContent');
 var projects = document.querySelector('.projects');
+var galleryMenuCategories = document.querySelector('.galleryMenuCategories');
 var arr = [];
 for (var i = 0; i < galleryMenuLinks.length; i++) {
     var link = galleryMenuLinks[i];
@@ -45,7 +46,8 @@ for (var i = 0; i < galleryMenuLinks.length; i++) {
             if (item === target) {
                 newDiv.appendChild(target);
                 target.setAttribute('class', 'styleTitleGallery');
-                svgSliceOfWood.style.display = 'none';
+                svgDerevo.style.display = 'none';
+                galleryMenuCategories.style.display = 'none';
                 projects.style.display = 'flex';
             }
             else {
@@ -57,29 +59,61 @@ for (var i = 0; i < galleryMenuLinks.length; i++) {
 
 
 // Open project
-var projectsImg = document.querySelectorAll('.project_img');
-// function openProject() {
-var arrProjectsImg = [];
-for (var k = 0; k < projectsImg.length; k++) {
-    var projectImg = projectsImg[k];
-    arrProjectsImg.push(projectImg);
-}
+var project = document.querySelectorAll('.project');
+var projectsCols = document.querySelectorAll('.projectsCol');
+var bigImgElements = document.getElementsByClassName('bigImg');
 
-arrProjectsImg.forEach(function (item) {
-    console.log(item);
-    item.addEventListener('click', function () {
-        var target = this;
-        var targetChild = target.childNodes[3];
-        if (item === target) {
-            targetChild.style.width = '900px';
+
+// function openProject
+project.forEach(function (elem) {
+    elem.addEventListener('click', function () {
+        var target = this;    // save target project
+        var parentTargetNode = target.parentNode;
+        projectsCols.forEach(function (elem) {
+            if (parentTargetNode !== elem) {
+                elem.style.display = 'none';
+            }
+            else {
+                elem.style.width = '100%';
+            }
+        });
+        project.forEach(function (elem) {
+            if (target !== elem) {
+                elem.style.display = 'none';
+            }
+
+        });
+        target.getElementsByClassName('littleImg')[0].style.display = 'none';  // hide little target img
+        for (var l = 0; l < bigImgElements.length; l++) {
+            var bigImg = bigImgElements[l];
+            if (bigImg.parentNode == target) {
+                bigImg.style.display = 'flex';
+            }
         }
-        else {
-            item.style.display = 'none';
-            // console.log(item);
-        }
+
     });
 });
+for (var l = 0; l < bigImgElements.length; l++) {
+    var bigImg = bigImgElements[l];
+    bigImg.addEventListener('click', function () { //Close Big Picture
+        console.log('click');
 
+        projectsCols.forEach(function (projCol) {
+            // console.log(projectsCols);
+            // projCol.style.width = '30%';
+            // projCol.style.display = 'flex';
+        });
+        for (var b = 0; b < bigImgElements.length; b++) {
+            var bigImgs = bigImgElements[b];
+            bigImgs.style.display = 'none';
+        }
+        project.forEach(function (proj) {
+            // proj.style.display = 'flex';
+            // console.log(proj);
+        });
+    });
+
+}
 // Navigation Links About Me
 var navigationLinksAboutMe = document.querySelector('#navigationLinkAboutMe');
 var aboutMeInfo = document.querySelector('.aboutMeInfo');
@@ -132,6 +166,7 @@ setTimeout(function () {
     bodyBlendMode();
     body.style.backgroundColor = 'none';
     body.style.backgroundBlendMode = 'normal';
+    document.querySelector('.bigContainerForSvg').style.overflow = 'auto';
     clearInterval(epilepsy);
     changeColor('#fff');
 }, 4000);
