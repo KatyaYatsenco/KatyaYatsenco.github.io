@@ -61,7 +61,7 @@ for (var i = 0; i < galleryMenuLinks.length; i++) {
 // Open project
 var project = document.querySelectorAll('.project');
 var projectsCols = document.querySelectorAll('.projectsCol');
-var bigImgElements = document.getElementsByClassName('bigImg');
+var bigImgElements = document.querySelectorAll('.bigImg');
 
 
 // function openProject
@@ -81,39 +81,47 @@ project.forEach(function (elem) {
             if (target !== elem) {
                 elem.style.display = 'none';
             }
-
         });
         target.getElementsByClassName('littleImg')[0].style.display = 'none';  // hide little target img
-        for (var l = 0; l < bigImgElements.length; l++) {
-            var bigImg = bigImgElements[l];
-            if (bigImg.parentNode == target) {
-                bigImg.style.display = 'flex';
+        bigImgElements.forEach(function (elem) {
+
+            if (elem.parentNode == target) {
+                elem.style.display = 'flex';
             }
-        }
+            else {
+                elem.style.display = 'none';
+            }
+        })
 
     });
 });
-for (var l = 0; l < bigImgElements.length; l++) {
-    var bigImg = bigImgElements[l];
-    bigImg.addEventListener('click', function () { //Close Big Picture
+bigImgElements.forEach(function (elem) {
+
+    elem.addEventListener('click', function () { //Close Big Picture
+        var bigImgsTargetProject = this.parentNode.querySelectorAll('.bigImg');
+
         console.log('click');
+        bigImgsTargetProject.forEach(function (elem) {
+            console.log(elem);
+            elem.style.display = 'none';                  // !!!!problem
+            console.log(elem.style.display);  // none
+
+        });
 
         projectsCols.forEach(function (projCol) {
             // console.log(projectsCols);
             // projCol.style.width = '30%';
             // projCol.style.display = 'flex';
         });
-        for (var b = 0; b < bigImgElements.length; b++) {
-            var bigImgs = bigImgElements[b];
-            bigImgs.style.display = 'none';
-        }
+
         project.forEach(function (proj) {
             // proj.style.display = 'flex';
             // console.log(proj);
         });
     });
+});
 
-}
+
 // Navigation Links About Me
 var navigationLinksAboutMe = document.querySelector('#navigationLinkAboutMe');
 var aboutMeInfo = document.querySelector('.aboutMeInfo');
@@ -140,76 +148,78 @@ navigationLinksContactsInfo.addEventListener('click', function () {
 });
 
 
-//Main animation when window onload
-var derevo = document.querySelector('#derevo');
-var str0 = derevo.querySelectorAll('.str0');
-var str1 = derevo.querySelectorAll('.str1');
-
-function changeColor(color) {
-    str0.forEach(function (str) {
-        str.style.fill = color;
-    });
-    str1.forEach(function (str) {
-        str.style.stroke = color;
-    });
-}
-var body = document.querySelector("body");
-
-
-var epilepsy = setInterval(function () {
-    changeColor(getRandomColor());
-    bodyBlendMode();
-}, 100);
-
-//Twinkle background and tree
-setTimeout(function () {
-    bodyBlendMode();
-    body.style.backgroundColor = 'none';
-    body.style.backgroundBlendMode = 'normal';
-    document.querySelector('.bigContainerForSvg').style.overflow = 'auto';
-    clearInterval(epilepsy);
-    changeColor('#fff');
-}, 4000);
+// //Main animation when window onload
+// var derevo = document.querySelector('#derevo');
+// var str0 = derevo.querySelectorAll('.str0');
+// var str1 = derevo.querySelectorAll('.str1');
+//
+// function changeColor(color) {
+//     str0.forEach(function (str) {
+//         str.style.fill = color;
+//     });
+//     str1.forEach(function (str) {
+//         str.style.stroke = color;
+//     });
+// }
+// var body = document.querySelector("body");
 
 
-function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
+// var epilepsy = setInterval(function () {
+//     changeColor(getRandomColor());
+//     bodyBlendMode();
+// }, 100);
+//
+// //Twinkle background and tree
+// setTimeout(function () {
+//     bodyBlendMode();
+//     body.style.backgroundColor = 'none';
+//     body.style.backgroundBlendMode = 'normal';
+//     document.querySelector('.bigContainerForSvg').style.overflow = 'auto';
+//     clearInterval(epilepsy);
+//     changeColor('#fff');
+// }, 4000);
 
-var blendModes = [
-    "normal",
-    "multiply",
-    "screen",
-    "overlay",
-    "darken",
-    "lighten",
-    "color-dodge",
-    "color-burn",
-    "hard-light",
-    "soft-light",
-    "difference",
-    "exclusion",
-    "hue",
-    "saturation",
-    "color",
-    "luminosity"
-];
-
-function bodyBlendMode() {
-    mode = blendModes[Math.floor(Math.random() * blendModes.length)];
-    body.style.backgroundBlendMode = mode;
-    body.style.backgroundColor = getRandomColor();
-}
+// function getRandomColor() {
+//     var letters = '0123456789ABCDEF';
+//     var color = '#';
+//     for (var i = 0; i < 6; i++) {
+//         color += letters[Math.floor(Math.random() * 16)];
+//     }
+//     return color;
+// }
+//
+// var blendModes = [
+//     "normal",
+//     "multiply",
+//     "screen",
+//     "overlay",
+//     "darken",
+//     "lighten",
+//     "color-dodge",
+//     "color-burn",
+//     "hard-light",
+//     "soft-light",
+//     "difference",
+//     "exclusion",
+//     "hue",
+//     "saturation",
+//     "color",
+//     "luminosity"
+// ];
+//
+// function bodyBlendMode() {
+//     mode = blendModes[Math.floor(Math.random() * blendModes.length)];
+//     body.style.backgroundBlendMode = mode;
+//     body.style.backgroundColor = getRandomColor();
+// }
 
 
 // }
+
+
+// ==============
 //
-// openProject();
+// openProject(); old version
 
 //Gallery Menu
 // var galleryMenuCategories = document.getElementsByClassName('menuCategories');
