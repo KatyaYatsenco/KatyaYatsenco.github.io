@@ -1,220 +1,185 @@
-//Navigation menu
-var menuImg = document.getElementById('menu_img_box');
-var navBar = document.querySelector('#navList');
-var menuImg1 = document.getElementById('menu_img1');
-var menuImg2 = document.getElementById('menu_img2');
-var menuImg3 = document.getElementById('menu_img3');
+//Open target gallery Category
+var projects = document.querySelector('.projects'),
+    svgContainer = document.querySelector('.svgContainer'),
+    galleryMenuCategories = document.querySelector('.galleryMenuCategories');
 
-menuImg.addEventListener('click', function () {
-    var style = window.getComputedStyle(navBar);
-    if (style.visibility === 'hidden') {
-        navBar.style.visibility = 'visible';
-        menuImg1.classList.add('rotate_img1');
-        menuImg2.classList.add('visibility_hidden');
-        menuImg3.classList.add('rotate_img3');
-    }
-    else {
-        navBar.style.visibility = 'hidden';
-        menuImg1.classList.remove('rotate_img1');
-        menuImg2.classList.remove('visibility_hidden');
-        menuImg3.classList.remove('rotate_img3');
-    }
-});
 
-// open target category
-var galleryMenuLinks = document.querySelectorAll('.linkGallerySubcategory');
-var svgDerevo = document.querySelector('#derevo');
-var mainContent = document.querySelector('.position_center_flex');
-var containerContents = document.querySelector('.mainContent');
-var projects = document.querySelector('.projects');
-var galleryMenuCategories = document.querySelector('.galleryMenuCategories');
-var arr = [];
-for (var i = 0; i < galleryMenuLinks.length; i++) {
-    var link = galleryMenuLinks[i];
-
-    arr.push(link);
-    link.addEventListener('click', function () {
-        var target = this;
-        if (!newDiv) {
-            var newDiv = document.createElement('div');
-        }
-        newDiv.setAttribute('id', 'titleGalleryDivision');
-        containerContents.insertBefore(newDiv, projects);
-        target.setAttribute('class', 'positionStatic');
-
-        arr.forEach(function (item) {
-            if (item === target) {
-                newDiv.appendChild(target);
-                target.setAttribute('class', 'styleTitleGallery');
-                svgDerevo.style.display = 'none';
-                galleryMenuCategories.style.display = 'none';
-                projects.style.display = 'flex';
-            }
-            else {
-                item.style.display = 'none';
-            }
-        });
-    });
+function getThisState() {
+    var pathName = window.location.pathname;
+    var deleteSlash = pathName.substr(1);
+    return deleteSlash;
 }
+var getState = getThisState();
+
+window.onload = function () {
+    if (history.state === null && getState === '') {
+        history.pushState('home', null, '/');
+    }
+
+
+
+
+    document.querySelector('body').addEventListener('click', function (event) {
+        var target = event.target; // save target category value to variable target.
+        console.log(target);
+        var data = event.target.id;
+        // url = data + ".html";
+
+        switch (target.className) {
+            case 'linkGalleryCategory':
+                openCategory(target);
+                history.pushState(data, null, data);
+                break;
+
+            case 'logo_name':
+                history.pushState('home', null, '/');
+                break;
+
+            case 'home':
+                console.log('you clicked home');
+                // history.pushState('home', null, '/');
+                break;
+        }
+
+        function openCategory(target) {
+            var titleGalleryDivision = document.getElementById('titleGalleryDivision');
+
+            var titleCategory = target.innerHTML;
+            titleGalleryDivision.innerHTML = titleCategory;
+            target.setAttribute('class', 'styleTitleGallery');
+
+            svgContainer.style.display = 'none';
+
+            galleryMenuCategories.style.display = 'none';
+
+            projects.style.display = 'flex';
+        }
+
+        //Determine history state
+        function historyState() {
+            // console.log(history.state);
+            var state = history.state;
+            if (state === null) {
+                // todo create state object manually if it's not defined in history based on current page url
+                function getThisState() {
+                    var pathName = window.location.pathname;
+                    var deleteSlash = pathName.substr(1);
+                    return deleteSlash;
+                }
+
+
+                history.replaceState(getState, null, getState);
+
+            }
+            return state;
+        }
+
+        var CategoryStates = ['design', 'painting', 'graphic', 'digitalArt', 'others', '_3d'];
+
+        CategoryStates.forEach(function (value) {
+            // if (history.state === value) {
+            // var targetCategory = document.getElementById(value);
+            //     openCategory(targetCategory);
+            // }
+        });
+
+
+    });
+
+
+};
+
+
+// // Navigation Links About Me
+// var navigationLinksAboutMe = document.querySelector('#aboutMe');
+// var aboutMeInfo = document.querySelector('.aboutMeInfo');
+// navigationLinksAboutMe.addEventListener('click', function () {
+//     mainContent.style.display = 'none';
+//     if (!newDiv) {
+//         var newDiv = document.createElement('div');
+//         newDiv.setAttribute('id', 'titleAboutMe');
+//         aboutMeInfo.style.display = 'flex';
+//     }
+// });
+
+
+// //Navigation Links Contacts
+// var navigationLinksContactsInfo = document.querySelector('#contacts');
+// var contactsInfo = document.querySelector('.contactsInfo');
+// navigationLinksContactsInfo.addEventListener('click', function () {
+//     mainContent.style.display = 'none';
+//     if (!newDiv) {
+//         var newDiv = document.createElement('div');
+//         newDiv.setAttribute('id', 'titleAboutMe');
+//         contactsInfo.style.display = 'flex';
+//     }
+// });
 
 
 // Open project
-var project = document.querySelectorAll('.project');
-var projectsCols = document.querySelectorAll('.projectsCol');
-var bigImgElements = document.querySelectorAll('.bigImg');
+// var projectsCols = document.querySelectorAll('.projectsCol');
+// var bigImgElements = document.querySelectorAll('.bigImg');
 
-
-// function openProject
-project.forEach(function (elem) {
-    elem.addEventListener('click', function () {
-        var target = this;    // save target project
-        var parentTargetNode = target.parentNode;
-        projectsCols.forEach(function (elem) {
-            if (parentTargetNode !== elem) {
-                elem.style.display = 'none';
-            }
-            else {
-                elem.style.width = '100%';
-            }
-        });
-        project.forEach(function (elem) {
-            if (target !== elem) {
-                elem.style.display = 'none';
-            }
-        });
-        target.getElementsByClassName('littleImg')[0].style.display = 'none';  // hide little target img
-        bigImgElements.forEach(function (elem) {
-
-            if (elem.parentNode == target) {
-                elem.style.display = 'flex';
-            }
-            else {
-                elem.style.display = 'none';
-            }
-        })
-
-    });
-});
-bigImgElements.forEach(function (elem) {
-
-    elem.addEventListener('click', function () { //Close Big Picture
-        var bigImgsTargetProject = this.parentNode.querySelectorAll('.bigImg');
-
-        console.log('click');
-        bigImgsTargetProject.forEach(function (elem) {
-            console.log(elem);
-            elem.style.display = 'none';                  // !!!!problem
-            console.log(elem.style.display);  // none
-
-        });
-
-        projectsCols.forEach(function (projCol) {
-            // console.log(projectsCols);
-            // projCol.style.width = '30%';
-            // projCol.style.display = 'flex';
-        });
-
-        project.forEach(function (proj) {
-            // proj.style.display = 'flex';
-            // console.log(proj);
-        });
-    });
-});
-
-
-// Navigation Links About Me
-var navigationLinksAboutMe = document.querySelector('#navigationLinkAboutMe');
-var aboutMeInfo = document.querySelector('.aboutMeInfo');
-navigationLinksAboutMe.addEventListener('click', function () {
-    mainContent.style.display = 'none';
-    if (!newDiv) {
-        var newDiv = document.createElement('div');
-        newDiv.setAttribute('id', 'titleAboutMe');
-        aboutMeInfo.style.display = 'flex';
-    }
-});
-
-
-//Navigation Links Contacts
-var navigationLinksContactsInfo = document.querySelector('#navigationLinkContacts');
-var contactsInfo = document.querySelector('.contactsInfo');
-navigationLinksContactsInfo.addEventListener('click', function () {
-    mainContent.style.display = 'none';
-    if (!newDiv) {
-        var newDiv = document.createElement('div');
-        newDiv.setAttribute('id', 'titleAboutMe');
-        contactsInfo.style.display = 'flex';
-    }
-});
-
-
-// //Main animation when window onload
-// var derevo = document.querySelector('#derevo');
-// var str0 = derevo.querySelectorAll('.str0');
-// var str1 = derevo.querySelectorAll('.str1');
+//Function open project
+// // function openProject
+// project.forEach(function (elem) {
+//     elem.addEventListener('click', function () {
+//         // debugger;
 //
-// function changeColor(color) {
-//     str0.forEach(function (str) {
-//         str.style.fill = color;
+//         var target = this;    // save target project
+//         var parentTargetNode = target.parentNode;
+//         projectsCols.forEach(function (elem) {
+//             if (parentTargetNode !== elem) {
+//                 elem.style.display = 'none';
+//             }
+//             else {
+//                 elem.style.width = '100%';
+//             }
+//         });
+//         project.forEach(function (elem) {
+//             if (target !== elem) {
+//                 elem.style.display = 'none';
+//             }
+//         });
+//         target.getElementsByClassName('littleImg')[0].style.display = 'none';  // hide little target img
+//
+//         bigImgElements.forEach(function (elem) {
+//
+//             if (elem.parentNode == target) {
+//                 elem.style.display = 'flex';
+//             }
+//             else {
+//                 elem.style.display = 'none';
+//             }
+//         })
+//
 //     });
-//     str1.forEach(function (str) {
-//         str.style.stroke = color;
+// });
+// bigImgElements.forEach(function (elem) {
+//
+//     elem.addEventListener('click', function () { //Close Big Picture
+//         var bigImgsTargetProject = this.parentNode.querySelectorAll('.bigImg');
+//
+//         console.log('click');
+//         bigImgsTargetProject.forEach(function (elem) {
+//             console.log(elem);
+//             elem.style.display = 'none';                  // !!!!problem
+//             console.log(elem.style.display);  // none
+//
+//         });
+//
+//         projectsCols.forEach(function (projCol) {
+//             // console.log(projectsCols);
+//             // projCol.style.width = '30%';
+//             // projCol.style.display = 'flex';
+//         });
+//
+//         project.forEach(function (proj) {
+//             // proj.style.display = 'flex';
+//             // console.log(proj);
+//         });
 //     });
-// }
-// var body = document.querySelector("body");
-
-
-// var epilepsy = setInterval(function () {
-//     changeColor(getRandomColor());
-//     bodyBlendMode();
-// }, 100);
-//
-// //Twinkle background and tree
-// setTimeout(function () {
-//     bodyBlendMode();
-//     body.style.backgroundColor = 'none';
-//     body.style.backgroundBlendMode = 'normal';
-//     document.querySelector('.bigContainerForSvg').style.overflow = 'auto';
-//     clearInterval(epilepsy);
-//     changeColor('#fff');
-// }, 4000);
-
-// function getRandomColor() {
-//     var letters = '0123456789ABCDEF';
-//     var color = '#';
-//     for (var i = 0; i < 6; i++) {
-//         color += letters[Math.floor(Math.random() * 16)];
-//     }
-//     return color;
-// }
-//
-// var blendModes = [
-//     "normal",
-//     "multiply",
-//     "screen",
-//     "overlay",
-//     "darken",
-//     "lighten",
-//     "color-dodge",
-//     "color-burn",
-//     "hard-light",
-//     "soft-light",
-//     "difference",
-//     "exclusion",
-//     "hue",
-//     "saturation",
-//     "color",
-//     "luminosity"
-// ];
-//
-// function bodyBlendMode() {
-//     mode = blendModes[Math.floor(Math.random() * blendModes.length)];
-//     body.style.backgroundBlendMode = mode;
-//     body.style.backgroundColor = getRandomColor();
-// }
-
-
-// }
+// });
 
 
 // ==============
