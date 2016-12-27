@@ -126,7 +126,7 @@ body {
     color: white;
     margin: 30px 10px;
     text-shadow: 1px 1px 10px white;
-    animation: appearanceLogo 3s;
+    /*animation: appearanceLogo 3s;*/
 }
 
 @keyframes appearanceLogo {
@@ -519,7 +519,7 @@ body {
 }
 
 #titleGalleryDivision {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     width: 1000px;
@@ -569,18 +569,14 @@ a .littleImg {
 }
 
 /* About me information */
-.about_me_background {
-    /*background: url(../image/about_me_background.jpg) right top;*/
-    background-size: 100% 100%;
-}
 
-.aboutMeInfo {
+#aboutMeInfo {
     display: none;
     margin: auto;
     flex-direction: column;
 }
 
-.aboutMeInfo p {
+#aboutMeInfo p {
     width: 800px;
     font-size: 25px;
     font-family: ISOCT2, 'sans-serif';
@@ -590,12 +586,8 @@ a .littleImg {
     padding: 80px 10px;
 }
 
-.aboutMeInfo {
-    display: none;
-}
-
 /* Contacts information */
-.contactsInfo {
+#contactsInfo {
     display: none;
     flex-direction: column;
     width: 1000px;
@@ -603,7 +595,7 @@ a .littleImg {
 
 }
 
-.contactsInfo p {
+#contactsInfo p {
     font-family: ISOCT2, 'sans-serif';
     color: white;
     display: flex;

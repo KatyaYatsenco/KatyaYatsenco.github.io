@@ -1,121 +1,187 @@
 //Open target gallery Category
 var projects = document.querySelector('.projects'),
     svgContainer = document.querySelector('.svgContainer'),
-    galleryMenuCategories = document.querySelector('.galleryMenuCategories');
+    derevo = document.getElementById('derevo'),
+    galleryMenuCategories = document.querySelector('.galleryMenuCategories'),
+    titleGalleryDivision = document.getElementById('titleGalleryDivision'),
+// Determine history state
+    state = history.state;
 
 
-function getThisState() {
-    var pathName = window.location.pathname;
-    var deleteSlash = pathName.substr(1);
-    return deleteSlash;
+function watchPathChanges(callback) {
+
 }
-var getState = getThisState();
+var currentPath = window.location.pathname;
 
+setInterval(function () {
+    if (window.location.pathname !== currentPath) {
+        currentPath = window.location.pathname;
+        watchPathChanges(function () {
+            var deleteSlash = currentPath.substr(1);
+            return currentPath;
+
+        });
+    }
+},10);
+
+
+// On window location I get pathName which correspondence with needed data.
+
+
+// All functions which start to work when the window on load.
 window.onload = function () {
-    if (history.state === null && getState === '') {
+
+    if (state === null && currentPath === '') {
         history.pushState('home', null, '/');
     }
 
 
-
-
+//Listener to the click somewhere on body
     document.querySelector('body').addEventListener('click', function (event) {
-        var target = event.target; // save target category value to variable target.
-        console.log(target);
-        var data = event.target.id;
+        var target = event.target, // save target category value to variable target.
+            data = event.target.id;
         // url = data + ".html";
 
-        switch (target.className) {
-            case 'linkGalleryCategory':
-                openCategory(target);
-                history.pushState(data, null, data);
-                break;
-
-            case 'logo_name':
-                history.pushState('home', null, '/');
-                break;
-
-            case 'home':
-                console.log('you clicked home');
-                // history.pushState('home', null, '/');
-                break;
-        }
-
-        function openCategory(target) {
-            var titleGalleryDivision = document.getElementById('titleGalleryDivision');
-
-            var titleCategory = target.innerHTML;
-            titleGalleryDivision.innerHTML = titleCategory;
-            target.setAttribute('class', 'styleTitleGallery');
-
-            svgContainer.style.display = 'none';
-
-            galleryMenuCategories.style.display = 'none';
-
-            projects.style.display = 'flex';
-        }
-
-        //Determine history state
+        //Determine history state, when you open page first time
         function historyState() {
-            // console.log(history.state);
-            var state = history.state;
-            if (state === null) {
-                // todo create state object manually if it's not defined in history based on current page url
-                function getThisState() {
-                    var pathName = window.location.pathname;
-                    var deleteSlash = pathName.substr(1);
-                    return deleteSlash;
-                }
+            switch (state) {
+                case null:
+                    history.pushState(currentPath, null, currentPath);
+                    break;
 
-
-                history.replaceState(getState, null, getState);
-
+                case 'design':
+                case 'painting':
+                case 'graphic':
+                case 'digitalArt':
+                case 'others':
+                case '_3d':
+                    openCategory(target);
+                    break;
+                case 'aboutMe':
+                    openAboutMe();
+                    break;
+                case 'contacts':
+                    openContacts();
+                    break;
+                default:
+                    // console.log("on this click I don't have activity.(switch(state))");
+                    break;
             }
+
             return state;
         }
 
-        var CategoryStates = ['design', 'painting', 'graphic', 'digitalArt', 'others', '_3d'];
+        historyState();
 
-        CategoryStates.forEach(function (value) {
-            // if (history.state === value) {
-            // var targetCategory = document.getElementById(value);
-            //     openCategory(targetCategory);
-            // }
-        });
+        // switch (target.className) {
+        //
+        //     case 'linkGalleryCategory':
+        //         openCategory(target);
+        //         history.pushState(data, null, data);
+        //         break;
+        //
+        //     case 'logo_name':
+        //         history.pushState('home', null, '/');
+        //         goHome(target);
+        //         break;
+        //     default:
+        //         // console.log("on this click I don't have activity.(switch(target.className))");
+        //         break;
+        // }
+        //Nav bar menu
+        switch (target.id) {
 
+            case 'home':
+                history.replaceState('home', null, '/');
+                goHome(target);
+                break;
+
+            case 'aboutMe':
+                openAboutMe();
+                history.pushState(data, null, data);
+                break;
+
+            case 'contacts':
+                openContacts();
+                history.pushState(data, null, data);
+                console.log('you clicked me');
+                console.log(target.id);
+                break;
+            default:
+                // console.log("on this click I don't have activity.(switch(target.id))");
+                break;
+        }
 
     });
 
-
 };
 
+// Open target category
+function openCategory(target) {
+    closeAll();
+    var textTitleCategory = target.innerHTML;
+    titleGalleryDivision.style.display = 'flex';
+    projects.style.display = 'flex';
+    titleGalleryDivision.innerHTML = textTitleCategory;
+    hideInfoHomePage();
+}
 
-// // Navigation Links About Me
-// var navigationLinksAboutMe = document.querySelector('#aboutMe');
-// var aboutMeInfo = document.querySelector('.aboutMeInfo');
-// navigationLinksAboutMe.addEventListener('click', function () {
-//     mainContent.style.display = 'none';
-//     if (!newDiv) {
-//         var newDiv = document.createElement('div');
-//         newDiv.setAttribute('id', 'titleAboutMe');
-//         aboutMeInfo.style.display = 'flex';
-//     }
-// });
+// Close target category
+function closeCategory() {
+    titleGalleryDivision.style.display = 'none';
+    projects.style.display = 'none';
+}
 
+// Open title page
+function goHome(target) {
+    closeAll();
+    svgContainer.style.display = 'block';
+    galleryMenuCategories.style.display = 'block';
+    closeCategory();
+}
 
-// //Navigation Links Contacts
-// var navigationLinksContactsInfo = document.querySelector('#contacts');
-// var contactsInfo = document.querySelector('.contactsInfo');
-// navigationLinksContactsInfo.addEventListener('click', function () {
-//     mainContent.style.display = 'none';
-//     if (!newDiv) {
-//         var newDiv = document.createElement('div');
-//         newDiv.setAttribute('id', 'titleAboutMe');
-//         contactsInfo.style.display = 'flex';
-//     }
-// });
+// Hide information from the home page
+function hideInfoHomePage() {
+    svgContainer.style.display = 'none';
+    galleryMenuCategories.style.display = 'none';
+}
 
+// Open page about me
+var aboutMeInfo = document.getElementById('aboutMeInfo');
 
+function openAboutMe() {
+    closeAll();
+    hideInfoHomePage();
+    aboutMeInfo.style.display = 'flex';
+}
+
+// Close information about me
+function closeAboutMe() {
+    aboutMeInfo.style.display = 'none';
+}
+
+// Open contacts
+var contactsInfo = document.getElementById('contactsInfo');
+
+function openContacts() {
+    closeAll();
+    contactsInfo.style.display = 'flex';
+    hideInfoHomePage();
+}
+
+// Close contacts
+function closeContacts() {
+    contactsInfo.style.display = 'none';
+}
+
+// Close all
+function closeAll() {
+    closeContacts();
+    closeAboutMe();
+    closeCategory();
+    hideInfoHomePage();
+    // console.log('close opened division');
+}
 // Open project
 // var projectsCols = document.querySelectorAll('.projectsCol');
 // var bigImgElements = document.querySelectorAll('.bigImg');

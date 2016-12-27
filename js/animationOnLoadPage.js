@@ -67,7 +67,7 @@ svgContainer.style.overflow = 'hidden';
 var navigation = document.querySelector('.navigation');
 navigation.style.animation = 'showNavBarMenu 4.5s';
 var logoName = document.querySelector('.logo_name');
-// logoName.style.animation = 'appearanceLogo 3s';
+logoName.style.animation = 'appearanceLogo 3s';
 var gallerySubcategoryDesign = document.querySelector('#design');
 gallerySubcategoryDesign.style.animation = 'moveDesignLink 4.1s';
 var gallerySubcategoryPainting = document.querySelector('#painting');
@@ -80,7 +80,6 @@ var gallerySubcategoryOthers = document.querySelector('#others');
 gallerySubcategoryOthers.style.animation = 'moveOthersLink 5s';
 var gallerySubcategory3d = document.querySelector('#_3d');
 gallerySubcategory3d.style.animation = 'move3dLink 4.7s';
-
 var derevo = document.querySelector('#derevo');
 derevo.style.animation = 'derevoZoom 2s';
 
