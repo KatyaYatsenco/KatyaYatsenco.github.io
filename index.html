@@ -4,33 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>stranger</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
 
-<!-- Navigation bar -->
-<div class="navigation">
-    <a href="index.html"><h1 class="logo_name">BOGDAN GORPINICH</h1></a>
-    <div class="navWrapper">
-        <nav id="navList">
-            <a href="index.html" class="navLinks">Home</a>
-            <a href="index.html/about_me" id="navigationLinkAboutMe navLinks">About Me</a>
-            <a href="index.html/contacts" id="navigationLinkContacts navLinks">Contacts</a>
-        </nav>
-
-        <div class="menuIcon">
-            <div id="menu_img_box">
-                <div id="menu_img1"></div>
-                <div id="menu_img2"></div>
-                <div id="menu_img3"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!--Tree svg picture -->
-<div class="bigContainerForSvg hide_gallery_menu">
+<div class="svgContainer">
     <svg id="derevo" class="derevo-start hide_gallery_menu"
          style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
          width="400px" height="400px" viewBox="1893 7746 14517 14611" xmlns="http://www.w3.org/2000/svg">
@@ -106,47 +86,71 @@
     </svg>
 </div>
 
+<!-- Navigation bar -->
+<div class="navigation">
+    <a><h1 id='home_page' class="logo_name">BOGDAN GORPINICH</h1></a>
+    <div class="navWrapper">
+        <nav id="navList">
+            <a id="home" class="navLinks">Home</a>
+            <a id="aboutMe" class="navLinks">About Me</a>
+            <a id="contacts" class="navLinks">Contacts</a>
+        </nav>
+
+        <div id="menuIcon">
+            <div id="menu_img_box">
+                <div id="menu_img1"></div>
+                <div id="menu_img2"></div>
+                <div id="menu_img3"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 
 <div class="mainContent">
 
     <!--Gallery menu links-->
-    <div class="galleryMenuCategories hide_gallery_menu">
-        <a href="index.html/design" class="linkGallerySubcategory" id="gallerySubcategoryDesign">DESIGN</a>
-        <a class="linkGallerySubcategory" id="gallerySubcategoryPainting">PAINTING</a>
-        <a href="index.html/graphic" class="linkGallerySubcategory" id="gallerySubcategoryGraphic">GRAPHIC</a>
-        <a href="index.html/digitalArt" class="linkGallerySubcategory" id="gallerySubcategoryDigitalArt">DIGITAL
+    <div id="titleGalleryDivision">
+    </div>
+
+    <div class="galleryMenuCategories">
+        <a class="linkGalleryCategory" id="design">DESIGN</a>
+        <a class="linkGalleryCategory" id="painting">PAINTING</a>
+        <a class="linkGalleryCategory" id="graphic">GRAPHIC</a>
+        <a class="linkGalleryCategory" id="digitalArt">DIGITAL
             ART</a>
-        <a href="index.html/others" class="linkGallerySubcategory" id="gallerySubcategoryOthers">OTHERS</a>
-        <a href="index.html/3d" class="linkGallerySubcategory" id="gallerySubcategory3d">3-D</a>
+        <a class="linkGalleryCategory" id="others">OTHERS</a>
+        <a class="linkGalleryCategory" id="_3d">3-D</a>
     </div>
 
     <!-- Projects --->
-    <div class="projects" id="design">
+    <div class="projects" id="CategoryDesign">
 
         <div class=" projectsCol1 projectsCol">
             <div class="project">
                 <a class="littleImg">
-                    <img src="../image/little_img_orange.png">
+                    <img src="image/little_img_orange.png">
                 </a>
                 <a class="bigImg">
-                    <img src="../image/big_img_orange1.png">
+                    <img src="image/big_img_orange1.png">
                 </a>
                 <a class="bigImg">
-                    <img src="../image/big_img_orange2.png">
+                    <img src="image/big_img_orange2.png">
                 </a>
             </div>
             <div class="project">
                 <a class="littleImg">
-                    <img src="../image/little_img_pink.png">
+                    <img src="image/little_img_orange.png">
                 </a>
                 <a class="bigImg">
-                    <img src="../image/big_img_orange2.png">
+                    <img src="image/big_img_orange2.png">
                 </a>
             </div>
             <div class="project">
                 <a class="littleImg">
-                    <img src="../image/little_img_yellow.png">
+                    <img src="image/little_img_orange.png">
                 </a>
             </div>
 
@@ -156,12 +160,12 @@
 
             <div class="project">
                 <a class="littleImg">
-                    <img src="../image/little_img_green.png">
+                    <img src="image/little_img_orange.png">
                 </a>
             </div>
             <div class="project">
                 <a class="littleImg">
-                    <img src="../image/little_img_orange.png">
+                    <img src="image/little_img_orange.png">
                 </a>
             </div>
             <!--<div class="project">-->
@@ -176,12 +180,12 @@
 
             <div class="project">
                 <a class="littleImg">
-                    <img src="../image/little_img_pink.png">
+                    <img src="image/little_img_orange.png">
                 </a>
             </div>
             <div class="project">
                 <a class="littleImg">
-                    <img src="../image/little_img_green.png">
+                    <img src="image/little_img_orange.png">
                 </a>
             </div>
             <!--<div class="project">-->
@@ -192,17 +196,358 @@
         </div>
     </div>
 
-    <div id="painting"></div>
+    <div class="projects" id="CategoryPainting">
 
-    <div id="graphic"></div>
+        <div class=" projectsCol1 projectsCol">
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_pink.png">
+                </a>
+                <a class="bigImg">
+                    <img src="image/big_img_orange1.png">
+                </a>
+                <a class="bigImg">
+                    <img src="image/big_img_orange2.png">
+                </a>
+            </div>
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_pink.png">
+                </a>
+                <a class="bigImg">
+                    <img src="image/big_img_orange2.png">
+                </a>
+            </div>
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_pink.png">
+                </a>
+            </div>
 
-    <div id="digitalArt"></div>
+        </div>
 
-    <div id="others"></div>
+        <div class="projectsCol2 projectsCol">
 
-    <div id="_3d"></div>
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_pink.png">
+                </a>
+            </div>
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_pink.png">
+                </a>
+            </div>
+            <!--<div class="project">-->
+            <!--<a class="little_img">-->
+            <!--<img src="../image/little_img_green.png">-->
+            <!--</a>-->
+            <!--</div>-->
 
-    <div id="about_me" class="aboutMeInfo">
+        </div>
+
+        <div class="projectsCol3 projectsCol">
+
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_pink.png">
+                </a>
+            </div>
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_pink.png">
+                </a>
+            </div>
+            <!--<div class="project">-->
+            <!--<a class="little_img">-->
+            <!--<img src="../image/little_img_green.png">-->
+            <!--</a>-->
+            <!--</div>-->
+        </div>
+    </div>
+
+    <div class="projects" id="CategoryGraphic">
+
+        <div class=" projectsCol1 projectsCol">
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_green.png">
+                </a>
+                <a class="bigImg">
+                    <img src="image/big_img_orange1.png">
+                </a>
+                <a class="bigImg">
+                    <img src="image/big_img_orange2.png">
+                </a>
+            </div>
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_pink.png">
+                </a>
+                <a class="bigImg">
+                    <img src="image/big_img_orange2.png">
+                </a>
+            </div>
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_yellow.png">
+                </a>
+            </div>
+
+        </div>
+
+        <div class="projectsCol2 projectsCol">
+
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_green.png">
+                </a>
+            </div>
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_orange.png">
+                </a>
+            </div>
+            <!--<div class="project">-->
+            <!--<a class="little_img">-->
+            <!--<img src="../image/little_img_green.png">-->
+            <!--</a>-->
+            <!--</div>-->
+
+        </div>
+
+        <div class="projectsCol3 projectsCol">
+
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_pink.png">
+                </a>
+            </div>
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_green.png">
+                </a>
+            </div>
+            <!--<div class="project">-->
+            <!--<a class="little_img">-->
+            <!--<img src="../image/little_img_green.png">-->
+            <!--</a>-->
+            <!--</div>-->
+        </div>
+    </div>
+
+    <div class="projects" id="CategoryDigitalArt">
+
+        <div class=" projectsCol1 projectsCol">
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_orange.png">
+                </a>
+                <a class="bigImg">
+                    <img src="image/big_img_orange1.png">
+                </a>
+                <a class="bigImg">
+                    <img src="image/big_img_orange2.png">
+                </a>
+            </div>
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_pink.png">
+                </a>
+                <a class="bigImg">
+                    <img src="image/big_img_orange2.png">
+                </a>
+            </div>
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_yellow.png">
+                </a>
+            </div>
+
+        </div>
+
+        <div class="projectsCol2 projectsCol">
+
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_green.png">
+                </a>
+            </div>
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_orange.png">
+                </a>
+            </div>
+            <!--<div class="project">-->
+            <!--<a class="little_img">-->
+            <!--<img src="../image/little_img_green.png">-->
+            <!--</a>-->
+            <!--</div>-->
+
+        </div>
+
+        <div class="projectsCol3 projectsCol">
+
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_pink.png">
+                </a>
+            </div>
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_green.png">
+                </a>
+            </div>
+            <!--<div class="project">-->
+            <!--<a class="little_img">-->
+            <!--<img src="../image/little_img_green.png">-->
+            <!--</a>-->
+            <!--</div>-->
+        </div>
+    </div>
+
+    <div class="projects" id="CategoryOthers">
+
+        <div class=" projectsCol1 projectsCol">
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_orange.png">
+                </a>
+                <a class="bigImg">
+                    <img src="image/big_img_orange1.png">
+                </a>
+                <a class="bigImg">
+                    <img src="image/big_img_orange2.png">
+                </a>
+            </div>
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_pink.png">
+                </a>
+                <a class="bigImg">
+                    <img src="image/big_img_orange2.png">
+                </a>
+            </div>
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_yellow.png">
+                </a>
+            </div>
+
+        </div>
+
+        <div class="projectsCol2 projectsCol">
+
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_green.png">
+                </a>
+            </div>
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_orange.png">
+                </a>
+            </div>
+            <!--<div class="project">-->
+            <!--<a class="little_img">-->
+            <!--<img src="../image/little_img_green.png">-->
+            <!--</a>-->
+            <!--</div>-->
+
+        </div>
+
+        <div class="projectsCol3 projectsCol">
+
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_pink.png">
+                </a>
+            </div>
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_green.png">
+                </a>
+            </div>
+            <!--<div class="project">-->
+            <!--<a class="little_img">-->
+            <!--<img src="../image/little_img_green.png">-->
+            <!--</a>-->
+            <!--</div>-->
+        </div>
+    </div>
+
+    <div class="projects" id="Category_3d">
+
+        <div class=" projectsCol1 projectsCol">
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_orange.png">
+                </a>
+                <a class="bigImg">
+                    <img src="image/big_img_orange1.png">
+                </a>
+                <a class="bigImg">
+                    <img src="image/big_img_orange2.png">
+                </a>
+            </div>
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_pink.png">
+                </a>
+                <a class="bigImg">
+                    <img src="image/big_img_orange2.png">
+                </a>
+            </div>
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_yellow.png">
+                </a>
+            </div>
+
+        </div>
+
+        <div class="projectsCol2 projectsCol">
+
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_green.png">
+                </a>
+            </div>
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_orange.png">
+                </a>
+            </div>
+            <!--<div class="project">-->
+            <!--<a class="little_img">-->
+            <!--<img src="../image/little_img_green.png">-->
+            <!--</a>-->
+            <!--</div>-->
+
+        </div>
+
+        <div class="projectsCol3 projectsCol">
+
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_pink.png">
+                </a>
+            </div>
+            <div class="project">
+                <a class="littleImg">
+                    <img src="image/little_img_green.png">
+                </a>
+            </div>
+            <!--<div class="project">-->
+            <!--<a class="little_img">-->
+            <!--<img src="../image/little_img_green.png">-->
+            <!--</a>-->
+            <!--</div>-->
+        </div>
+    </div>
+
+
+    <div id="aboutMeInfo">
         <p>Lorem ipsum dolor sit amet, id laudem iisque singulis usu. Maiorum assentior sea no. Quo alterum
             partiendo eu,
             nec ei natum autem similique, sit no ubique tritani. Mea an dictas epicuri corrumpit, primis evertitur
@@ -212,13 +557,16 @@
         </p>
     </div>
 
-    <div id="contacts" class="contactsInfo">
+    <div id="contactsInfo">
         <p>Location<br>Ukraine</p>
         <p>Email<br>121212@gmail.com</p>
         <p>Social links</p>
     </div>
 
 </div>
-<script src="../js/main.js"></script>
+<script src="js/main.js"></script>
+<!--<script src="js/animationOnLoadPage.js"></script>-->
+<script src="js/animationNavBar.js"></script>
+
 </body>
 </html>
