@@ -11,9 +11,34 @@ var projects = document.querySelector('.projects'),
 function watchPathChanges(callback) {
 
 }
-var currentPath = window.location.pathname;
+var currentPath = window.location.pathname.substr(1),
+    categoryDesign = document.getElementById('categoryDesign'),
+    categoryPainting = document.getElementById('categoryPainting'),
+    categoryGraphic = document.getElementById('categoryGraphic'),
+    categoryDigitalArt = document.getElementById('categoryDigitalArt'),
+    categoryOthers = document.getElementById('categoryOthers'),
+    category_3d = document.getElementById('category_3d'),
+    categoryAboutMe = document.getElementById('aboutMeInfo'),
+    categoryContacts = document.getElementById('contactsInfo'),
 
-setInterval(function () {
+    categoriesPage = [categoryPainting, categoryDesign, categoryGraphic, categoryDigitalArt, categoryOthers, category_3d, categoryAboutMe, categoryContacts],
+    categoriesPathName = ['aboutMe', 'contacts', 'design', 'painting', 'graphic', 'digitalArt', 'others', '_3d', ''];
+
+
+//Check current pathName
+// setInterval(function () {
+//     if (window.location.pathname !== currentPath) {
+//         currentPath = window.location.pathname.substr(1);
+//         watchPathChanges(function () {
+//             var deleteSlash = currentPath;
+//             return currentPath;
+//
+//         });
+//     }
+//
+// }, 10);
+
+currentPath.addEventListener('change', function () {
     if (window.location.pathname !== currentPath) {
         currentPath = window.location.pathname;
         watchPathChanges(function () {
@@ -22,166 +47,152 @@ setInterval(function () {
 
         });
     }
-},10);
+    console.log(currentPath);
+});
 
+switchCategoryPages();
+
+
+function hideMainCategories() {
+    svgContainer.classList.add('hide');
+    galleryMenuCategories.classList.add('hide');
+}
+function openMainCategories() {
+    svgContainer.classList.add('visible');
+    galleryMenuCategories.classList.add('visible');
+}
+
+function switchCategoryPages() {
+        categoriesPathName.forEach(function (elem) {
+            switch (currentPath) {
+                case 'design':
+                    // if(elem)
+                    categoriesPage[1].classList.add('visible');
+                    hideMainCategories();
+                    break;
+                case '' :
+                    openMainCategories();
+                    break;
+
+            }
+
+        });
+
+}
 
 // On window location I get pathName which correspondence with needed data.
 
-
 // All functions which start to work when the window on load.
-window.onload = function () {
-
-    if (state === null && currentPath === '') {
-        history.pushState('home', null, '/');
-    }
+    window.onload = function () {
+        if (state === null && currentPath === '') {
+            history.pushState('home', null, '/');
+        }
 
 
 //Listener to the click somewhere on body
-    document.querySelector('body').addEventListener('click', function (event) {
-        var target = event.target, // save target category value to variable target.
-            data = event.target.id;
-        // url = data + ".html";
+        document.querySelector('body').addEventListener('click', function (event) {
+            var target = event.target,
+                data = event.target.id;
 
-        //Determine history state, when you open page first time
-        function historyState() {
-            switch (state) {
-                case null:
-                    history.pushState(currentPath, null, currentPath);
-                    break;
+            // var categoriesId = ['aboutMe', 'contacts', 'design', 'painting', 'graphic', 'digitalArt', 'others', '_3d'];
+            categoriesPathName.forEach(function (elem) {
+                var categoriesPathName = elem;
+                switch (data) {
+                    case categoriesPathName:
+                        history.pushState(data, null, data);
+                        var targetPage = document.getElementById(categoriesPathName);
+                        targetPage.classList.add('visible');
+                        break;
+                    case 'home':
+                    case  'home_page':
+                        history.pushState('home', null, '/');
+                        break;
+                }
+            });
 
-                case 'design':
-                case 'painting':
-                case 'graphic':
-                case 'digitalArt':
-                case 'others':
-                case '_3d':
-                    openCategory(target);
-                    break;
-                case 'aboutMe':
-                    openAboutMe();
-                    break;
-                case 'contacts':
-                    openContacts();
-                    break;
-                default:
-                    // console.log("on this click I don't have activity.(switch(state))");
-                    break;
-            }
 
-            return state;
-        }
+        });
 
-        historyState();
 
-        // switch (target.className) {
-        //
-        //     case 'linkGalleryCategory':
-        //         openCategory(target);
-        //         history.pushState(data, null, data);
-        //         break;
-        //
-        //     case 'logo_name':
-        //         history.pushState('home', null, '/');
-        //         goHome(target);
-        //         break;
-        //     default:
-        //         // console.log("on this click I don't have activity.(switch(target.className))");
-        //         break;
-        // }
-        //Nav bar menu
-        switch (target.id) {
+    };
 
-            case 'home':
-                history.replaceState('home', null, '/');
-                goHome(target);
-                break;
+window.onpopstate = (function () {
+    if (this.currentPath === state) {
+        console.log('bo ');
+        // history changed because of pushState/replaceState
+    } else {
+        console.log('do ');
 
-            case 'aboutMe':
-                openAboutMe();
-                history.pushState(data, null, data);
-                break;
-
-            case 'contacts':
-                openContacts();
-                history.pushState(data, null, data);
-                console.log('you clicked me');
-                console.log(target.id);
-                break;
-            default:
-                // console.log("on this click I don't have activity.(switch(target.id))");
-                break;
-        }
-
-    });
-
-};
+        // history changed because of a page load
+    }
+}());
 
 // Open target category
-function openCategory(target) {
-    closeAll();
-    var textTitleCategory = target.innerHTML;
-    titleGalleryDivision.style.display = 'flex';
-    projects.style.display = 'flex';
-    titleGalleryDivision.innerHTML = textTitleCategory;
-    hideInfoHomePage();
-}
-
-// Close target category
-function closeCategory() {
-    titleGalleryDivision.style.display = 'none';
-    projects.style.display = 'none';
-}
-
-// Open title page
-function goHome(target) {
-    closeAll();
-    svgContainer.style.display = 'block';
-    galleryMenuCategories.style.display = 'block';
-    closeCategory();
-}
-
-// Hide information from the home page
-function hideInfoHomePage() {
-    svgContainer.style.display = 'none';
-    galleryMenuCategories.style.display = 'none';
-}
-
-// Open page about me
-var aboutMeInfo = document.getElementById('aboutMeInfo');
-
-function openAboutMe() {
-    closeAll();
-    hideInfoHomePage();
-    aboutMeInfo.style.display = 'flex';
-}
-
-// Close information about me
-function closeAboutMe() {
-    aboutMeInfo.style.display = 'none';
-}
-
-// Open contacts
-var contactsInfo = document.getElementById('contactsInfo');
-
-function openContacts() {
-    closeAll();
-    contactsInfo.style.display = 'flex';
-    hideInfoHomePage();
-}
-
-// Close contacts
-function closeContacts() {
-    contactsInfo.style.display = 'none';
-}
-
-// Close all
-function closeAll() {
-    closeContacts();
-    closeAboutMe();
-    closeCategory();
-    hideInfoHomePage();
-    // console.log('close opened division');
-}
+// function openCategory(target) {
+//     closeAll();
+//     var textTitleCategory = target.innerHTML;
+//     titleGalleryDivision.style.display = 'flex';
+//     projects.style.display = 'flex';
+//     titleGalleryDivision.innerHTML = textTitleCategory;
+//     hideInfoHomePage();
+// }
+//
+// // Close target category
+// function closeCategory() {
+//     titleGalleryDivision.style.display = 'none';
+//     projects.style.display = 'none';
+// }
+//
+// // Open title page
+// function goHome(target) {
+//     closeAll();
+//     svgContainer.style.display = 'block';
+//     galleryMenuCategories.style.display = 'block';
+//     closeCategory();
+// }
+//
+// // Hide information from the home page
+// function hideInfoHomePage() {
+//     svgContainer.style.display = 'none';
+//     galleryMenuCategories.style.display = 'none';
+// }
+//
+// // Open page about me
+// var aboutMeInfo = document.getElementById('aboutMeInfo');
+//
+// function openAboutMe() {
+//     closeAll();
+//     hideInfoHomePage();
+//     aboutMeInfo.style.display = 'flex';
+// }
+//
+// // Close information about me
+// function closeAboutMe() {
+//     aboutMeInfo.style.display = 'none';
+// }
+//
+// // Open contacts
+// var contactsInfo = document.getElementById('contactsInfo');
+//
+// function openContacts() {
+//     closeAll();
+//     contactsInfo.style.display = 'flex';
+//     hideInfoHomePage();
+// }
+//
+// // Close contacts
+// function closeContacts() {
+//     contactsInfo.style.display = 'none';
+// }
+//
+// // Close all
+// function closeAll() {
+//     closeContacts();
+//     closeAboutMe();
+//     closeCategory();
+//     hideInfoHomePage();
+//     // console.log('close opened division');
+// }
 // Open project
 // var projectsCols = document.querySelectorAll('.projectsCol');
 // var bigImgElements = document.querySelectorAll('.bigImg');

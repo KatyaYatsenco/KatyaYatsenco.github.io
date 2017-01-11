@@ -20,17 +20,23 @@ body {
     background-size: cover;
     height: 100%;
     /*min-height: 680px;*/
-
     display: block;
 }
 
 .mainContent {
     width: 1000px;
     display: flex;
-    flex-direction: column;
     margin: auto;
     /*border: 1px solid white;*/
 
+}
+
+.hide {
+    display: none !important;
+}
+
+.visible {
+    display: flex !important;
 }
 
 /* Fonts */
@@ -512,34 +518,60 @@ body {
 
 /* Projects */
 .projects {
-    display: none;
-    justify-content: space-around;
+    display: flex;
     padding: 0;
     width: 1000px;
 }
 
-#titleGalleryDivision {
-    display: none;
-    justify-content: center;
-    align-items: center;
+#categoryDesign, #categoryGraphic, #categoryDigitalArt, #category_3d, #categoryOthers, #categoryPainting {
+    flex-direction: column;
+    padding: 0;
     width: 1000px;
-    height: 100px;
+}
+
+#categoryDesign {
+    display: none;
+}
+
+#categoryGraphic {
+    display: none
+}
+
+#categoryDigitalArt {
+    display: none;
+}
+
+#category_3d {
+    display: none;
+}
+
+#categoryOthers {
+    display: none;
+}
+
+#categoryPainting {
+    display: none;
+}
+
+.titleGalleryDivision {
+    display: block;
+    width: 1000px;
     font-family: ISOCT2, 'sans-serif';
     font-size: 28px;
     color: white;
 }
 
-.positionStatic {
-    position: static;
+.titleGalleryDivision p {
+    width: 245px;
+    margin: 20px auto;
 }
-
 
 .projectsCol1, .projectsCol2, .projectsCol3 {
     flex-flow: column wrap;
     display: flex;
-    margin: 20px 0;
+    margin: 20px 16px;
     padding: 0;
-    border: 1px solid white;
+    /*border: 1px solid white;*/
     height: 100%;
     width: 30%;
 
