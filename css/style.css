@@ -523,7 +523,7 @@ body {
     width: 1000px;
 }
 
-#categoryDesign, #categoryGraphic, #categoryDigitalArt, #category_3d, #categoryOthers, #categoryPainting {
+#categoryDesign, #categoryGraphic, #categoryDigitalArt, #category3d, #categoryOthers, #categoryPainting {
     flex-direction: column;
     padding: 0;
     width: 1000px;
@@ -541,7 +541,7 @@ body {
     display: none;
 }
 
-#category_3d {
+#category3d {
     display: none;
 }
 

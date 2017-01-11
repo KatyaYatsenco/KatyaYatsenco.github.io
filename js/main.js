@@ -4,6 +4,9 @@ var projects = document.querySelector('.projects'),
     derevo = document.getElementById('derevo'),
     galleryMenuCategories = document.querySelector('.galleryMenuCategories'),
     titleGalleryDivision = document.getElementById('titleGalleryDivision'),
+    mainContent = document.querySelector('.mainContent'),
+    mainContentChildren = mainContent.children,
+
 // Determine history state
     state = history.state;
 
@@ -11,21 +14,19 @@ var projects = document.querySelector('.projects'),
 function watchPathChanges(callback) {
 
 }
-var currentPath = window.location.pathname.substr(1),
-    categoryDesign = document.getElementById('categoryDesign'),
+var categoryDesign = document.getElementById('categoryDesign'),
     categoryPainting = document.getElementById('categoryPainting'),
     categoryGraphic = document.getElementById('categoryGraphic'),
     categoryDigitalArt = document.getElementById('categoryDigitalArt'),
     categoryOthers = document.getElementById('categoryOthers'),
-    category_3d = document.getElementById('category_3d'),
+    category3d = document.getElementById('category3d'),
     categoryAboutMe = document.getElementById('aboutMeInfo'),
     categoryContacts = document.getElementById('contactsInfo'),
-
-    categoriesPage = [categoryPainting, categoryDesign, categoryGraphic, categoryDigitalArt, categoryOthers, category_3d, categoryAboutMe, categoryContacts],
-    categoriesPathName = ['aboutMe', 'contacts', 'design', 'painting', 'graphic', 'digitalArt', 'others', '_3d', ''];
+    categoriesPage = [categoryPainting, categoryDesign, categoryGraphic, categoryDigitalArt, categoryOthers, category3d, categoryAboutMe, categoryContacts];
 
 
 //Check current pathName
+
 // setInterval(function () {
 //     if (window.location.pathname !== currentPath) {
 //         currentPath = window.location.pathname.substr(1);
@@ -38,94 +39,205 @@ var currentPath = window.location.pathname.substr(1),
 //
 // }, 10);
 
-currentPath.addEventListener('change', function () {
-    if (window.location.pathname !== currentPath) {
-        currentPath = window.location.pathname;
-        watchPathChanges(function () {
-            var deleteSlash = currentPath.substr(1);
-            return currentPath;
 
-        });
+// switchCategoryPages();
+function checkClassVisible() {
+    // I check if mainContent children have class 'visible'  - I remove class 'visible'.
+    for (var i = 0; i < mainContentChildren.length; i++) {
+        if (mainContentChildren[i].classList.contains('visible')) {
+            mainContentChildren[i].classList.remove('visible');
+        }
     }
-    console.log(currentPath);
+}
+
+// Change our States
+if (state === null && currentPath === '/') {
+    history.pushState('home', null, '/');
+}
+
+//Listener to the click somewhere on body
+document.querySelector('body').addEventListener('click', function (event) {
+    var target = event.target,
+        data = event.target.id;
+
+    if (data === 'home' || data === 'home_page') {
+        history.pushState('home', null, '/');
+        checkClassVisible();
+    }
+    else if (data === 'aboutMe') {
+        history.pushState(data, null, data);
+    }
+    else if (data === 'contacts') {
+        history.pushState(data, null, data);
+    }
+    else if (data === 'design') {
+        history.pushState(data, null, data);
+    }
+    else if (data === 'painting') {
+        history.pushState(data, null, data);
+    }
+    else if (data === 'graphic') {
+        history.pushState(data, null, data);
+    }
+    else if (data === 'digitalArt') {
+        history.pushState(data, null, data);
+    }
+    else if (data === 'others') {
+        history.pushState(data, null, data);
+    }
+    else if (data === '_3d') {
+        history.pushState(data, null, data);
+    }
 });
 
-switchCategoryPages();
+window.onpopstate = function (event) {
+    console.log(event.state);
+};
 
+
+//-------------------
+var _wr = function (type) {
+    var orig = history[type];
+    return function () {
+        var rv = orig.apply(this, arguments);
+        var e = new Event(type);
+        e.arguments = arguments;
+        window.dispatchEvent(e);
+        return rv;
+    };
+};
+history.pushState = _wr('pushState'), history.replaceState = _wr('replaceState');
+
+// Use it like this:
+window.addEventListener('pushState', function (e) {
+    var currentPath = window.location.pathname;
+    if (currentPath === '/') {
+        openMainCategories();
+    }
+    else if(currentPath === '/design') {
+        checkClassVisible();
+        hideMainCategories();
+        categoriesPage[1].classList.add('visible');
+    }
+    else if(currentPath === '/painting') {
+        checkClassVisible();
+        hideMainCategories();
+        categoriesPage[0].classList.add('visible');
+    }
+    else if(currentPath === '/graphic') {
+        checkClassVisible();
+        hideMainCategories();
+        categoriesPage[2].classList.add('visible');
+    }
+    else if(currentPath === '/digitalArt') {
+        checkClassVisible();
+        hideMainCategories();
+        categoriesPage[3].classList.add('visible');
+    }
+    else if(currentPath === '/others') {
+        checkClassVisible();
+        hideMainCategories();
+        categoriesPage[4].classList.add('visible');
+    }
+    else if(currentPath === '/3d') {
+        checkClassVisible();
+        hideMainCategories();
+        categoriesPage[5].classList.add('visible');
+    }
+    else if(currentPath === '/aboutMe') {
+        checkClassVisible();
+        hideMainCategories();
+        categoriesPage[6].classList.add('visible');
+    }
+    else if(currentPath === '/contacts') {
+        checkClassVisible();
+        hideMainCategories();
+        categoriesPage[7].classList.add('visible');
+    }
+});
+
+window.onload = function () {
+    var currentPath = window.location.pathname;
+
+    if (currentPath === '/') {
+        openMainCategories();
+    }
+    else if(currentPath === '/design') {
+        checkClassVisible();
+        hideMainCategories();
+        categoriesPage[1].classList.add('visible');
+    }
+    else if(currentPath === '/painting') {
+        checkClassVisible();
+        hideMainCategories();
+        categoriesPage[0].classList.add('visible');
+    }
+    else if(currentPath === '/graphic') {
+        checkClassVisible();
+        hideMainCategories();
+        categoriesPage[2].classList.add('visible');
+    }
+    else if(currentPath === '/digitalArt') {
+        checkClassVisible();
+        hideMainCategories();
+        categoriesPage[3].classList.add('visible');
+    }
+    else if(currentPath === '/others') {
+        checkClassVisible();
+        hideMainCategories();
+        categoriesPage[4].classList.add('visible');
+    }
+    else if(currentPath === '/3d') {
+        checkClassVisible();
+        hideMainCategories();
+        categoriesPage[5].classList.add('visible');
+    }
+    else if(currentPath === '/aboutMe') {
+        checkClassVisible();
+        hideMainCategories();
+        categoriesPage[6].classList.add('visible');
+    }
+    else if(currentPath === '/contacts') {
+        checkClassVisible();
+        hideMainCategories();
+        categoriesPage[7].classList.add('visible');
+    }
+};
+
+//-------------------
+var categoriesPathName;
 
 function hideMainCategories() {
     svgContainer.classList.add('hide');
     galleryMenuCategories.classList.add('hide');
 }
 function openMainCategories() {
-    svgContainer.classList.add('visible');
-    galleryMenuCategories.classList.add('visible');
+    svgContainer.classList.remove('hide');
+    galleryMenuCategories.classList.remove('hide');
 }
 
-function switchCategoryPages() {
-        categoriesPathName.forEach(function (elem) {
-            switch (currentPath) {
-                case 'design':
-                    // if(elem)
-                    categoriesPage[1].classList.add('visible');
-                    hideMainCategories();
-                    break;
-                case '' :
-                    openMainCategories();
-                    break;
-
-            }
-
-        });
-
-}
+// function switchCategoryPages() {
+//     categoriesPathName.forEach(function (elem) {
+//         switch (currentPath) {
+//             case 'design':
+//                 // if(elem)
+//                 categoriesPage[1].classList.add('visible');
+//                 hideMainCategories();
+//                 break;
+//             case '' :
+//                 openMainCategories();
+//                 break;
+//
+//         }
+//
+//     });
+//
+// }
 
 // On window location I get pathName which correspondence with needed data.
 
 // All functions which start to work when the window on load.
-    window.onload = function () {
-        if (state === null && currentPath === '') {
-            history.pushState('home', null, '/');
-        }
 
-
-//Listener to the click somewhere on body
-        document.querySelector('body').addEventListener('click', function (event) {
-            var target = event.target,
-                data = event.target.id;
-
-            // var categoriesId = ['aboutMe', 'contacts', 'design', 'painting', 'graphic', 'digitalArt', 'others', '_3d'];
-            categoriesPathName.forEach(function (elem) {
-                var categoriesPathName = elem;
-                switch (data) {
-                    case categoriesPathName:
-                        history.pushState(data, null, data);
-                        var targetPage = document.getElementById(categoriesPathName);
-                        targetPage.classList.add('visible');
-                        break;
-                    case 'home':
-                    case  'home_page':
-                        history.pushState('home', null, '/');
-                        break;
-                }
-            });
-
-
-        });
-
-
-    };
-
-window.onpopstate = (function () {
-    if (this.currentPath === state) {
-        console.log('bo ');
-        // history changed because of pushState/replaceState
-    } else {
-        console.log('do ');
-
-        // history changed because of a page load
-    }
-}());
 
 // Open target category
 // function openCategory(target) {
