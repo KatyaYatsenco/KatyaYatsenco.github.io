@@ -9,6 +9,7 @@ a {
     margin: 0;
     padding: 0;
     border: 0;
+    transition: all;
 }
 
 html {
@@ -16,11 +17,56 @@ html {
 }
 
 body {
-    background: url(../image/backgound_main_page.png) black right center; /* Main background */
+    width: 100%;
+    height: 100%;
+    background: black;
+    /*animation: showBackground 4s;*/
+}
+
+.parallax {
+    /*background-color: black;*/
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-image: url(../image/background_main_page.png); /* Main background */
+    background-position: right center;
     background-size: cover;
     height: 100%;
-    /*min-height: 680px;*/
-    display: block;
+}
+.content {
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*#background {*/
+/*background-color: red;*/
+/*position: absolute;*/
+/*width: 100%;*/
+/*!*height: 100%;*!*/
+/*top: 0;*/
+/*z-index: -1;*/
+
+/*}*/
+/*@keyframes showBackground {*/
+/*from {*/
+/*opacity: 0;*/
+/*}*/
+/*to {*/
+/*opacity: 1;*/
+/*}*/
+/*}*/
+
+.mainBackground {
+    background: url(../image/background_main_page.png) black right center; /* Main background */
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 .mainContent {
@@ -28,7 +74,14 @@ body {
     display: flex;
     margin: auto;
     /*border: 1px solid white;*/
+}
 
+footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 10px;
+    width: 100%;
 }
 
 .hide {
@@ -50,60 +103,6 @@ body {
 * {
     font-family: ISOCT2, 'sans-serif';
 }
-
-/* Tree svg */
-.svgContainer {
-    width: 100%;
-    height: 100%;
-    /*overflow: hidden; */ /*        ---------------------------------------------- delete comments */
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
-/*delete old code - probably don't use it*/
-/*.treeSvg {*/
-/*position: absolute;*/
-/*background: url("../image/gallery_menu.svg") no-repeat 50% 80%;*/
-/*background-size: 65% 65%;*/
-/*top: 0;*/
-/*left: 0;*/
-/*width: 100%;*/
-/*height: 100%;*/
-/*opacity: 0.8;*/
-/*!*animation: showTree 1s;*!*/
-/*}*/
-
-/*@keyframes showTree {*/
-/*0% {*/
-/*background-size: 1500% 1500%;*/
-/*background-position: 50.1% 48%;*/
-/*top: 0;*/
-/*left: 0;*/
-/*width: 100%;*/
-/*height: 100%;*/
-/*opacity: 0.1;*/
-/*}*/
-/*80% {*/
-/*background-size: 65% 65%;*/
-/*background-position: 50% 75%;*/
-/*top: 0;*/
-/*left: 0;*/
-/*width: 100%;*/
-/*height: 100%;*/
-/*opacity: 0.8;*/
-/*}*/
-/*100% {*/
-/*background-size: 65% 65%;*/
-/*background-position: 50% 80%;*/
-/*top: 0;*/
-/*left: 0;*/
-/*width: 100%;*/
-/*height: 100%;*/
-/*opacity: 1;*/
-/*}*/
-/*}*/
 
 /* Nav bar */
 .navigation {
@@ -131,7 +130,7 @@ body {
     display: block;
     color: white;
     margin: 30px 10px;
-    text-shadow: 1px 1px 10px white;
+    text-shadow: 1px 1px 10px;
     /*animation: appearanceLogo 3s;*/
 }
 
@@ -203,7 +202,7 @@ body {
     align-items: center;
     color: white;
     font-family: ISOCT2;
-    text-shadow: 1px 1px 10px white;
+    text-shadow: 1px 1px 10px;
 }
 
 #menuIcon {
@@ -233,10 +232,22 @@ body {
 #menu_img1 {
     width: 40px;
     height: 10px;
-    background-image: url("../image/menu_img1.png");
+    /*background-image: url("../image/menu_img_grey.png");*/
     background-size: cover;
 
     /*animation: rotateImg1 0.5s;*/
+    /*animation: backRotateImg1 0.5s;*/
+}
+
+@keyframes backRotateImg1 {
+    from {
+        transform: rotate(40deg);
+        margin-top: 17px;
+    }
+    to {
+        transform: rotate(0deg);
+        margin: 0;
+    }
 }
 
 @keyframes rotateImg1 {
@@ -254,7 +265,7 @@ body {
 #menu_img2 {
     width: 40px;
     height: 10px;
-    background-image: url("../image/menu_img1.png");
+    /*background-image: url("../image/menu_img_grey.png");*/
     background-size: cover;
     margin: 5px 0;
 
@@ -263,12 +274,24 @@ body {
 #menu_img3 {
     width: 40px;
     height: 10px;
-    background-image: url("../image/menu_img1.png");
+    /*background-image: url("../image/menu_img_grey.png");*/
     background-size: cover;
     /*animation: rotateImg3 0.5s;*/
+    animation: backRotateImg3;
 
 }
 
+@keyframes backRotateImg3 {
+    from {
+        transform: rotate(-40deg);
+        margin-top: -10px;
+
+    }
+    to {
+        transform: rotate(0deg);
+        margin: 0;
+    }
+}
 @keyframes rotateImg3 {
     from {
         transform: rotate(0deg);
@@ -281,8 +304,21 @@ body {
     }
 }
 
+/* Tree svg */
+.svgContainer {
+    display: none;
+    width: 100%;
+    height: 100%;
+    /*overflow: hidden; */ /*        ---------------------------------------------- delete comments */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
 /* Menu gallery */
 .galleryMenuCategories {
+    display: none;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -524,6 +560,7 @@ body {
 }
 
 #categoryDesign, #categoryGraphic, #categoryDigitalArt, #category3d, #categoryOthers, #categoryPainting {
+    display: none;
     flex-direction: column;
     padding: 0;
     width: 1000px;
@@ -531,39 +568,55 @@ body {
 
 #categoryDesign {
     display: none;
+    /*background: url('../image/graphic_gallery_background.png') right center; !* Gallery background *!*/
+    background-size: cover;
+    opacity: 1;
+    /*animation: showGraphicBackground 1s;*/
+}
+
+@keyframes showGraphicBackground {
+    from {
+        background: url('../image/background_main_page.png') black right center; /* Main background */
+        background-size: cover;
+        opacity: 0;
+    }
+    to {
+        background: url('../image/graphic_gallery_background.png') right center; /* Gallery background */
+        background-size: cover;
+        opacity: 1;
+    }
 }
 
 #categoryGraphic {
-    display: none
 }
 
 #categoryDigitalArt {
-    display: none;
 }
 
 #category3d {
-    display: none;
 }
 
 #categoryOthers {
-    display: none;
 }
 
 #categoryPainting {
-    display: none;
 }
 
 .titleGalleryDivision {
     display: block;
     width: 1000px;
-    font-family: ISOCT2, 'sans-serif';
-    font-size: 28px;
     color: white;
+    cursor: pointer;
+    text-shadow: 1px 1px 10px;
+
 }
 
-.titleGalleryDivision p {
+.titleGalleryDivision h1 , .titleGalleryDivision p{
     width: 245px;
     margin: 20px auto;
+    font-family: ISOCT2, 'sans-serif';
+    font-size: 28px;
+    text-shadow: 1px 1px 10px;
 }
 
 .projectsCol1, .projectsCol2, .projectsCol3 {
@@ -579,17 +632,13 @@ body {
 
 .project img {
     width: 100%;
+    height: 100%;
     margin: 20px 0;
-}
-
-.graphic_background {
-    /*background-image: url("../image/graphic_gallery_background.png");*/
-    background-size: cover;
 }
 
 .bigImg {
     display: none;
-    width: 1000px;
+    /*width: 1000px;*/
     height: 100%;
     margin: 20px 0;
 }

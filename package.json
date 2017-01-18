@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/KatyaYatsenco/KatyaYatsenco.github.io#readme",
   "dependencies": {
+    "jsdoc": "git+https://github.com/jsdoc3/jsdoc.git",
     "webpack": "^1.14.0"
   }
 }

@@ -1,20 +1,25 @@
-//Open target gallery Category
 var projects = document.querySelector('.projects'),
     svgContainer = document.querySelector('.svgContainer'),
-    derevo = document.getElementById('derevo'),
+    derevo = document.getElementById('derevo'), // used in another file
     galleryMenuCategories = document.querySelector('.galleryMenuCategories'),
-    titleGalleryDivision = document.getElementById('titleGalleryDivision'),
+    titleGalleryDivision = document.querySelectorAll('.titleGalleryDivision'),
     mainContent = document.querySelector('.mainContent'),
     mainContentChildren = mainContent.children,
 
-// Determine history state
-    state = history.state;
+    parallax = document.querySelectorAll('.parallax'),
+
+    logo = document.querySelector('.logo_name'),
+    navigationLinks = document.querySelectorAll('.navLinks'),
+    navMenuImg1 = document.getElementById('menu_img1'),
+    navMenuImg2 = document.getElementById('menu_img2'),
+    navMenuImg3 = document.getElementById('menu_img3'),
+    linkGalleryCategory = document.querySelectorAll('titleGalleryCategory'),
+
+    navBar = document.querySelector('#navList');
 
 
-function watchPathChanges(callback) {
-
-}
-var categoryDesign = document.getElementById('categoryDesign'),
+/* Categories pages and contact and about me pages */
+categoryDesign = document.getElementById('categoryDesign'),
     categoryPainting = document.getElementById('categoryPainting'),
     categoryGraphic = document.getElementById('categoryGraphic'),
     categoryDigitalArt = document.getElementById('categoryDigitalArt'),
@@ -22,11 +27,14 @@ var categoryDesign = document.getElementById('categoryDesign'),
     category3d = document.getElementById('category3d'),
     categoryAboutMe = document.getElementById('aboutMeInfo'),
     categoryContacts = document.getElementById('contactsInfo'),
-    categoriesPage = [categoryPainting, categoryDesign, categoryGraphic, categoryDigitalArt, categoryOthers, category3d, categoryAboutMe, categoryContacts];
 
+    /* Array categories page */
+    categoriesPage = [categoryPainting, categoryDesign, categoryGraphic, categoryDigitalArt, categoryOthers, category3d, categoryAboutMe, categoryContacts],
+
+    /* Determine history state */
+    state = history.state;
 
 //Check current pathName
-
 // setInterval(function () {
 //     if (window.location.pathname !== currentPath) {
 //         currentPath = window.location.pathname.substr(1);
@@ -39,10 +47,8 @@ var categoryDesign = document.getElementById('categoryDesign'),
 //
 // }, 10);
 
-
-// switchCategoryPages();
-function checkClassVisible() {
-    // I check if mainContent children have class 'visible'  - I remove class 'visible'.
+/* I check if mainContent children have class 'visible'  - I remove class 'visible'. */
+function hideMainContentChildren() {
     for (var i = 0; i < mainContentChildren.length; i++) {
         if (mainContentChildren[i].classList.contains('visible')) {
             mainContentChildren[i].classList.remove('visible');
@@ -50,19 +56,20 @@ function checkClassVisible() {
     }
 }
 
-// Change our States
-if (state === null && currentPath === '/') {
+/* Change our States */
+if (state === null && window.location.pathname === '/') {
     history.pushState('home', null, '/');
+    hideMainContentChildren();
 }
 
-//Listener to the click somewhere on body
+/* Listener to the click somewhere on body */
 document.querySelector('body').addEventListener('click', function (event) {
     var target = event.target,
         data = event.target.id;
 
     if (data === 'home' || data === 'home_page') {
         history.pushState('home', null, '/');
-        checkClassVisible();
+        // hideMainContentChildren();
     }
     else if (data === 'aboutMe') {
         history.pushState(data, null, data);
@@ -86,329 +93,282 @@ document.querySelector('body').addEventListener('click', function (event) {
         history.pushState(data, null, data);
     }
     else if (data === '_3d') {
-        history.pushState(data, null, data);
+        history.pushState(data, null, '3d');
     }
 });
 
+/* History navigation 'go()' and 'back()' */
 window.onpopstate = function (event) {
+
     console.log(event.state);
 };
+// window.history.go();
+// window.history.back();
 
+function changeBackgroundIntoParallax(url) {
+    parallax.forEach(function (elem) {
+        elem.style.backgroundImage = url;
+    })
+}
 
-//-------------------
-var _wr = function (type) {
+var body = document.getElementsByTagName('body')[0];
+
+var eventCheckStateChanges = function (type) {
     var orig = history[type];
     return function () {
         var rv = orig.apply(this, arguments);
-        var e = new Event(type);
-        e.arguments = arguments;
-        window.dispatchEvent(e);
+        var event = new Event(type);
+        event.arguments = arguments;
+        window.dispatchEvent(event);
         return rv;
     };
 };
-history.pushState = _wr('pushState'), history.replaceState = _wr('replaceState');
+history.pushState = eventCheckStateChanges('pushState');
 
-// Use it like this:
+history.replaceState = eventCheckStateChanges('replaceState');
+
+
+function changeTextColor(color) {
+    logo.style.color = color;
+    titleGalleryDivision.forEach(function (elem) {
+        elem.style.color = color;
+    });
+    navigationLinks.forEach(function (elem) {
+        elem.style.color = color;
+    });
+    linkGalleryCategory.forEach(function (elem) {
+        elem.style.color = color;
+    });
+    // if(color === 'grey') {
+    //     navMenuImg1.style.backgroundImage = 'url(../image/menu_img_grey.png)';
+    //     navMenuImg2.style.backgroundImage = 'url(../image/menu_img_grey.png)';
+    //     navMenuImg3.style.backgroundImage = 'url(../image/menu_img_grey.png)';
+    // }
+    if (color === 'white') {
+        navMenuImg1.style.backgroundImage = 'url(../image/menu_img_white.png)';
+        navMenuImg2.style.backgroundImage = 'url(../image/menu_img_white.png)';
+        navMenuImg3.style.backgroundImage = 'url(../image/menu_img_white.png)';
+    }
+    else if (color === 'black') {
+        navMenuImg1.style.backgroundImage = 'url(../image/menu_img_black.png)';
+        navMenuImg2.style.backgroundImage = 'url(../image/menu_img_black.png)';
+        navMenuImg3.style.backgroundImage = 'url(../image/menu_img_black.png)';
+    }
+}
+
+function parameterSwitchPageContents(currentPath) {
+
+    if (currentPath === '/') {
+        changeTextColor('white');
+        openMainCategories();
+        hideMainContentChildren();
+        changeBackgroundIntoParallax('url(../image/background_main_page.png)');
+    }
+    else if (currentPath === '/design') {
+        changeTextColor('white');
+        categoriesPage[1].classList.add('visible');
+        changeBackgroundIntoParallax('url(../image/gallery_background_design.png)');
+    }
+    else if (currentPath === '/painting') {
+        changeTextColor('white');
+        categoriesPage[0].classList.add('visible');
+        changeBackgroundIntoParallax('url(../image/gallery_background_painting.png)');
+    }
+    else if (currentPath === '/graphic') {
+        changeTextColor('white');
+        categoriesPage[2].classList.add('visible');
+        changeBackgroundIntoParallax('url(../image/gallery_background_graphic.png)');
+    }
+    else if (currentPath === '/digitalArt') {
+        changeTextColor('white');
+        categoriesPage[3].classList.add('visible');
+        changeBackgroundIntoParallax('url(../image/gallery_background_digital_art.png)');
+    }
+    else if (currentPath === '/others') {
+        changeTextColor('white');
+        categoriesPage[4].classList.add('visible');
+        changeBackgroundIntoParallax('url(../image/gallery_background_others.png)');
+    }
+    else if (currentPath === '/3d') {
+        changeTextColor('black');
+        categoriesPage[5].classList.add('visible');
+        changeBackgroundIntoParallax('url(../image/gallery_background_3d.png)');
+    }
+    else if (currentPath === '/aboutMe') {
+        changeTextColor('white');
+        hideMainContentChildren();
+        categoriesPage[6].classList.add('visible');
+        changeBackgroundIntoParallax('url(../image/gallery_background_about_me.png)');
+
+    }
+    else if (currentPath === '/contacts') {
+        changeTextColor('white');
+        hideMainContentChildren();
+        categoriesPage[7].classList.add('visible');
+        changeBackgroundIntoParallax('url(../image/gallery_background_contacts.png)');
+    }
+}
+
 window.addEventListener('pushState', function (e) {
     var currentPath = window.location.pathname;
-    if (currentPath === '/') {
-        openMainCategories();
+    if (navBar.style.visibility === 'visible') { //Close nav bar menu if it is open, when you switch pages
+        menuIcon.click();
     }
-    else if(currentPath === '/design') {
-        checkClassVisible();
+    parameterSwitchPageContents(currentPath);
+    if (currentPath !== '/') {
         hideMainCategories();
-        categoriesPage[1].classList.add('visible');
     }
-    else if(currentPath === '/painting') {
-        checkClassVisible();
-        hideMainCategories();
-        categoriesPage[0].classList.add('visible');
+});
+
+window.addEventListener('replaceState', function (e) {
+    var currentPath = window.location.pathname;
+    if (navBar.style.visibility === 'visible') { //Close nav bar menu if it is open, when you switch pages
+        menuIcon.click();
     }
-    else if(currentPath === '/graphic') {
-        checkClassVisible();
-        hideMainCategories();
-        categoriesPage[2].classList.add('visible');
-    }
-    else if(currentPath === '/digitalArt') {
-        checkClassVisible();
-        hideMainCategories();
-        categoriesPage[3].classList.add('visible');
-    }
-    else if(currentPath === '/others') {
-        checkClassVisible();
-        hideMainCategories();
-        categoriesPage[4].classList.add('visible');
-    }
-    else if(currentPath === '/3d') {
-        checkClassVisible();
-        hideMainCategories();
-        categoriesPage[5].classList.add('visible');
-    }
-    else if(currentPath === '/aboutMe') {
-        checkClassVisible();
-        hideMainCategories();
-        categoriesPage[6].classList.add('visible');
-    }
-    else if(currentPath === '/contacts') {
-        checkClassVisible();
-        hideMainCategories();
-        categoriesPage[7].classList.add('visible');
-    }
+    parameterSwitchPageContents(currentPath);
 });
 
 window.onload = function () {
     var currentPath = window.location.pathname;
+    if (navBar.style.visibility === 'visible') { //Close nav bar menu if it is open, when you switch pages
+        menuIcon.click();
+    }
+    parameterSwitchPageContents(currentPath);
 
-    if (currentPath === '/') {
-        openMainCategories();
-    }
-    else if(currentPath === '/design') {
-        checkClassVisible();
-        hideMainCategories();
-        categoriesPage[1].classList.add('visible');
-    }
-    else if(currentPath === '/painting') {
-        checkClassVisible();
-        hideMainCategories();
-        categoriesPage[0].classList.add('visible');
-    }
-    else if(currentPath === '/graphic') {
-        checkClassVisible();
-        hideMainCategories();
-        categoriesPage[2].classList.add('visible');
-    }
-    else if(currentPath === '/digitalArt') {
-        checkClassVisible();
-        hideMainCategories();
-        categoriesPage[3].classList.add('visible');
-    }
-    else if(currentPath === '/others') {
-        checkClassVisible();
-        hideMainCategories();
-        categoriesPage[4].classList.add('visible');
-    }
-    else if(currentPath === '/3d') {
-        checkClassVisible();
-        hideMainCategories();
-        categoriesPage[5].classList.add('visible');
-    }
-    else if(currentPath === '/aboutMe') {
-        checkClassVisible();
-        hideMainCategories();
-        categoriesPage[6].classList.add('visible');
-    }
-    else if(currentPath === '/contacts') {
-        checkClassVisible();
-        hideMainCategories();
-        categoriesPage[7].classList.add('visible');
+    if (window.location.hash !== '') {
+        var hash = window.location.hash.slice(1),
+            project = document.getElementById(hash), //project equal to hash
+            colThisProject = project.parentNode,
+            thisProjects = colThisProject.parentNode,
+            cols = thisProjects.querySelectorAll('.projectsCol');
+
+        cols.prototype = Object.create(Array.prototype);
+        cols.forEach(function (elem) {
+            if (colThisProject === elem) {
+                elem.style.width = '98%';
+            }
+            else {
+                elem.style.width = 0;
+            }
+        });
+
+        findImgs(thisProjects, 'littleImg', hideElement);
+
+        findImgs(project, 'bigImg', showElement);
+        console.log(project);
     }
 };
 
 //-------------------
-var categoriesPathName;
-
+//Functions open and hide main gallery categories menu
 function hideMainCategories() {
-    svgContainer.classList.add('hide');
-    galleryMenuCategories.classList.add('hide');
+
+    if (svgContainer.classList.contains('visible') || galleryMenuCategories.classList.contains('visible')) {
+        svgContainer.classList.remove('visible');
+        galleryMenuCategories.classList.remove('visible');
+    }
 }
+
 function openMainCategories() {
-    svgContainer.classList.remove('hide');
-    galleryMenuCategories.classList.remove('hide');
+    body.style.backgroundImage = 'url(../image/background_main_page.png)';
+    if (svgContainer.classList.contains('hide') || galleryMenuCategories.classList.contains('hide')) {
+        svgContainer.classList.remove('hide');
+        galleryMenuCategories.classList.remove('hide');
+        svgContainer.classList.add('visible');
+        galleryMenuCategories.classList.add('visible');
+    }
+    else {
+        svgContainer.classList.add('visible');
+        galleryMenuCategories.classList.add('visible');
+    }
 }
 
-// function switchCategoryPages() {
-//     categoriesPathName.forEach(function (elem) {
-//         switch (currentPath) {
-//             case 'design':
-//                 // if(elem)
-//                 categoriesPage[1].classList.add('visible');
-//                 hideMainCategories();
-//                 break;
-//             case '' :
-//                 openMainCategories();
-//                 break;
-//
-//         }
-//
-//     });
-//
-// }
+// Function open and hide project
+function findImgs(collectionProjectsTargetCategory, typeImg, operation) {
+    var desiredTypeImgs = collectionProjectsTargetCategory.getElementsByClassName(typeImg); //Collection
 
-// On window location I get pathName which correspondence with needed data.
+    desiredTypeImgs.prototype = Object.create(Array.prototype); //Add Array prototype
 
-// All functions which start to work when the window on load.
+    for (var k = 0; k < desiredTypeImgs.length; k++) {
+        var desireTypeImg = desiredTypeImgs[k];
+        operation(desireTypeImg);
+    }
+}
 
+function hideElement(element) {
+    if (element.classList.contains('visible')) {
+        element.classList.remove('visible');
+    }
+    else {
+        element.classList.add('hide');
+    }
+}
 
-// Open target category
-// function openCategory(target) {
-//     closeAll();
-//     var textTitleCategory = target.innerHTML;
-//     titleGalleryDivision.style.display = 'flex';
-//     projects.style.display = 'flex';
-//     titleGalleryDivision.innerHTML = textTitleCategory;
-//     hideInfoHomePage();
-// }
-//
-// // Close target category
-// function closeCategory() {
-//     titleGalleryDivision.style.display = 'none';
-//     projects.style.display = 'none';
-// }
-//
-// // Open title page
-// function goHome(target) {
-//     closeAll();
-//     svgContainer.style.display = 'block';
-//     galleryMenuCategories.style.display = 'block';
-//     closeCategory();
-// }
-//
-// // Hide information from the home page
-// function hideInfoHomePage() {
-//     svgContainer.style.display = 'none';
-//     galleryMenuCategories.style.display = 'none';
-// }
-//
-// // Open page about me
-// var aboutMeInfo = document.getElementById('aboutMeInfo');
-//
-// function openAboutMe() {
-//     closeAll();
-//     hideInfoHomePage();
-//     aboutMeInfo.style.display = 'flex';
-// }
-//
-// // Close information about me
-// function closeAboutMe() {
-//     aboutMeInfo.style.display = 'none';
-// }
-//
-// // Open contacts
-// var contactsInfo = document.getElementById('contactsInfo');
-//
-// function openContacts() {
-//     closeAll();
-//     contactsInfo.style.display = 'flex';
-//     hideInfoHomePage();
-// }
-//
-// // Close contacts
-// function closeContacts() {
-//     contactsInfo.style.display = 'none';
-// }
-//
-// // Close all
-// function closeAll() {
-//     closeContacts();
-//     closeAboutMe();
-//     closeCategory();
-//     hideInfoHomePage();
-//     // console.log('close opened division');
-// }
-// Open project
-// var projectsCols = document.querySelectorAll('.projectsCol');
-// var bigImgElements = document.querySelectorAll('.bigImg');
+function showElement(element) {
+    if (element.classList.contains('hide')) {
+        element.classList.remove('hide');
+    }
+    else {
+        element.classList.add('visible');
+    }
+}
 
-//Function open project
-// // function openProject
-// project.forEach(function (elem) {
-//     elem.addEventListener('click', function () {
-//         // debugger;
-//
-//         var target = this;    // save target project
-//         var parentTargetNode = target.parentNode;
-//         projectsCols.forEach(function (elem) {
-//             if (parentTargetNode !== elem) {
-//                 elem.style.display = 'none';
-//             }
-//             else {
-//                 elem.style.width = '100%';
-//             }
-//         });
-//         project.forEach(function (elem) {
-//             if (target !== elem) {
-//                 elem.style.display = 'none';
-//             }
-//         });
-//         target.getElementsByClassName('littleImg')[0].style.display = 'none';  // hide little target img
-//
-//         bigImgElements.forEach(function (elem) {
-//
-//             if (elem.parentNode == target) {
-//                 elem.style.display = 'flex';
-//             }
-//             else {
-//                 elem.style.display = 'none';
-//             }
-//         })
-//
-//     });
-// });
-// bigImgElements.forEach(function (elem) {
-//
-//     elem.addEventListener('click', function () { //Close Big Picture
-//         var bigImgsTargetProject = this.parentNode.querySelectorAll('.bigImg');
-//
-//         console.log('click');
-//         bigImgsTargetProject.forEach(function (elem) {
-//             console.log(elem);
-//             elem.style.display = 'none';                  // !!!!problem
-//             console.log(elem.style.display);  // none
-//
-//         });
-//
-//         projectsCols.forEach(function (projCol) {
-//             // console.log(projectsCols);
-//             // projCol.style.width = '30%';
-//             // projCol.style.display = 'flex';
-//         });
-//
-//         project.forEach(function (proj) {
-//             // proj.style.display = 'flex';
-//             // console.log(proj);
-//         });
-//     });
-// });
+//Listen when you click on prev little img to increase size prev img and than replace prev img to the big imgs
+mainContent.addEventListener('click', function (event) {
+
+    var targetElement = event.target,
+        targetImg = event.target.parentNode, //have class 'littleImg' or 'bigImg'
+        thisProject = targetImg.parentNode,
+        thisProjectId = thisProject.id,
+        thisProjectCol = thisProject.parentNode,
+        collectionThisProjectChildren = thisProject.children,
+        thisProjects = thisProjectCol.parentNode,
+        data = window.location.pathname,
+
+        thisProjectsListCols = thisProjects.querySelectorAll('.projectsCol');
 
 
-// ==============
-//
-// openProject(); old version
+    //if you click on little img - you open bigImgs this project
+    if (targetImg.classList.contains('littleImg')) {
 
-//Gallery Menu
-// var galleryMenuCategories = document.getElementsByClassName('menuCategories');
-// var galleryMenuPageBackground = document.getElementsByClassName('main_background')[0];
-// // debugger;
-//
-// var category;
-// for (var i = 0; i < galleryMenuCategories.length; i++) {
-//     category = galleryMenuCategories[i];
-//     var categoryMouseover = category.addEventListener('mouseover', function categoryInFocus() {
-//         var findLindCurrentCategory = this.getElementsByTagName('a')[0];
-//         findLindCurrentCategory.style.display = 'block';
-//         if(findLindCurrentCategory.id === 'section3D') {
-//             galleryMenuPageBackground.style.backgroundImage = 'url("../image/gallery_background_3d.png")';
-//         }
-//         else if(findLindCurrentCategory.id === 'sectionPainting') {
-//             galleryMenuPageBackground.style.backgroundImage = 'url("../image/gallery_background_painting.png")';
-//         }
-//         else {
-//             galleryMenuPageBackground.style.backgroundImage = 'url("../image/main_background.jpg")';
-//
-//         }
-//
-//     });
-//     var categoryMouseoout = category.addEventListener('mouseout', function categoryInFocus() {
-//         var findLindCurrentCategory = this.getElementsByTagName('a')[0];
-//         findLindCurrentCategory.style.display = 'none';
-//         if(findLindCurrentCategory.id === 'section3D') {
-//             galleryMenuPageBackground.style.backgroundImage = 'url("../image/main_background.jpg")';
-//
-//         }
-//         else if(findLindCurrentCategory.id === 'sectionPainting') {
-//             galleryMenuPageBackground.style.backgroundImage = 'url("../image/main_background.jpg")';
-//
-//         }
-//     })
-// }
+        collectionThisProjectChildren.prototype = Object.create(Array.prototype);
+        // Replace 3 col to 1
+        thisProjectsListCols.forEach(function (elem) {
+            if (thisProjectCol === elem) {
+                elem.style.width = '98%';
+            }
+            else {
+                elem.style.width = 0;
+            }
+        });
+
+        findImgs(thisProjects, 'littleImg', hideElement);
+
+        findImgs(thisProject, 'bigImg', showElement);
+
+        history.pushState('project' + thisProjectId, null, '#' + thisProjectId); // Add window location hash with number this project
+
+    }
+
+    else if (targetImg.classList.contains('bigImg') || targetImg.classList.contains('titleGalleryDivision')) {
+
+        //Replace 1 col to 3
+        thisProjectsListCols.forEach(function (elem) {
+            elem.style.width = '30%';
+        });
+
+        findImgs(thisProjects, 'littleImg', showElement);
+
+        findImgs(thisProject, 'bigImg', hideElement);
+
+        history.replaceState(data.slice(1), null, data);
+
+    }
+
+
+});
+
+
+
+
 
