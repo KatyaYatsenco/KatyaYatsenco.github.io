@@ -1,4 +1,14 @@
-var menuIcon = document.getElementById('menuIcon');
+var menuIcon = document.getElementById('menuIcon'),
+    logo = document.querySelector('.logo_name'),
+    navigationLinks = document.querySelectorAll('.navLinks'),
+    navMenuImg1 = document.getElementById('menu_img1'),
+    navMenuImg2 = document.getElementById('menu_img2'),
+    navMenuImg3 = document.getElementById('menu_img3'),
+    linkGalleryCategory = document.querySelectorAll('titleGalleryCategory'),
+
+
+
+    navBar = document.querySelector('#navList');
 
 //Navigation menu
 menuIcon.addEventListener('click', function () {
@@ -43,3 +53,11 @@ function delay(show, ms) {
 
 }
 
+/**
+ * Function closeNavBarMenu, when navBar open and pages switch
+ */
+function closeNavBarMenu() {
+    if (navBar.style.visibility === 'visible') {
+        menuIcon.click();
+    }
+}
