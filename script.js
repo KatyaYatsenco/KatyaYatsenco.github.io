@@ -129,57 +129,30 @@
 	        galleryMenuCategories.classList.add('visible');
 	    }
 	}
-	//--------------------------------------------
-	// var url = 'json_files/graphic_gallery.json';
-	// function loadJSON(path, success, error)
-	// {
-	//     var xhr = new XMLHttpRequest();
-	//     xhr.onreadystatechange = function()
-	//     {
-	//         if (xhr.readyState === XMLHttpRequest.DONE) {
-	//             if (xhr.status === 200) {
-	//                 if (success)
-	//                     success(JSON.parse(xhr.responseText));
-	//             } else {
-	//                 if (error)
-	//                     error(xhr);
-	//             }
-	//         }
-	//     };
-	//     xhr.open("GET", path, true);
-	//     xhr.send();
-	// }
-
-	// loadJSON(url,
-	//     function(data) {
-	// // console.log(data)
-	// },
-	//     function(xhr) { console.error(xhr); }
-	// );
-
-	//--------------------------------------------
 
 
-	function loadJSON1()
-	{
-	    var xmlhttp = new XMLHttpRequest();
-	    xmlhttp.onreadystatechange=function()
-	    {
-	        if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	        {
-	            var JSONObject = JSON.parse(xmlhttp.responseText);
 
-	            for(var i =0; i<JSONObject.projects.length; i++) {
-	                var name = JSONObject.projects[i].name;
-	                var id = JSONObject.projects[i].id;
-	                console.log('name: ' + name + ', id: ' + id);
-	            }
-	        }
-	    };
-	    xmlhttp.open("GET","json_files/graphic_gallery.json",true);
-	    xmlhttp.send();
-	}
-	loadJSON1();
+	// On css animation
+	// var svgContainer = document.querySelector('.svgContainer');
+	svgContainer.style.overflow = 'hidden';
+	var navigation = document.querySelector('.navigation');
+	navigation.style.animation = 'showNavBarMenu 4.5s';
+	var logoName = document.querySelector('.logo_name');
+	logoName.style.animation = 'appearanceLogo 3s';
+	var gallerySubcategoryDesign = document.querySelector('#design');
+	gallerySubcategoryDesign.style.animation = 'moveDesignLink 4.1s';
+	var gallerySubcategoryPainting = document.querySelector('#painting');
+	gallerySubcategoryPainting.style.animation = 'movePaintingLink 3.3s';
+	var gallerySubcategoryGraphic = document.querySelector('#graphic');
+	gallerySubcategoryGraphic.style.animation = 'moveGraphicLink 4.4s';
+	var gallerySubcategoryDigitalArt = document.querySelector('#digitalArt');
+	gallerySubcategoryDigitalArt.style.animation = 'moveDigitalArtLink 4.2s';
+	var gallerySubcategoryOthers = document.querySelector('#others');
+	gallerySubcategoryOthers.style.animation = 'moveOthersLink 5s';
+	var gallerySubcategory3d = document.querySelector('#_3d');
+	gallerySubcategory3d.style.animation = 'move3dLink 4.7s';
+	// var derevo = document.querySelector('#derevo');
+	derevo.style.animation = 'derevoZoom 2s';
 
 
 /***/ }

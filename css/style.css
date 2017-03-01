@@ -141,24 +141,6 @@ body {
     overflow: hidden;
 }
 
-/*#background {*/
-/*background-color: red;*/
-/*position: absolute;*/
-/*width: 100%;*/
-/*!*height: 100%;*!*/
-/*top: 0;*/
-/*z-index: -1;*/
-
-/*}*/
-/*@keyframes showBackground {*/
-/*from {*/
-/*opacity: 0;*/
-/*}*/
-/*to {*/
-/*opacity: 1;*/
-/*}*/
-/*}*/
-
 .mainBackground {
     background: url(../image/background_main_page.png) black right center; /* Main background */
     background-size: cover;
@@ -410,8 +392,9 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 0;
+    z-index: -1;
 }
+
 
 /* Menu gallery */
 .galleryMenuCategories {
@@ -734,17 +717,34 @@ body {
     margin: 20px 0;
 }
 
+
 .bigImg {
+    flex-direction: row;
+    align-items: flex-start;
     display: none;
     width: 967px;
     height: 100%;
     margin: 20px 0;
 }
 
-a .littleImg {
+.smallImg {
+    flex-direction: row;
+    display: flex;
+    align-items: flex-start;
     margin: 0;
     padding: 0;
-    height: 0;
+    height: 100%;
+}
+
+.closeButton {
+    display: none;
+    color: white;
+    opacity: 1;
+    z-index: 1;
+    font-size: 30px;
+    margin: 15px 0;
+    background-color: black;
+    cursor: pointer;
 }
 
 /* About me information */

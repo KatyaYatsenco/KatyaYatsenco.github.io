@@ -1,5 +1,58 @@
 /* Categories pages and contact and about me pages */
 
+
+var stateConfig = {
+    'design': {
+        color: 'white',
+        index: 1,
+        animation: 'designBg 0.2s',
+        bg: 'url(../image/gallery_background_design.png)'
+    },
+    'painting': {
+        color: 'white',
+        index: 0,
+        animation: 'paintingBg 0.2s',
+        bg: 'url(../image/gallery_background_painting.png)'
+    },
+    'graphic': {
+        color: 'white',
+        index: 2,
+        animation: 'graphicBg 0.2s',
+        bg: 'url(../image/gallery_background_graphic.png)'
+    },
+    'digitalArt': {
+        color: 'white',
+        index: 3,
+        animation: 'digitalArtBg 0.2s',
+        bg: 'url(../image/gallery_background_digital_art.png)'
+    },
+    'others': {
+        color: 'white',
+        index: 4,
+        animation: 'othersBg 0.2s',
+        bg: 'url(../image/gallery_background_others.png)'
+    },
+    '_3d': {
+        color: 'black',
+        index: 5,
+        animation: '_3dBg 0.2s',
+        bg: 'url(../image/gallery_background_3d.png)'
+    },
+    'aboutMe': {
+        color: 'white',
+        index: 6,
+        animation: 'aboutMeBg 0.2s',
+        bg: 'url(../image/gallery_background_about_me.png)'
+    },
+    'contacts': {
+        color: 'white',
+        index: 7,
+        animation: 'contactsBg 0.2s',
+        bg: 'url(../image/gallery_background_contacts.png)'
+    }
+
+};
+
 function State() {
 
     var categoryDesign = document.getElementById('categoryDesign'),
@@ -26,7 +79,6 @@ function State() {
      */
     function paramToSwitchCategoriesContent(textColor, categoriesPageIndex, animationName, bodyBgImg) {
 
-        onLoadAnimation.stopEpilepsyAnimation(10); //on load animation
         changeTextColor(textColor);
         categoriesPage[categoriesPageIndex].classList.add('visible');
         body.style.animation = animationName;
@@ -43,7 +95,6 @@ function State() {
      */
     function paramToSwitchOtherContent(textColor, categoriesPageIndex, animationName, bodyBgImg) {
 
-        onLoadAnimation.stopEpilepsyAnimation(10);  //on load animation
         changeTextColor(textColor);
         hideMainContentChildren();
         categoriesPage[categoriesPageIndex].classList.add('visible');
@@ -51,17 +102,6 @@ function State() {
         body.style.backgroundImage = bodyBgImg;
 
     }
-
-    // var stateConfig =
-    //     {
-    //         'design': {
-    //             color: 'white',
-    //             index: 1,
-    //             animation: 'designBg 2s',
-    //             bg: 'url(../image/gallery_background_design.png)'
-    //         }
-    //     };
-
 
     this.parameterSwitchPageContents = function (currentPath) {
         switch (currentPath) {
@@ -74,35 +114,35 @@ function State() {
                 break;
 
             case '/design':
-                paramToSwitchCategoriesContent('white', 1, 'designBg 2s', 'url(../image/gallery_background_design.png)');
+                paramToSwitchCategoriesContent(stateConfig.design.color, stateConfig.design.index, stateConfig.design.animation, stateConfig.design.bg);
                 break;
 
             case '/painting':
-                paramToSwitchCategoriesContent('white', 0, 'paintingBg 2s', 'url(../image/gallery_background_painting.png)');
+                paramToSwitchCategoriesContent(stateConfig.painting.color, stateConfig.painting.index, stateConfig.painting.animation, stateConfig.painting.bg);
                 break;
 
             case '/graphic':
-                paramToSwitchCategoriesContent('white', 2, 'graphicBg 2s', 'url(../image/gallery_background_graphic.png)');
+                paramToSwitchCategoriesContent(stateConfig.graphic.color, stateConfig.graphic.index, stateConfig.graphic.animation, stateConfig.graphic.bg);
                 break;
 
             case  '/digitalArt':
-                paramToSwitchCategoriesContent('white', 3, 'digitalArtBg 2s', 'url(../image/gallery_background_digital_art.png)');
+                paramToSwitchCategoriesContent(stateConfig.digitalArt.color, stateConfig.digitalArt.index, stateConfig.digitalArt.animation, stateConfig.digitalArt.bg);
                 break;
 
             case  '/others':
-                paramToSwitchCategoriesContent('white', 4, 'othersBg 2s', 'url(../image/gallery_background_others.png)');
+                paramToSwitchCategoriesContent(stateConfig.others.color, stateConfig.others.index, stateConfig.others.animation, stateConfig.others.bg);
                 break;
 
             case  '/3d':
-                paramToSwitchCategoriesContent('black', 5, '_3dBg 2s', 'url(../image/gallery_background_3d.png)');
+                paramToSwitchCategoriesContent(stateConfig._3d.color, stateConfig._3d.index, stateConfig._3d.animation, stateConfig._3d.bg);
                 break;
 
             case  '/aboutMe':
-                paramToSwitchOtherContent('white', 6, 'aboutMeBg 2s', 'url(../image/gallery_background_about_me.png)');
+                paramToSwitchOtherContent(stateConfig.aboutMe.color, stateConfig.aboutMe.index, stateConfig.aboutMe.animation, stateConfig.aboutMe.bg);
                 break;
 
             case  '/contacts':
-                paramToSwitchOtherContent('white', 7, 'contactsBg 2s', 'url(../image/gallery_background_contacts.png)');
+                paramToSwitchOtherContent(stateConfig.contacts.color, stateConfig.contacts.index, stateConfig.contacts.animation, stateConfig.contacts.bg);
                 break;
         }
     }
@@ -195,15 +235,16 @@ window.onload = function () {
     closeNavBarMenu();
     checkStates.parameterSwitchPageContents(currentPath);
 
-
     if (window.location.hash !== '') {
         var hash = window.location.hash.slice(1),
             project = document.getElementById(hash), //project equal to hash
+            targetImg = project.querySelector('.prevImg'),
             targetCol = project.parentNode,
             projects = targetCol.parentNode,
             cols = projects.querySelectorAll('.projectsCol');
 
-        projectNavigation.openTargetProject(cols, targetCol, projects, project);
+        projectNavigation.open(cols, targetCol, projects, project, targetImg);
+        showElement(targetImg)
     }
 };
 
