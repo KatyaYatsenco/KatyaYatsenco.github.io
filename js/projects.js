@@ -43,12 +43,12 @@ mainContent.addEventListener('click', function (event) {
         targetOpenButton = targetImg.querySelector('.openButton');
 
         img.style.filter = '';
+
         img.style.width = '97%';
 
         projectNavigation.open(cols, projectCol, projects, project);
 
         var targetPrevImg = project.children[0];
-        // console.log(targetPrevImg)
         showElement(targetPrevImg);
 
         targetOpenButton.style.display = 'none';
@@ -59,7 +59,6 @@ mainContent.addEventListener('click', function (event) {
         var closeButtons = project.getElementsByClassName('closeButton');
         for (var i = 0; i < closeButtons.length; i++) {
             var button = closeButtons[i];
-            // button.style.display = '';
             showElement(button);
         }
 
@@ -69,16 +68,7 @@ mainContent.addEventListener('click', function (event) {
         history.replaceState(data.slice(1), null, data);
 
         hideElement(closeButtonPrevImg);
-
     }
-
-    // if (projectCol.style.width === '98%') {
-    //     closeButton(project, showElement);
-    // } else if (projectCol.style.width === '30%') {
-    //     if (targetImg.classList.contains('.littleImg')) {
-    //         closeButton(project, hideElement);
-    //     }
-    // }
 });
 
 

@@ -244,7 +244,16 @@ window.onload = function () {
             cols = projects.querySelectorAll('.projectsCol');
 
         projectNavigation.open(cols, targetCol, projects, project, targetImg);
-        showElement(targetImg)
+        showElement(targetImg);
+
+        var closeButtons = project.getElementsByClassName('closeButton');
+        for (var i = 0; i < closeButtons.length; i++) {
+            var button = closeButtons[i];
+            showElement(button);
+        }
+        var img = targetImg.firstChild;
+
+        img.style.width = '97%';
     }
 };
 
