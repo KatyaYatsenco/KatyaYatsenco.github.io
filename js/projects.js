@@ -1,17 +1,22 @@
 var projectNavigation = {
 
-    open: function (cols, projectCol, projects, project, targetImg) {
+    open: function (cols, projectCol, projects, project) {
         onceCol(cols, projectCol);
-        findImgs(projects, 'smallImg', hideElement);
 
-        // showElement(targetImg);
+        findImgs(projects, 'smallImg', hideElement);
 
         findImgs(project, 'bigImg', showElement);
     },
 
     close: function (cols, projectCol, projects, project) {
+
+        var img = project.children[0].firstChild;
+        img.style.width = '100%';
+
         threeCol(cols);
+
         findImgs(projects, 'smallImg', showElement);
+
         findImgs(project, 'bigImg', hideElement);
     }
 };
@@ -21,33 +26,80 @@ mainContent.addEventListener('click', function (event) {
         targetImg = targetElement.parentNode, //have class 'smallImg' or 'bigImg'
         project = targetImg.parentNode,
         prevImg = project.querySelector('.prevImg'),
+        closeButtonPrevImg = prevImg.querySelector('.closeButton'),
         projectId = project.id,
         projectCol = project.parentNode,
         projects = projectCol.parentNode,
         data = window.location.pathname,
+        img,
+        targetOpenButton,
 
         cols = projects.querySelectorAll('.projectsCol');
-    console.log(event.target)
 
-    if (targetImg.classList.contains('prevImg')) {
+
+    if (targetElement.classList.contains('openButton')) {
+        img = targetImg.firstChild;
+        targetOpenButton = targetImg.querySelector('.openButton');
+
+        img.style.filter = '';
+        img.style.width = '97%';
+
         projectNavigation.open(cols, projectCol, projects, project);
+
         showElement(targetImg);
+        targetOpenButton.style.display = 'none';
+        hideElement(targetOpenButton);
+
         history.pushState('project' + projectId, null, '#' + projectId); // Add window location hash with number this project
-    } else if (event.target.classList.contains('closeButton')) {
+
+        var closeButtons = project.getElementsByClassName('closeButton');
+        for (var i = 0; i < closeButtons.length; i++) {
+            var button = closeButtons[i];
+            // button.style.display = '';
+            showElement(button);
+        }
+
+    } else if (targetElement.classList.contains('closeButton')) {
+
         projectNavigation.close(cols, projectCol, projects, project, targetImg);
         history.replaceState(data.slice(1), null, data);
 
-        var closeButtonPrevImg = targetImg.querySelector('.closeButton');
-        console.log('click button');
-        hideElement(prevImg);
+        hideElement(closeButtonPrevImg);
     }
 
-    if (projectCol.style.width === '98%') {
-        closeButton(project, showElement);
-    } else if (projectCol.style.width === '30%') {
-        if(targetImg.classList.contains('.littleImg')) {
-            closeButton(project, hideElement);
-        }
+    // if (projectCol.style.width === '98%') {
+    //     closeButton(project, showElement);
+    // } else if (projectCol.style.width === '30%') {
+    //     if (targetImg.classList.contains('.littleImg')) {
+    //         closeButton(project, hideElement);
+    //     }
+    // }
+});
+
+
+mainContent.addEventListener('mouseover', function (event) {
+    var element = event.target.parentNode;
+    if (element.classList.contains('prevImg') && element.firstChild.offsetWidth === 300) {
+        var img = element.firstChild;
+        img.style.filter = 'blur(2px)';
+        var openButton = element.querySelector('.openButton');
+        openButton.style.display = 'block';
+        showElement(openButton);
+    }
+});
+
+
+mainContent.addEventListener('mouseout', function (event) {
+    var element = event.target.parentNode;
+    var img = element.firstChild;
+
+    if (element.classList.contains('prevImg')) {
+        var openButton = element.querySelector('.openButton');
+        img.style.filter = '';
+        openButton.style.display = 'none';
+
+        hideElement(openButton);
+
     }
 });
 
@@ -82,6 +134,7 @@ function findImgs(collectionProjectsTargetCategory, typeImg, operation) {
         operation(desireTypeImg);
     }
 }
+
 
 function closeButton(project, activity) {
     var buttons = project.querySelectorAll('.closeButton');

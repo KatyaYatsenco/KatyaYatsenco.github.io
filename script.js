@@ -93,6 +93,7 @@
 	    }
 	    else {
 	        element.classList.add('hide');
+
 	    }
 	}
 
@@ -100,9 +101,11 @@
 	function showElement(element) {
 	    if (element.classList.contains('hide')) {
 	        element.classList.remove('hide');
+
 	    }
 	    else {
 	        element.classList.add('visible');
+
 	    }
 	}
 
@@ -129,7 +132,6 @@
 	        galleryMenuCategories.classList.add('visible');
 	    }
 	}
-
 
 
 	// On css animation

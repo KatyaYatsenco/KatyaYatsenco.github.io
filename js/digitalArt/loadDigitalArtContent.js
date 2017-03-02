@@ -1,5 +1,3 @@
-
-
 function parseData(loadProjects) {
     var JSONObject;
     var xmlhttp = new XMLHttpRequest();
@@ -15,7 +13,7 @@ function parseData(loadProjects) {
     xmlhttp.send();
 }
 
-parseData(  loadContent);
+parseData(loadContent);
 
 var _categoryDigitalArt = document.getElementById('categoryDigitalArt'), //To this category I want to add project imgs
     _projects = categoryDigitalArt.querySelectorAll('.project'); //List projects
@@ -51,7 +49,7 @@ function _addImg(className, elementValue, parent) { // Function create img cover
     img.setAttribute('src', elementValue);
 
     var containerForImg = document.createElement('A');
-    if(className === 'smallImg') {
+    if (className === 'smallImg') {
         containerForImg.classList.add('prevImg');
     }
     containerForImg.classList.add(className);
@@ -61,25 +59,47 @@ function _addImg(className, elementValue, parent) { // Function create img cover
     parent.appendChild(containerForImg);
 
     addCloseButton(parent);
-
+    addOpenButton(parent);
 }
 
 function addCloseButton(project) {
 
     var children = project.childNodes;
-    var imgs = [];
-    for (var l = 0; l < project.childNodes.length; l++) {
-        var child = project.childNodes[l];
+    for (var indexChildren = 0; indexChildren < children.length; indexChildren++) {
+        var imgs = [];
+        var child = children[indexChildren];
         if (child.nodeType == 1) {
-            imgs.push(child)
+                imgs.push(child)
         }
     }
-    var button = document.createElement('input');
+    var button = document.createElement('div');
     button.classList.add('closeButton');
-    button.setAttribute('type', 'button');
-    button.setAttribute('value', 'x');
-    for (var i = 0; i < imgs.length; i++) {
-
-        imgs[i].append(button);
+    for (var indexImgs = 0; indexImgs < imgs.length; indexImgs++) {
+        imgs[indexImgs].append(button);
     }
 }
+
+function addOpenButton(project) {
+
+    var children = project.childNodes;
+    for (var index = 0; index < children.length; index++) {
+        var imgs = [];
+        var child = children[index];
+        if (child.nodeType == 1) {
+            if (child.classList.contains('prevImg')) {
+                imgs.push(child)
+            }
+
+        }
+    }
+    var button = document.createElement('div');
+    button.classList.add('openButton');
+
+    for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        img.appendChild(button);
+
+    }
+}
+
+

@@ -47,6 +47,7 @@ function hideElement(element) {
     }
     else {
         element.classList.add('hide');
+
     }
 }
 
@@ -54,9 +55,11 @@ function hideElement(element) {
 function showElement(element) {
     if (element.classList.contains('hide')) {
         element.classList.remove('hide');
+
     }
     else {
         element.classList.add('visible');
+
     }
 }
 
@@ -83,7 +86,6 @@ function openMainCategories() {
         galleryMenuCategories.classList.add('visible');
     }
 }
-
 
 
 // On css animation
