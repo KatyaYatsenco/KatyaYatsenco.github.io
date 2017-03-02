@@ -1,6 +1,7 @@
 var projectNavigation = {
 
     open: function (cols, projectCol, projects, project) {
+
         onceCol(cols, projectCol);
 
         findImgs(projects, 'smallImg', hideElement);
@@ -46,7 +47,10 @@ mainContent.addEventListener('click', function (event) {
 
         projectNavigation.open(cols, projectCol, projects, project);
 
-        showElement(targetImg);
+        var targetPrevImg = project.children[0];
+        // console.log(targetPrevImg)
+        showElement(targetPrevImg);
+
         targetOpenButton.style.display = 'none';
         hideElement(targetOpenButton);
 
@@ -65,6 +69,7 @@ mainContent.addEventListener('click', function (event) {
         history.replaceState(data.slice(1), null, data);
 
         hideElement(closeButtonPrevImg);
+
     }
 
     // if (projectCol.style.width === '98%') {
@@ -109,6 +114,13 @@ function onceCol(cols, projectCol) {
     cols.forEach(function (elem) {
         if (projectCol === elem) {
             elem.style.width = '98%';
+
+            var prevImgs = elem.querySelectorAll('.prevImg');
+            for(var i = 0; i<prevImgs.length; i++) {
+                if(!prevImgs[i].classList.contains('hide')){
+                    prevImgs[i].classList.add('hide');
+                }
+            }
         }
         else {
             elem.style.width = 0;
