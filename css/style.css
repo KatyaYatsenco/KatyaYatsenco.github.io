@@ -691,7 +691,7 @@ body {
 
 }
 
-.titleGalleryDivision h1, .titleGalleryDivision p {
+.titleGalleryDivision h2, .titleGalleryDivision p {
     width: 245px;
     margin: 20px auto;
     font-family: ISOCT2, 'sans-serif';

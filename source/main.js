@@ -1,3 +1,12 @@
+
+
+// <!--<script src='js/animation/animationOnLoadPage.js'></script>-->
+// require('./states');
+// require('./projects');
+// require('./animation/animationNavBar');
+// require('./digitalArt/loadDigitalArtContent');
+
+
 var projects = document.querySelector('.projects'),
     svgContainer = document.querySelector('.svgContainer'),
     derevo = document.getElementById('derevo'), // used in another file
@@ -5,6 +14,7 @@ var projects = document.querySelector('.projects'),
     titleGalleryDivision = document.querySelectorAll('.titleGalleryDivision'),
     mainContent = document.querySelector('.mainContent'),
     mainContentChildren = mainContent.children;
+
 
 
 /* I check if mainContent children have class 'visible'  - I remove class 'visible'. */
@@ -89,7 +99,7 @@ function openMainCategories() {
 
 
 // On css animation
-// var svgContainer = document.querySelector('.svgContainer');
+var svgContainer = document.querySelector('.svgContainer');
 svgContainer.style.overflow = 'hidden';
 var navigation = document.querySelector('.navigation');
 navigation.style.animation = 'showNavBarMenu 4.5s';
@@ -107,5 +117,11 @@ var gallerySubcategoryOthers = document.querySelector('#others');
 gallerySubcategoryOthers.style.animation = 'moveOthersLink 5s';
 var gallerySubcategory3d = document.querySelector('#_3d');
 gallerySubcategory3d.style.animation = 'move3dLink 4.7s';
-// var derevo = document.querySelector('#derevo');
+var derevo = document.querySelector('#derevo');
 derevo.style.animation = 'derevoZoom 2s';
+
+
+
+
+
+

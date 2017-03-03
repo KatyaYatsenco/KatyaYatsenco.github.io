@@ -242,6 +242,7 @@ window.onload = function () {
             targetCol = project.parentNode,
             projects = targetCol.parentNode,
             cols = projects.querySelectorAll('.projectsCol');
+        console.log(targetImg)
 
         projectNavigation.open(cols, targetCol, projects, project, targetImg);
         showElement(targetImg);
