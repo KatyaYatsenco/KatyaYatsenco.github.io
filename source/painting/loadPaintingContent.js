@@ -1,13 +1,13 @@
-var categoryPainting = document.getElementById('categoryPainting'),
-    projects = categoryPainting.querySelectorAll('.project'); //List projects digitalArt category
+function loadContentPainting(JSONObject) {
 
-if (window.location.pathname === '/painting') {
-    parseData(loadContent, "json_files/painting.json");
-}
+    var categoryPainting = document.getElementById('categoryPainting'),
+        projects = categoryPainting.querySelectorAll('.project');
 
-function loadContent(JSONObject) {
-    // debugger
-    projects.forEach(function (parent) {
-        injectImages(JSONObject, parent);
-    });
+    for (var i = 0; i < projects.length; i++) {
+        var project = projects[i];
+        if (!project.children.length) {
+
+            injectImages(JSONObject.projects[i], project);
+        }
+    }
 }
