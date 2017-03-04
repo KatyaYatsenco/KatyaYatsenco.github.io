@@ -1,0 +1,134 @@
+{
+  "projects": [
+    {
+      "name": "project",
+      "id": 1.1,
+      "small": "../image/graphic_gallery/1/1.1.jpg",
+      "big": [
+        "../image/graphic_gallery/1/1.2.jpg",
+        "../image/graphic_gallery/1/1.3.jpg",
+        "../image/graphic_gallery/1/1.4.jpg",
+        "../image/graphic_gallery/1/1.5.jpg",
+        "../image/graphic_gallery/1/1.6.jpg",
+        "../image/graphic_gallery/1/1.7.jpg",
+        "../image/graphic_gallery/1/1.8.jpg",
+        "../image/graphic_gallery/1/1.9.jpg",
+        "../image/graphic_gallery/1/1.10.jpg"
+      ]
+    },
+    {
+      "name": "project",
+      "id": 1.2,
+      "small": "../image/graphic_gallery/2/2.1.jpg",
+      "big": [
+        "../image/graphic_gallery/2/2.2.jpg",
+        "../image/graphic_gallery/2/2.3.jpg",
+        "../image/graphic_gallery/2/2.4.jpg",
+        "../image/graphic_gallery/2/2.5.jpg",
+        "../image/graphic_gallery/2/2.6.jpg",
+        "../image/graphic_gallery/2/2.7.jpg",
+        "../image/graphic_gallery/2/2.8.jpg",
+        "../image/graphic_gallery/2/2.9.jpg",
+        "../image/graphic_gallery/2/2.10.jpg",
+        "../image/graphic_gallery/2/2.11.jpg",
+        "../image/graphic_gallery/2/2.12.jpg",
+        "../image/graphic_gallery/2/2.13.jpg",
+        "../image/graphic_gallery/2/2.14.jpg",
+        "../image/graphic_gallery/2/2.15.jpg",
+        "../image/graphic_gallery/2/2.16.jpg",
+        "../image/graphic_gallery/2/2.17.jpg",
+        "../image/graphic_gallery/2/2.18.jpg",
+        "../image/graphic_gallery/2/2.19.jpg",
+        "../image/graphic_gallery/2/2.20.jpg",
+        "../image/graphic_gallery/2/2.21.jpg",
+        "../image/graphic_gallery/2/2.22.jpg",
+        "../image/graphic_gallery/2/2.23.jpg",
+        "../image/graphic_gallery/2/2.24.jpg",
+        "../image/graphic_gallery/2/2.25.jpg",
+        "../image/graphic_gallery/2/2.26.jpg",
+        "../image/graphic_gallery/2/2.27.jpg",
+        "../image/graphic_gallery/2/2.28.jpg",
+        "../image/graphic_gallery/2/2.29.jpg",
+        "../image/graphic_gallery/2/2.30.jpg",
+        "../image/graphic_gallery/2/2.31.jpg",
+        "../image/graphic_gallery/2/2.32.jpg"
+      ]
+    },
+    {
+      "name": "project",
+      "id": 1.3,
+      "small": "../image/graphic_gallery/3/3.1.jpg",
+      "big": [
+        "../image/graphic_gallery/3/3.2.jpg"
+      ]
+    },
+
+    {
+      "name": "project",
+      "id": 1.4,
+      "small": "../image/graphic_gallery/5/5.1.jpg",
+      "big": [
+      ]
+    },
+    {
+      "name": "project",
+      "id": 1.5,
+      "small": "../image/graphic_gallery/6/6.1.jpg",
+      "big": [
+        "../image/graphic_gallery/6/6.2.jpg",
+        "../image/graphic_gallery/6/6.3.jpg"
+      ]
+    },
+    {
+      "name": "project",
+      "id": 1.6,
+      "small": "../image/graphic_gallery/7/7.1.jpg",
+      "big": [
+      ]
+    },
+    {
+      "name": "project",
+      "id": 1.7,
+      "small": "../image/graphic_gallery/8/8.1.jpg",
+      "big": [
+        "../image/graphic_gallery/8/8.2.jpg",
+        "../image/graphic_gallery/8/8.3.jpg",
+        "../image/graphic_gallery/8/8.4.jpg",
+        "../image/graphic_gallery/8/8.5.jpg",
+        "../image/graphic_gallery/8/8.6.jpg",
+        "../image/graphic_gallery/8/8.7.jpg",
+        "../image/graphic_gallery/8/8.8.jpg",
+        "../image/graphic_gallery/8/8.9.jpg",
+        "../image/graphic_gallery/8/8.10.jpg"
+      ]
+    },
+    {
+      "name": "project",
+      "id": 1.8,
+      "small": "../image/graphic_gallery/9/9.1.jpg",
+      "big": [
+      ]
+    },
+    {
+      "name": "project",
+      "id": 1.9,
+      "small": "../image/graphic_gallery/10/10.1.jpg",
+      "big": [
+      ]
+    },
+    {
+      "name": "project",
+      "id": 1.10,
+      "small": "../image/graphic_gallery/11/11.1.jpg",
+      "big": [
+      ]
+    },
+    {
+      "name": "project",
+      "id": 1.11,
+      "small": "../image/graphic_gallery/4/4.1.jpg",
+      "big": [
+      ]
+    }
+  ]
+}
