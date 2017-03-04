@@ -22,8 +22,6 @@ var projectNavigation = {
     }
 };
 
-var mainContent = document.querySelector('.mainContent');
-
 mainContent.addEventListener('click', function (event) {
     var targetElement = event.target,
         targetImg = targetElement.parentNode, //have class 'smallImg' or 'bigImg'
@@ -108,8 +106,8 @@ function onceCol(cols, projectCol) {
             elem.style.width = '98%';
 
             var prevImgs = elem.querySelectorAll('.prevImg');
-            for (var i = 0; i < prevImgs.length; i++) {
-                if (!prevImgs[i].classList.contains('hide')) {
+            for(var i = 0; i<prevImgs.length; i++) {
+                if(!prevImgs[i].classList.contains('hide')){
                     prevImgs[i].classList.add('hide');
                 }
             }

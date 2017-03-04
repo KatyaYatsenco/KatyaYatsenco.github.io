@@ -118,15 +118,21 @@ function State() {
                 break;
 
             case '/painting':
+                hideMainCategories();
                 paramToSwitchCategoriesContent(stateConfig.painting.color, stateConfig.painting.index, stateConfig.painting.animation, stateConfig.painting.bg);
+                parseData(loadContentPainting, "json_files/painting.json");
                 break;
 
             case '/graphic':
+                hideMainCategories();
                 paramToSwitchCategoriesContent(stateConfig.graphic.color, stateConfig.graphic.index, stateConfig.graphic.animation, stateConfig.graphic.bg);
+                parseData(setContentGraphic, "json_files/graphic.json");
                 break;
 
             case  '/digitalArt':
+                hideMainCategories();
                 paramToSwitchCategoriesContent(stateConfig.digitalArt.color, stateConfig.digitalArt.index, stateConfig.digitalArt.animation, stateConfig.digitalArt.bg);
+                parseData(loadContentDigitalArt, "json_files/digital_art.json");
                 break;
 
             case  '/others':
@@ -134,7 +140,9 @@ function State() {
                 break;
 
             case  '/3d':
+                hideMainCategories();
                 paramToSwitchCategoriesContent(stateConfig._3d.color, stateConfig._3d.index, stateConfig._3d.animation, stateConfig._3d.bg);
+                parseData(setContent3d, "json_files/3d.json");
                 break;
 
             case  '/aboutMe':
@@ -159,7 +167,6 @@ if (checkStates.state === null && window.location.pathname === '/') {
 
 /* Listener to the click somewhere on body */
 document.querySelector('body').addEventListener('click', function (event) {
-
     var target = event.target,
         data = event.target.id;
 
@@ -203,6 +210,13 @@ var eventCheckStateChanges = function (type) {
         return rv;
     };
 };
+window.onpopstate = function (event) {
+    var currentPath = window.location.pathname;
+    closeNavBarMenu();
+
+    checkStates.parameterSwitchPageContents(currentPath);
+    console.log(event)
+};
 
 history.pushState = eventCheckStateChanges('pushState');
 
@@ -211,14 +225,9 @@ history.replaceState = eventCheckStateChanges('replaceState');
 
 window.addEventListener('pushState', function (e) {
     var currentPath = window.location.pathname;
-
     closeNavBarMenu();
-
     checkStates.parameterSwitchPageContents(currentPath);
 
-    if (currentPath !== '/') {
-        hideMainCategories();
-    }
 });
 
 
@@ -231,7 +240,6 @@ window.addEventListener('replaceState', function (e) {
 
 window.onload = function () {
     var currentPath = window.location.pathname;
-
     closeNavBarMenu();
     checkStates.parameterSwitchPageContents(currentPath);
 
@@ -242,7 +250,7 @@ window.onload = function () {
             targetCol = project.parentNode,
             projects = targetCol.parentNode,
             cols = projects.querySelectorAll('.projectsCol');
-        console.log(targetImg)
+        console.log(targetImg);
 
         projectNavigation.open(cols, targetCol, projects, project, targetImg);
         showElement(targetImg);
@@ -256,5 +264,6 @@ window.onload = function () {
 
         img.style.width = '97%';
     }
+
 };
 

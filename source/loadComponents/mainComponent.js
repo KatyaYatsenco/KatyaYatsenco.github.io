@@ -1,23 +1,5 @@
+function injectImages(project, parent) { //Rename function
 
-function parseData(loadProjects, path) {
-    var JSONObject;
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            JSONObject = JSON.parse(xmlhttp.responseText);
-            var self = this;
-
-            loadProjects.call(self, JSONObject);
-        }
-    };
-    xmlhttp.open("GET", path, true);
-    xmlhttp.send();
-}
-
-var index = 0;
-function injectImages(JSONObject, parent) { //Rename function
-
-    var project = JSONObject.projects[index++];
     console.log(project)
     var id = project['id'];
     var smallImg = project['small'];
@@ -32,3 +14,16 @@ function injectImages(JSONObject, parent) { //Rename function
     })
 }
 
+function parseData(loadProjects, path) {
+    var JSONObject;
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            JSONObject = JSON.parse(xhr.responseText);
+
+            loadProjects(JSONObject);
+        }
+    };
+    xhr.open("GET", path, true);
+    xhr.send();
+}

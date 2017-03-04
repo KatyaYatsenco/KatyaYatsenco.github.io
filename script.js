@@ -876,7 +876,7 @@
 
 	window.addEventListener('pushState', function (e) {
 	    var currentPath = window.location.pathname;
-
+debugger
 	    closeNavBarMenu();
 
 	    checkStates.parameterSwitchPageContents(currentPath);
