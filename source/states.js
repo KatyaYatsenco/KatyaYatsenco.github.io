@@ -114,6 +114,8 @@ function State() {
                 break;
 
             case '/design':
+                hideMainCategories();
+
                 paramToSwitchCategoriesContent(stateConfig.design.color, stateConfig.design.index, stateConfig.design.animation, stateConfig.design.bg);
                 break;
 
@@ -136,6 +138,7 @@ function State() {
                 break;
 
             case  '/others':
+                hideMainCategories();
                 paramToSwitchCategoriesContent(stateConfig.others.color, stateConfig.others.index, stateConfig.others.animation, stateConfig.others.bg);
                 break;
 
@@ -146,10 +149,14 @@ function State() {
                 break;
 
             case  '/aboutMe':
+                hideMainCategories();
+
                 paramToSwitchOtherContent(stateConfig.aboutMe.color, stateConfig.aboutMe.index, stateConfig.aboutMe.animation, stateConfig.aboutMe.bg);
                 break;
 
             case  '/contacts':
+                hideMainCategories();
+
                 paramToSwitchOtherContent(stateConfig.contacts.color, stateConfig.contacts.index, stateConfig.contacts.animation, stateConfig.contacts.bg);
                 break;
         }
