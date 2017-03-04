@@ -2,18 +2,19 @@
 // require('../loadComponents/addImg');
 // require('../loadComponents/buttons');
 
-var categoryDigitalArt = document.getElementById('categoryDigitalArt'),
-    projects = categoryDigitalArt.querySelectorAll('.project'); //List projects digitalArt category
 
-if(window.location.pathname === '/digitalArt'){
-    parseData(loadContent, "json_files/digital_art.json");
+function loadContentDigitalArt(JSONObject) {
+
+    var categoryDigitalArt = document.getElementById('categoryDigitalArt'),
+        projectsNode = categoryDigitalArt.querySelectorAll('.project');
+
+    for (var i = 0; i < projectsNode.length; i++) {
+        var projectNode = projectsNode[i];
+        if (!projectNode.children.length) {
+
+            injectImages(JSONObject.projects[i], projectNode);
+        }
+    }
 }
-
-function loadContent(JSONObject) {
-    projects.forEach(function (parent) {
-        injectImages(JSONObject, parent);
-    });
-}
-
 
 
