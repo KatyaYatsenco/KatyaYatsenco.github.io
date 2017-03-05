@@ -115,7 +115,7 @@ function State() {
 
             case '/design':
                 hideMainCategories();
-
+                parseData(setContentDesign, "json_files/design.json");
                 paramToSwitchCategoriesContent(stateConfig.design.color, stateConfig.design.index, stateConfig.design.animation, stateConfig.design.bg);
                 break;
 
@@ -140,6 +140,7 @@ function State() {
             case  '/others':
                 hideMainCategories();
                 paramToSwitchCategoriesContent(stateConfig.others.color, stateConfig.others.index, stateConfig.others.animation, stateConfig.others.bg);
+                parseData(setContentOthers, "json_files/others.json");
                 break;
 
             case  '/3d':

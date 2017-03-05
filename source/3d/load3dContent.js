@@ -10,7 +10,5 @@ function setContent3d(JSONObject) {
 
             injectImages(JSONObject.projects[i], project);
         }
-
-
     }
 }
