@@ -1,0 +1,12 @@
+{
+  "projects": [
+    {
+      "name": "project",
+      "id": 5.1,
+      "small": "../image/others_gallery/1/1.2.gif",
+      "big": [
+        "../image/others_gallery/1/1.1.jpg"
+      ]
+    }
+  ]
+}
