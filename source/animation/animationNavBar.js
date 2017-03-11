@@ -1,4 +1,4 @@
-var menuIcon = document.getElementById('menuIcon'),
+export const menuIcon = document.getElementById('menuIcon'),
     logo = document.querySelector('.logo_name'),
     navigationLinks = document.querySelectorAll('.navLinks'),
     navMenuImg1 = document.getElementById('menu_img1'),
@@ -12,7 +12,7 @@ var menuIcon = document.getElementById('menuIcon'),
 
 //Navigation menu
 menuIcon.addEventListener('click', function () {
-    var style = window.getComputedStyle(navBar);
+    const style = window.getComputedStyle(navBar);
     if (style.visibility === 'hidden') {
         navBar.style.visibility = 'visible';
         navMenuImg1.style.animation = 'rotateImg1 0.3s';
@@ -28,23 +28,23 @@ menuIcon.addEventListener('click', function () {
         navMenuImg1.style.animation = 'backRotateImg1 0.3s';
         navMenuImg1.style.transform = 'rotate(0deg)';
         navMenuImg1.style.marginTop = '0';
-        var showImg2 = delay(show,200);
+        const showImg2 = delay(show,200);
         showImg2(navMenuImg2);
-        function show(navMenuImg2) {
-            navMenuImg2.style.display = 'flex';
-        }
+
         navMenuImg3.style.animation = 'backRotateImg3 0.3s';
         navMenuImg3.style.transform = 'rotate(0deg)';
         navMenuImg3.style.marginTop = '0';
     }
 });
 
-
+function show(navMenuImg2) {
+    navMenuImg2.style.display = 'flex';
+}
 function delay(show, ms) {
 
     return function() {
-        var savedThis = this;
-        var savedArgs = arguments;
+        const savedThis = this;
+        const savedArgs = arguments;
 
         setTimeout(function() {
             show.apply(savedThis, savedArgs);
@@ -56,7 +56,7 @@ function delay(show, ms) {
 /**
  * Function closeNavBarMenu, when navBar open and pages switch
  */
-function closeNavBarMenu() {
+export function closeNavBarMenu() {
     if (navBar.style.visibility === 'visible') {
         menuIcon.click();
     }

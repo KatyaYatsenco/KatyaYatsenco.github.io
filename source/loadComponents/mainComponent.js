@@ -1,9 +1,15 @@
-function injectImages(project, parent) { //Rename function
+import './addImg';
+import './buttons';
+import './setContent';
 
-    console.log(project)
-    var id = project['id'];
-    var smallImg = project['small'];
-    var bigImgs = project['big'];
+import {addImg} from './addImg';
+
+
+export function injectImages(project, parent) { //Rename function
+
+    const id = project['id'];
+    const smallImg = project['small'];
+    const bigImgs = project['big'];
 
     parent.setAttribute('id', id);
 
@@ -14,14 +20,15 @@ function injectImages(project, parent) { //Rename function
     })
 }
 
-function parseData(loadProjects, path) {
-    var JSONObject;
-    var xhr = new XMLHttpRequest();
+export function parseData(loadProjects, path) {
+    let JSONObject;
+    const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             JSONObject = JSON.parse(xhr.responseText);
 
             loadProjects(JSONObject);
+            console.log(JSONObject)
         }
     };
     xhr.open("GET", path, true);

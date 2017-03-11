@@ -1,13 +1,22 @@
+'use strict';
 
 
-// <!--<script src='js/animation/animationOnLoadPage.js'></script>-->
-// require('./states');
-// require('./projects');
-// require('./animation/animationNavBar');
-// require('./digitalArt/loadDigitalArtContent');
 
 
-var projects = document.querySelector('.projects'),
+import  './loadComponents/mainComponent';
+import './design/setDesignContent';
+
+import {
+    logo,
+    navigationLinks,
+    linkGalleryCategory,
+    navMenuImg1,
+    navMenuImg2,
+    navMenuImg3
+} from './animation/animationNavBar';
+
+
+const projects = document.querySelector('.projects'),
     svgContainer = document.querySelector('.svgContainer'),
     derevo = document.getElementById('derevo'), // used in another file
     galleryMenuCategories = document.querySelector('.galleryMenuCategories'),
@@ -16,17 +25,15 @@ var projects = document.querySelector('.projects'),
     mainContentChildren = mainContent.children;
 
 
-
-/* I check if mainContent children have class 'visible'  - I remove class 'visible'. */
-function hideMainContentChildren() {
-    for (var i = 0; i < mainContentChildren.length; i++) {
+export function hideMainContentChildren() {
+    for (let i = 0; i < mainContentChildren.length; i++) {
         if (mainContentChildren[i].classList.contains('visible')) {
             mainContentChildren[i].classList.remove('visible');
         }
     }
 }
 
-function changeTextColor(color) {
+export function changeTextColor(color) {
     logo.style.color = color;
     titleGalleryDivision.forEach(function (elem) {
         elem.style.color = color;
@@ -51,7 +58,7 @@ function changeTextColor(color) {
 }
 
 
-function hideElement(element) {
+export function hideElement(element) {
     if (element.classList.contains('visible')) {
         element.classList.remove('visible');
     }
@@ -62,19 +69,16 @@ function hideElement(element) {
 }
 
 
-function showElement(element) {
+export function showElement(element) {
     if (element.classList.contains('hide')) {
         element.classList.remove('hide');
-
     }
     else {
         element.classList.add('visible');
-
     }
 }
 
-//Functions open and hide main gallery categories menu
-function hideMainCategories() {
+export function hideMainCategories() {
 
     if (svgContainer.classList.contains('visible') || galleryMenuCategories.classList.contains('visible')) {
         svgContainer.classList.remove('visible');
@@ -83,8 +87,8 @@ function hideMainCategories() {
 }
 
 
-function openMainCategories() {
-    body.style.backgroundImage = 'url(../image/background_main_page.png)';
+export function openMainCategories() {
+    document.body.style.backgroundImage = 'url(../image/background_main_page.png)';
     if (svgContainer.classList.contains('hide') || galleryMenuCategories.classList.contains('hide')) {
         svgContainer.classList.remove('hide');
         galleryMenuCategories.classList.remove('hide');
@@ -99,26 +103,28 @@ function openMainCategories() {
 
 
 // On css animation
-var svgContainer = document.querySelector('.svgContainer');
+// const svgContainer = document.querySelector('.svgContainer');
 svgContainer.style.overflow = 'hidden';
-var navigation = document.querySelector('.navigation');
+const navigation = document.querySelector('.navigation');
 navigation.style.animation = 'showNavBarMenu 4.5s';
-var logoName = document.querySelector('.logo_name');
+const logoName = document.querySelector('.logo_name');
 logoName.style.animation = 'appearanceLogo 3s';
-var gallerySubcategoryDesign = document.querySelector('#design');
+const gallerySubcategoryDesign = document.querySelector('#design');
 gallerySubcategoryDesign.style.animation = 'moveDesignLink 4.1s';
-var gallerySubcategoryPainting = document.querySelector('#painting');
+const gallerySubcategoryPainting = document.querySelector('#painting');
 gallerySubcategoryPainting.style.animation = 'movePaintingLink 3.3s';
-var gallerySubcategoryGraphic = document.querySelector('#graphic');
+const gallerySubcategoryGraphic = document.querySelector('#graphic');
 gallerySubcategoryGraphic.style.animation = 'moveGraphicLink 4.4s';
-var gallerySubcategoryDigitalArt = document.querySelector('#digitalArt');
+const gallerySubcategoryDigitalArt = document.querySelector('#digitalArt');
 gallerySubcategoryDigitalArt.style.animation = 'moveDigitalArtLink 4.2s';
-var gallerySubcategoryOthers = document.querySelector('#others');
+const gallerySubcategoryOthers = document.querySelector('#others');
 gallerySubcategoryOthers.style.animation = 'moveOthersLink 5s';
-var gallerySubcategory3d = document.querySelector('#_3d');
+const gallerySubcategory3d = document.querySelector('#_3d');
 gallerySubcategory3d.style.animation = 'move3dLink 4.7s';
-var derevo = document.querySelector('#derevo');
+// const derevo = document.querySelector('#derevo');
 derevo.style.animation = 'derevoZoom 2s';
+
+
 
 
 

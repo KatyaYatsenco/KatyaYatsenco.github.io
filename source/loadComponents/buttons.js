@@ -1,38 +1,41 @@
 
-function addCloseButton(project) {
+export function addCloseButton(project) {
 
-    var children = project.childNodes;
-    for (var indexChildren = 0; indexChildren < children.length; indexChildren++) {
-        var imgs = [];
-        var child = children[indexChildren];
+    const children = project.childNodes;
+    const imgs = [];
+
+    for (let indexChildren = 0; indexChildren < children.length; indexChildren++) {
+        const child = children[indexChildren];
         if (child.nodeType == 1) {
             imgs.push(child)
         }
     }
-    var button = document.createElement('div');
+    const button = document.createElement('div');
     button.classList.add('closeButton');
-    for (var indexImgs = 0; indexImgs < imgs.length; indexImgs++) {
+    for (let indexImgs = 0; indexImgs < imgs.length; indexImgs++) {
         imgs[indexImgs].append(button);
     }
 }
 
-function addOpenButton(project) {
+export function addOpenButton(project) {
 
-    var children = project.childNodes;
-    for (var index = 0; index < children.length; index++) {
-        var imgs = [];
-        var child = children[index];
+    const children = project.childNodes;
+    const imgs = [];
+
+    for (let index = 0; index < children.length; index++) {
+        const imgs = [];
+        const child = children[index];
         if (child.nodeType == 1) {
             if (child.classList.contains('prevImg')) {
                 imgs.push(child)
             }
         }
     }
-    var button = document.createElement('div');
+    const button = document.createElement('div');
     button.classList.add('openButton');
 
-    for (var i = 0; i < imgs.length; i++) {
-        var img = imgs[i];
+    for (let i = 0; i < imgs.length; i++) {
+        const img = imgs[i];
         img.appendChild(button);
     }
 }

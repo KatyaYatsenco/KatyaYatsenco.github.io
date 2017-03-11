@@ -1,6 +1,9 @@
-var projectNavigation = {
+import {showElement, hideElement} from './main';
 
-    open: function (cols, projectCol, projects, project) {
+
+export const projectNavigation = {
+
+    open(cols, projectCol, projects, project) {
 
         onceCol(cols, projectCol);
 
@@ -9,9 +12,9 @@ var projectNavigation = {
         findImgs(project, 'bigImg', showElement);
     },
 
-    close: function (cols, projectCol, projects, project) {
+    close(cols, projectCol, projects, project) {
 
-        var img = project.children[0].firstChild;
+        const img = project.children[0].firstChild;
         img.style.width = '100%';
 
         threeCol(cols);
@@ -22,8 +25,10 @@ var projectNavigation = {
     }
 };
 
+const mainContent = document.querySelector('.mainContent');
+
 mainContent.addEventListener('click', function (event) {
-    var targetElement = event.target,
+    const targetElement = event.target,
         targetImg = targetElement.parentNode, //have class 'smallImg' or 'bigImg'
         project = targetImg.parentNode,
         prevImg = project.querySelector('.prevImg'),
@@ -32,15 +37,13 @@ mainContent.addEventListener('click', function (event) {
         projectCol = project.parentNode,
         projects = projectCol.parentNode,
         data = window.location.pathname,
-        img,
-        targetOpenButton,
 
         cols = projects.querySelectorAll('.projectsCol');
 
 
     if (targetElement.classList.contains('openButton')) {
-        img = targetImg.firstChild;
-        targetOpenButton = targetImg.querySelector('.openButton');
+        const img = targetImg.firstChild;
+        const targetOpenButton = targetImg.querySelector('.openButton');
 
         img.style.filter = '';
 
@@ -48,7 +51,7 @@ mainContent.addEventListener('click', function (event) {
 
         projectNavigation.open(cols, projectCol, projects, project);
 
-        var targetPrevImg = project.children[0];
+        const targetPrevImg = project.children[0];
         showElement(targetPrevImg);
 
         targetOpenButton.style.display = 'none';
@@ -56,9 +59,9 @@ mainContent.addEventListener('click', function (event) {
 
         history.pushState('project' + projectId, null, '#' + projectId); // Add window location hash with number this project
 
-        var closeButtons = project.getElementsByClassName('closeButton');
-        for (var i = 0; i < closeButtons.length; i++) {
-            var button = closeButtons[i];
+        const closeButtons = project.getElementsByClassName('closeButton');
+        for (let i = 0; i < closeButtons.length; i++) {
+            const button = closeButtons[i];
             showElement(button);
         }
 
@@ -73,11 +76,11 @@ mainContent.addEventListener('click', function (event) {
 
 
 mainContent.addEventListener('mouseover', function (event) {
-    var element = event.target.parentNode;
+    const element = event.target.parentNode;
     if (element.classList.contains('prevImg') && element.firstChild.offsetWidth === 300) {
-        var img = element.firstChild;
+        const img = element.firstChild;
         img.style.filter = 'blur(2px)';
-        var openButton = element.querySelector('.openButton');
+        const openButton = element.querySelector('.openButton');
         openButton.style.display = 'block';
         showElement(openButton);
     }
@@ -85,11 +88,11 @@ mainContent.addEventListener('mouseover', function (event) {
 
 
 mainContent.addEventListener('mouseout', function (event) {
-    var element = event.target.parentNode;
-    var img = element.firstChild;
+    const element = event.target.parentNode;
+    const img = element.firstChild;
 
     if (element.classList.contains('prevImg')) {
-        var openButton = element.querySelector('.openButton');
+        const openButton = element.querySelector('.openButton');
         img.style.filter = '';
         openButton.style.display = 'none';
 
@@ -105,9 +108,9 @@ function onceCol(cols, projectCol) {
         if (projectCol === elem) {
             elem.style.width = '98%';
 
-            var prevImgs = elem.querySelectorAll('.prevImg');
-            for(var i = 0; i<prevImgs.length; i++) {
-                if(!prevImgs[i].classList.contains('hide')){
+            const prevImgs = elem.querySelectorAll('.prevImg');
+            for (let i = 0; i < prevImgs.length; i++) {
+                if (!prevImgs[i].classList.contains('hide')) {
                     prevImgs[i].classList.add('hide');
                 }
             }
@@ -128,18 +131,18 @@ function threeCol(cols) {
 
 function findImgs(collectionProjectsTargetCategory, typeImg, operation) {
 
-    var desiredTypeImgs = collectionProjectsTargetCategory.getElementsByClassName(typeImg); //Collection
+    const desiredTypeImgs = collectionProjectsTargetCategory.getElementsByClassName(typeImg); //Collection
     desiredTypeImgs.prototype = Object.create(Array.prototype); //Add Array prototype
 
-    for (var k = 0; k < desiredTypeImgs.length; k++) {
-        var desireTypeImg = desiredTypeImgs[k];
+    for (let i = 0; i < desiredTypeImgs.length; i++) {
+        const desireTypeImg = desiredTypeImgs[i];
         operation(desireTypeImg);
     }
 }
 
 
 function closeButton(project, activity) {
-    var buttons = project.querySelectorAll('.closeButton');
+    const buttons = project.querySelectorAll('.closeButton');
     buttons.forEach(function (elem) {
         activity(elem);
     })

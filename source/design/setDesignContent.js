@@ -1,14 +1,11 @@
+import {setContent} from '../loadComponents/setContent';
 
-function setContentDesign(JSONObject) {
 
-    var categoryDesign = document.getElementById('categoryDesign'),
-        projects = categoryDesign.querySelectorAll('.project');
+export function setDesignContent(JSONObject) {
 
-    for (var i = 0; i < projects.length; i++) {
-        var project = projects[i];
-        if (!project.children.length) {
+    const categoryDesign = document.getElementById('categoryDesign'),
+        projectsNode = categoryDesign.querySelectorAll('.project');
 
-            injectImages(JSONObject.projects[i], project);
-        }
-    }
+    setContent(JSONObject, projectsNode);
+
 }

@@ -1,9 +1,12 @@
-function addImg(className, elementValue, parent) { // Function create img covers
+import {addCloseButton, addOpenButton} from './buttons';
 
-    var img = document.createElement('IMG');
+
+export function addImg(className, elementValue, parent) { // Function create img covers
+
+    const img = document.createElement('IMG');
     img.setAttribute('src', elementValue);
 
-    var containerForImg = document.createElement('A');
+    const containerForImg = document.createElement('A');
     if (className === 'smallImg') {
         containerForImg.classList.add('prevImg');
     }
