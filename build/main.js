@@ -309,6 +309,7 @@ function injectImages(project, parent) {
     const id = project['id'];
     const smallImg = project['small'];
     const bigImgs = project['big'];
+    // console.log(project.length)
 
     parent.setAttribute('id', id);
 
@@ -327,7 +328,7 @@ function parseData(loadProjects, path) {
             JSONObject = JSON.parse(xhr.responseText);
 
             loadProjects(JSONObject);
-            console.log(JSONObject);
+            console.log(JSONObject.projects.length);
         }
     };
     xhr.open("GET", path, true);
@@ -371,7 +372,7 @@ function paramToSwitchPageContents(currentPath) {
             __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["a" /* changeTextColor */])('white');
             __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["b" /* openMainCategories */])();
             __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["c" /* hideMainContentChildren */])();
-            body.style.backgroundImage = 'url(../image/background_main_page.png)';
+            body.style.backgroundImage = 'url(../image/backgrounds/main_page.png)';
             break;
 
         case '/design':
@@ -452,20 +453,28 @@ function addImg(className, elementValue, parent) {
     // Function create img covers
 
     const img = document.createElement('IMG');
+
     img.setAttribute('src', elementValue);
 
-    const containerForImg = document.createElement('A');
-    if (className === 'smallImg') {
-        containerForImg.classList.add('prevImg');
+    const containerForImg = document.createElement('DIV');
+
+    switch (className) {
+        case 'smallImg':
+            containerForImg.classList.add('prevImg');
+            break;
+        case 'bigImg':
+            containerForImg.classList.add('bigImg');
+            break;
     }
-    containerForImg.classList.add(className);
+
+    // containerForImg.classList.add(className);
 
     containerForImg.appendChild(img);
 
     parent.appendChild(containerForImg);
-
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__buttons__["a" /* addCloseButton */])(parent);
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__buttons__["b" /* addOpenButton */])(parent);
+    //
+    // addCloseButton(parent);
+    // addOpenButton(parent);
 }
 
 /***/ }),
@@ -473,8 +482,8 @@ function addImg(className, elementValue, parent) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = addCloseButton;
-/* harmony export (immutable) */ __webpack_exports__["b"] = addOpenButton;
+/* unused harmony export addCloseButton */
+/* unused harmony export addOpenButton */
 
 function addCloseButton(project) {
 
@@ -586,49 +595,49 @@ const stateConfig = {
         color: 'white',
         index: 1,
         animation: 'designBg 0.2s',
-        bg: 'url(../image/gallery_background_design.png)'
+        bg: 'url(../image/backgrounds/gallery_design.png)'
     },
     'painting': {
         color: 'white',
         index: 0,
         animation: 'paintingBg 0.2s',
-        bg: 'url(../image/gallery_background_painting.png)'
+        bg: 'url(../image/backgrounds/gallery_painting.png)'
     },
     'graphic': {
         color: 'white',
         index: 2,
         animation: 'graphicBg 0.2s',
-        bg: 'url(../image/gallery_background_graphic.png)'
+        bg: 'url(../image/backgrounds/gallery_graphic.png)'
     },
     'digitalArt': {
         color: 'white',
         index: 3,
         animation: 'digitalArtBg 0.2s',
-        bg: 'url(../image/gallery_background_digital_art.png)'
+        bg: 'url(../image/backgrounds/gallery_digital_art.png)'
     },
     'others': {
         color: 'white',
         index: 4,
         animation: 'othersBg 0.2s',
-        bg: 'url(../image/gallery_background_others.png)'
+        bg: 'url(../image/backgrounds/gallery_others.png)'
     },
     '_3d': {
         color: 'black',
         index: 5,
         animation: '_3dBg 0.2s',
-        bg: 'url(../image/gallery_background_3d.png)'
+        bg: 'url(../image/backgrounds/gallery_3d.png)'
     },
     'aboutMe': {
         color: 'white',
         index: 6,
         animation: 'aboutMeBg 0.2s',
-        bg: 'url(../image/gallery_background_about_me.png)'
+        bg: 'url(../image/backgrounds/about_me.png)'
     },
     'contacts': {
         color: 'white',
         index: 7,
         animation: 'contactsBg 0.2s',
-        bg: 'url(../image/gallery_background_contacts.png)'
+        bg: 'url(../image/backgrounds/contacts.png)'
     }
 
 };
@@ -660,7 +669,7 @@ const projectNavigation = {
 
         onceCol(cols, projectCol);
 
-        findImgs(projects, 'smallImg', __WEBPACK_IMPORTED_MODULE_0__main__["f" /* hideElement */]);
+        findImgs(projects, 'prevImg', __WEBPACK_IMPORTED_MODULE_0__main__["f" /* hideElement */]);
 
         findImgs(project, 'bigImg', __WEBPACK_IMPORTED_MODULE_0__main__["e" /* showElement */]);
     },
@@ -668,11 +677,11 @@ const projectNavigation = {
     close(cols, projectCol, projects, project) {
 
         const img = project.children[0].firstChild;
-        img.style.width = '100%';
+        // img.style.width = '100%';
 
         threeCol(cols);
 
-        findImgs(projects, 'smallImg', __WEBPACK_IMPORTED_MODULE_0__main__["e" /* showElement */]);
+        findImgs(projects, 'prevImg', __WEBPACK_IMPORTED_MODULE_0__main__["e" /* showElement */]);
 
         findImgs(project, 'bigImg', __WEBPACK_IMPORTED_MODULE_0__main__["f" /* hideElement */]);
     }
@@ -695,21 +704,21 @@ mainContent.addEventListener('click', function (event) {
           data = window.location.pathname,
           cols = projects.querySelectorAll('.projectsCol');
 
-    if (targetElement.classList.contains('openButton')) {
+    if (targetImg.classList.contains('prevImg')) {
         const img = targetImg.firstChild;
-        const targetOpenButton = targetImg.querySelector('.openButton');
+        // const targetOpenButton = targetImg.querySelector('.openButton');
 
         img.style.filter = '';
 
-        img.style.width = '97%';
+        // img.style.width = '100%';
 
         projectNavigation.open(cols, projectCol, projects, project);
 
         const targetPrevImg = project.children[0];
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["e" /* showElement */])(targetPrevImg);
+        // showElement(targetPrevImg);
 
-        targetOpenButton.style.display = 'none';
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["f" /* hideElement */])(targetOpenButton);
+        // targetOpenButton.style.display = 'none';
+        // hideElement(targetOpenButton);
 
         history.pushState('project' + projectId, null, '#' + projectId); // Add window location hash with number this project
 
@@ -718,23 +727,32 @@ mainContent.addEventListener('click', function (event) {
             const button = closeButtons[i];
             __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["e" /* showElement */])(button);
         }
-    } else if (targetElement.classList.contains('closeButton')) {
+    } else if (targetImg.classList.contains('bigImg')) {
 
         projectNavigation.close(cols, projectCol, projects, project, targetImg);
         history.replaceState(data.slice(1), null, data);
 
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["f" /* hideElement */])(closeButtonPrevImg);
+        // hideElement(closeButtonPrevImg);
     }
 });
 
 mainContent.addEventListener('mouseover', function (event) {
     const element = event.target.parentNode;
-    if (element.classList.contains('prevImg') && element.firstChild.offsetWidth === 300) {
+
+    if (element.classList.contains('prevImg')) {
         const img = element.firstChild;
-        img.style.filter = 'blur(2px)';
-        const openButton = element.querySelector('.openButton');
-        openButton.style.display = 'block';
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["e" /* showElement */])(openButton);
+        img.style.opacity = '1';
+
+        console.log('prev Img');
+        element.style.cursor = "url(../image/open.png),auto";
+
+        // const openButton = element.querySelector('.openButton');
+        // openButton.style.display = 'block';
+        // showElement(openButton);
+    } else if (element.classList.contains('bigImg')) {
+        const img = element.firstChild;
+        console.log('big Img');
+        element.style.cursor = "url(../image/close.png),auto";
     }
 });
 
@@ -743,11 +761,13 @@ mainContent.addEventListener('mouseout', function (event) {
     const img = element.firstChild;
 
     if (element.classList.contains('prevImg')) {
-        const openButton = element.querySelector('.openButton');
-        img.style.filter = '';
-        openButton.style.display = 'none';
+        img.style.opacity = '0.6';
 
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["f" /* hideElement */])(openButton);
+        element.style.cursor = "auto";
+    } else if (element.classList.contains('bigImg')) {
+        console.log('move out big Img');
+        img.style.filter = '';
+        element.style.cursor = "auto";
     }
 });
 

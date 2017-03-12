@@ -10,6 +10,7 @@ export function injectImages(project, parent) { //Rename function
     const id = project['id'];
     const smallImg = project['small'];
     const bigImgs = project['big'];
+    // console.log(project.length)
 
     parent.setAttribute('id', id);
 
@@ -28,7 +29,7 @@ export function parseData(loadProjects, path) {
             JSONObject = JSON.parse(xhr.responseText);
 
             loadProjects(JSONObject);
-            console.log(JSONObject)
+            console.log(JSONObject.projects.length)
         }
     };
     xhr.open("GET", path, true);

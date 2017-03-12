@@ -7,7 +7,7 @@ export const projectNavigation = {
 
         onceCol(cols, projectCol);
 
-        findImgs(projects, 'smallImg', hideElement);
+        findImgs(projects, 'prevImg', hideElement);
 
         findImgs(project, 'bigImg', showElement);
     },
@@ -15,11 +15,11 @@ export const projectNavigation = {
     close(cols, projectCol, projects, project) {
 
         const img = project.children[0].firstChild;
-        img.style.width = '100%';
+        // img.style.width = '100%';
 
         threeCol(cols);
 
-        findImgs(projects, 'smallImg', showElement);
+        findImgs(projects, 'prevImg', showElement);
 
         findImgs(project, 'bigImg', hideElement);
     }
@@ -41,21 +41,21 @@ mainContent.addEventListener('click', function (event) {
         cols = projects.querySelectorAll('.projectsCol');
 
 
-    if (targetElement.classList.contains('openButton')) {
+    if (targetImg.classList.contains('prevImg')) {
         const img = targetImg.firstChild;
-        const targetOpenButton = targetImg.querySelector('.openButton');
+        // const targetOpenButton = targetImg.querySelector('.openButton');
 
         img.style.filter = '';
 
-        img.style.width = '97%';
+        // img.style.width = '100%';
 
         projectNavigation.open(cols, projectCol, projects, project);
 
         const targetPrevImg = project.children[0];
-        showElement(targetPrevImg);
+        // showElement(targetPrevImg);
 
-        targetOpenButton.style.display = 'none';
-        hideElement(targetOpenButton);
+        // targetOpenButton.style.display = 'none';
+        // hideElement(targetOpenButton);
 
         history.pushState('project' + projectId, null, '#' + projectId); // Add window location hash with number this project
 
@@ -65,38 +65,52 @@ mainContent.addEventListener('click', function (event) {
             showElement(button);
         }
 
-    } else if (targetElement.classList.contains('closeButton')) {
+    } else if (targetImg.classList.contains('bigImg')) {
 
         projectNavigation.close(cols, projectCol, projects, project, targetImg);
         history.replaceState(data.slice(1), null, data);
 
-        hideElement(closeButtonPrevImg);
+        // hideElement(closeButtonPrevImg);
     }
 });
 
 
 mainContent.addEventListener('mouseover', function (event) {
     const element = event.target.parentNode;
-    if (element.classList.contains('prevImg') && element.firstChild.offsetWidth === 300) {
+
+    if (element.classList.contains('prevImg')) {
         const img = element.firstChild;
-        img.style.filter = 'blur(2px)';
-        const openButton = element.querySelector('.openButton');
-        openButton.style.display = 'block';
-        showElement(openButton);
+        img.style.opacity = '1';
+
+        console.log('prev Img')
+       element.style.cursor = "url(../image/open.png),auto";
+
+        // const openButton = element.querySelector('.openButton');
+        // openButton.style.display = 'block';
+        // showElement(openButton);
+    }
+    else if(element.classList.contains('bigImg')){
+        const img = element.firstChild;
+        console.log('big Img')
+        element.style.cursor = "url(../image/close.png),auto";
+
     }
 });
-
 
 mainContent.addEventListener('mouseout', function (event) {
     const element = event.target.parentNode;
     const img = element.firstChild;
 
     if (element.classList.contains('prevImg')) {
-        const openButton = element.querySelector('.openButton');
-        img.style.filter = '';
-        openButton.style.display = 'none';
+        img.style.opacity = '0.6';
 
-        hideElement(openButton);
+        element.style.cursor = "auto";
+
+    }
+    else if(element.classList.contains('bigImg')){
+        console.log('move out big Img');
+        img.style.filter = '';
+        element.style.cursor = "auto";
 
     }
 });

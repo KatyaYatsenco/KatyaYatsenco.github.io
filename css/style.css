@@ -713,7 +713,7 @@ body {
 .project img {
     width: 100%;
     height: 100%;
-    margin: 15px 0;
+    margin: 0;
 }
 
 .bigImg {
@@ -741,6 +741,13 @@ body {
 .prevImg {
     position: relative;
     cursor: auto;
+    margin: 15px 0;
+    background-color: white;
+}
+
+.prevImg img {
+    opacity: 0.6;
+    vertical-align: bottom;
 }
 
 .closeButton {

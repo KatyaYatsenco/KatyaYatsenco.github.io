@@ -20,7 +20,7 @@ export function paramToSwitchPageContents(currentPath) {
             changeTextColor('white');
             openMainCategories();
             hideMainContentChildren();
-            body.style.backgroundImage = 'url(../image/background_main_page.png)';
+            body.style.backgroundImage = 'url(../image/backgrounds/main_page.png)';
             break;
 
         case '/design':

@@ -3,8 +3,9 @@
     {
       "name": "project",
       "id": 3.1,
-      "small": "../image/design_gallery/1/1.1.jpg",
+      "small": "../image/design_gallery/prev.jpg",
       "big": [
+        "../image/design_gallery/1/1.1.jpg",
         "../image/design_gallery/1/1.2.jpg",
         "../image/design_gallery/1/1.3.jpg",
         "../image/design_gallery/1/1.4.jpg"
@@ -13,8 +14,9 @@
     {
       "name": "project",
       "id": 3.2,
-      "small": "../image/design_gallery/2/2.1.jpg",
+      "small": "../image/design_gallery/2/prev.jpg",
       "big": [
+        "../image/design_gallery/2/2.1.jpg",
         "../image/design_gallery/2/2.2.jpg",
         "../image/design_gallery/2/2.3.jpg",
         "../image/design_gallery/2/2.4.jpg",
@@ -31,8 +33,9 @@
     {
       "name": "project",
       "id": 3.3,
-      "small": "../image/design_gallery/3/3.1.jpg",
+      "small": "../image/design_gallery/3/prev.jpg",
       "big": [
+        "../image/design_gallery/3/3.1.jpg",
         "../image/design_gallery/3/3.2.jpg",
         "../image/design_gallery/3/3.3.jpg",
         "../image/design_gallery/3/3.4.jpg",
@@ -58,8 +61,9 @@
     {
       "name": "project",
       "id": 3.4,
-      "small": "../image/design_gallery/4/4.1.jpg",
+      "small": "../image/design_gallery/4/prev.jpg",
       "big": [
+        "../image/design_gallery/4/4.1.jpg",
         "../image/design_gallery/4/4.2.jpg",
         "../image/design_gallery/4/4.3.jpg",
         "../image/design_gallery/4/4.4.jpg",
@@ -90,8 +94,9 @@
     {
       "name": "project",
       "id": 3.5,
-      "small": "../image/design_gallery/5/5.1.jpg",
+      "small": "../image/design_gallery/5/prev.jpg",
       "big": [
+        "../image/design_gallery/5/5.1.jpg",
         "../image/design_gallery/5/5.2.jpg",
         "../image/design_gallery/5/5.3.jpg"
       ]
@@ -99,15 +104,17 @@
     {
       "name": "project",
       "id": 3.6,
-      "small": "../image/design_gallery/6/6.1.jpg",
+      "small": "../image/design_gallery/6/prev.jpg",
       "big": [
+        "../image/design_gallery/6/6.1.jpg"
       ]
     },
     {
       "name": "project",
       "id": 3.7,
-      "small": "../image/design_gallery/7/7.1.jpg",
+      "small": "../image/design_gallery/7/prev.jpg",
       "big": [
+        "../image/design_gallery/7/7.1.jpg",
         "../image/design_gallery/7/7.2.jpg",
         "../image/design_gallery/7/7.3.jpg",
         "../image/design_gallery/7/7.4.jpg",
@@ -117,8 +124,9 @@
     {
       "name": "project",
       "id": 3.8,
-      "small": "../image/design_gallery/8/8.1.jpg",
+      "small": "../image/design_gallery/8/prev.jpg",
       "big": [
+        "../image/design_gallery/8/8.1.jpg",
         "../image/design_gallery/8/8.2.jpg",
         "../image/design_gallery/8/8.3.jpg",
         "../image/design_gallery/8/8.4.jpg"
@@ -127,24 +135,27 @@
     {
       "name": "project",
       "id": 3.9,
-      "small": "../image/design_gallery/9/9.1.jpg",
+      "small": "../image/design_gallery/9/prev.jpg",
       "big": [
+        "../image/design_gallery/9/9.1.jpg",
         "../image/design_gallery/9/9.2.jpg"
       ]
     },
     {
       "name": "project",
       "id": 3.10,
-      "small": "../image/design_gallery/10/10.1.jpg",
+      "small": "../image/design_gallery/10/prev.jpg",
       "big": [
+        "../image/design_gallery/10/10.1.jpg",
         "../image/design_gallery/10/10.2.jpg"
       ]
     },
     {
       "name": "project",
       "id": 3.11,
-      "small": "../image/design_gallery/11/11.1.jpg",
+      "small": "../image/design_gallery/11/prev.jpg",
       "big": [
+        "../image/design_gallery/11/11.1.jpg",
         "../image/design_gallery/11/11.2.jpg",
         "../image/design_gallery/11/11.3.jpg"
       ]
@@ -152,8 +163,9 @@
     {
       "name": "project",
       "id": 1.12,
-      "small": "../image/design_gallery/12/12.1.jpg",
+      "small": "../image/design_gallery/12/prev.jpg",
       "big": [
+        "../image/design_gallery/12/12.1.jpg",
         "../image/design_gallery/12/12.2.jpg",
         "../image/design_gallery/12/12.3.jpg",
         "../image/design_gallery/12/12.4.jpg"
@@ -162,8 +174,9 @@
     {
       "name": "project",
       "id": 1.13,
-      "small": "../image/design_gallery/13/13.1.jpg",
+      "small": "../image/design_gallery/13/prev.jpg",
       "big": [
+        "../image/design_gallery/13/13.1.jpg",
         "../image/design_gallery/13/13.2.jpg",
         "../image/design_gallery/13/13.3.jpg",
         "../image/design_gallery/13/13.4.jpg"
@@ -172,24 +185,27 @@
     {
       "name": "project",
       "id": 1.14,
-      "small": "../image/design_gallery/14/14.1.jpg",
+      "small": "../image/design_gallery/14/prev.jpg",
       "big": [
+        "../image/design_gallery/14/14.1.jpg",
         "../image/design_gallery/14/14.2.jpg"
       ]
     },
     {
       "name": "project",
       "id": 1.15,
-      "small": "../image/design_gallery/15/15.1.jpg",
+      "small": "../image/design_gallery/15/prev.jpg",
       "big": [
+        "../image/design_gallery/15/15.1.jpg",
         "../image/design_gallery/15/15.2.jpg"
       ]
     },
     {
       "name": "project",
       "id": 1.16,
-      "small": "../image/design_gallery/16/16.1.jpg",
+      "small": "../image/design_gallery/16/prev.jpg",
       "big": [
+        "../image/design_gallery/16/16.1.jpg",
         "../image/design_gallery/16/16.2.jpg",
         "../image/design_gallery/16/16.3.jpg"
       ]
@@ -197,8 +213,9 @@
     {
       "name": "project",
       "id": 1.17,
-      "small": "../image/design_gallery/17/17.1.jpg",
+      "small": "../image/design_gallery/17/prev.jpg",
       "big": [
+        "../image/design_gallery/17/17.1.jpg",
         "../image/design_gallery/17/17.2.jpg",
         "../image/design_gallery/17/17.3.jpg"
       ]
@@ -206,8 +223,9 @@
     {
       "name": "project",
       "id": 1.18,
-      "small": "../image/design_gallery/18/18.1.jpg",
+      "small": "../image/design_gallery/18/prev.jpg",
       "big": [
+        "../image/design_gallery/18/18.1.jpg",
         "../image/design_gallery/18/18.2.jpg",
         "../image/design_gallery/18/18.3.jpg",
         "../image/design_gallery/18/18.4.jpg"
@@ -216,16 +234,18 @@
     {
       "name": "project",
       "id": 1.19,
-      "small": "../image/design_gallery/19/19.1.jpg",
+      "small": "../image/design_gallery/19/prev.jpg",
       "big": [
+        "../image/design_gallery/19/19.1.jpg",
         "../image/design_gallery/19/19.2.jpg"
       ]
     },
     {
       "name": "project",
       "id": 1.20,
-      "small": "../image/design_gallery/20/20.1.jpg",
+      "small": "../image/design_gallery/20/prev.jpg",
       "big": [
+        "../image/design_gallery/20/20.1.jpg",
         "../image/design_gallery/20/20.2.jpg",
         "../image/design_gallery/20/20.3.jpg"
       ]
@@ -233,8 +253,9 @@
     {
       "name": "project",
       "id": 1.21,
-      "small": "../image/design_gallery/21/21.1.jpg",
+      "small": "../image/design_gallery/21/prev.jpg",
       "big": [
+        "../image/design_gallery/21/21.1.jpg",
         "../image/design_gallery/21/21.2.jpg",
         "../image/design_gallery/21/21.3.jpg",
         "../image/design_gallery/21/21.4.jpg"
@@ -243,8 +264,9 @@
     {
       "name": "project",
       "id": 1.22,
-      "small": "../image/design_gallery/22/22.1.jpg",
+      "small": "../image/design_gallery/22/prev.jpg",
       "big": [
+        "../image/design_gallery/22/22.1.jpg",
         "../image/design_gallery/22/22.2.jpg",
         "../image/design_gallery/22/22.3.jpg",
         "../image/design_gallery/22/22.4.jpg",
@@ -254,8 +276,9 @@
     {
       "name": "project",
       "id": 1.23,
-      "small": "../image/design_gallery/23/23.1.jpg",
+      "small": "../image/design_gallery/23/prev.jpg",
       "big": [
+        "../image/design_gallery/23/23.1.jpg",
         "../image/design_gallery/23/23.2.jpg",
         "../image/design_gallery/23/23.3.jpg"
       ]
@@ -263,15 +286,17 @@
     {
       "name": "project",
       "id": 1.24,
-      "small": "../image/design_gallery/24/24.1.jpg",
+      "small": "../image/design_gallery/24/prev.jpg",
       "big": [
+        "../image/design_gallery/24/24.1.jpg"
       ]
     },
     {
       "name": "project",
       "id": 1.25,
-      "small": "../image/design_gallery/25/25.1.jpg",
+      "small": "../image/design_gallery/25/prev.jpg",
       "big": [
+        "../image/design_gallery/25/25.1.jpg",
         "../image/design_gallery/25/25.2.jpg",
         "../image/design_gallery/25/25.3.jpg",
         "../image/design_gallery/25/25.4.jpg",
@@ -281,8 +306,9 @@
     {
       "name": "project",
       "id": 1.26,
-      "small": "../image/design_gallery/26/26.1.jpg",
+      "small": "../image/design_gallery/26/prev.jpg",
       "big": [
+        "../image/design_gallery/26/26.1.jpg",
         "../image/design_gallery/26/26.2.jpg",
         "../image/design_gallery/26/26.3.jpg",
         "../image/design_gallery/26/26.4.jpg"
@@ -291,8 +317,9 @@
     {
       "name": "project",
       "id": 1.27,
-      "small": "../image/design_gallery/27/27.1.jpg",
+      "small": "../image/design_gallery/27/prev.jpg",
       "big": [
+        "../image/design_gallery/27/27.1.jpg",
         "../image/design_gallery/27/27.2.jpg",
         "../image/design_gallery/27/27.3.jpg"
       ]
@@ -300,8 +327,9 @@
     {
       "name": "project",
       "id": 1.28,
-      "small": "../image/design_gallery/28/28.1.jpg",
+      "small": "../image/design_gallery/28/prev.jpg",
       "big": [
+        "../image/design_gallery/28/28.1.jpg",
         "../image/design_gallery/28/28.2.jpg",
         "../image/design_gallery/28/28.3.jpg"
       ]
@@ -309,8 +337,9 @@
     {
       "name": "project",
       "id": 1.29,
-      "small": "../image/design_gallery/29/29.1.jpg",
+      "small": "../image/design_gallery/29/prev.jpg",
       "big": [
+        "../image/design_gallery/29/29.1.jpg",
         "../image/design_gallery/29/29.2.jpg",
         "../image/design_gallery/29/29.3.jpg"
       ]
@@ -318,8 +347,9 @@
     {
       "name": "project",
       "id": 1.30,
-      "small": "../image/design_gallery/30/30.1.jpg",
+      "small": "../image/design_gallery/30/prev.jpg",
       "big": [
+        "../image/design_gallery/30/30.1.jpg",
         "../image/design_gallery/30/30.2.jpg",
         "../image/design_gallery/30/30.3.jpg",
         "../image/design_gallery/30/30.4.jpg"
@@ -328,16 +358,18 @@
     {
       "name": "project",
       "id": 1.31,
-      "small": "../image/design_gallery/31/31.1.jpg",
+      "small": "../image/design_gallery/31/prev.jpg",
       "big": [
+        "../image/design_gallery/31/31.1.jpg",
         "../image/design_gallery/31/31.2.jpg"
       ]
     },
     {
       "name": "project",
       "id": 1.32,
-      "small": "../image/design_gallery/32/32.1.jpg",
+      "small": "../image/design_gallery/32/prev.jpg",
       "big": [
+        "../image/design_gallery/32/32.1.jpg",
         "../image/design_gallery/32/32.2.jpg",
         "../image/design_gallery/32/32.3.jpg"
       ]
@@ -345,8 +377,9 @@
     {
       "name": "project",
       "id": 1.33,
-      "small": "../image/design_gallery/33/33.1.jpg",
+      "small": "../image/design_gallery/33/prev.jpg",
       "big": [
+        "../image/design_gallery/33/33.1.jpg",
         "../image/design_gallery/33/33.2.jpg",
         "../image/design_gallery/33/33.3.jpg"
       ]
@@ -354,8 +387,9 @@
     {
       "name": "project",
       "id": 1.34,
-      "small": "../image/design_gallery/34/34.1.jpg",
+      "small": "../image/design_gallery/34/prev.jpg",
       "big": [
+        "../image/design_gallery/34/34.1.jpg",
         "../image/design_gallery/34/34.2.jpg",
         "../image/design_gallery/34/34.3.jpg",
         "../image/design_gallery/35/35.4.jpg",
@@ -365,16 +399,18 @@
     {
       "name": "project",
       "id": 1.35,
-      "small": "../image/design_gallery/35/35.1.jpg",
+      "small": "../image/design_gallery/35/prev.jpg",
       "big": [
+        "../image/design_gallery/35/35.1.jpg",
         "../image/design_gallery/35/35.2.jpg"
       ]
     },
     {
       "name": "project",
       "id": 1.36,
-      "small": "../image/design_gallery/36/36.1.jpg",
+      "small": "../image/design_gallery/36/prev.jpg",
       "big": [
+        "../image/design_gallery/36/36.1.jpg",
         "../image/design_gallery/36/36.2.jpg",
         "../image/design_gallery/36/36.3.jpg",
         "../image/design_gallery/36/36.4.jpg"
@@ -383,8 +419,9 @@
     {
       "name": "project",
       "id": 1.37,
-      "small": "../image/design_gallery/37/37.1.jpg",
+      "small": "../image/design_gallery/37/prev.jpg",
       "big": [
+        "../image/design_gallery/37/37.1.jpg",
         "../image/design_gallery/37/37.2.jpg",
         "../image/design_gallery/37/37.3.jpg"
       ]
@@ -392,8 +429,9 @@
     {
       "name": "project",
       "id": 1.38,
-      "small": "../image/design_gallery/38/38.1.jpg",
+      "small": "../image/design_gallery/38/prev.jpg",
       "big": [
+        "../image/design_gallery/38/38.1.jpg",
         "../image/design_gallery/38/38.2.jpg",
         "../image/design_gallery/38/38.3.jpg"
       ]
@@ -401,8 +439,9 @@
     {
       "name": "project",
       "id": 1.39,
-      "small": "../image/design_gallery/39/39.1.jpg",
+      "small": "../image/design_gallery/39/prev.jpg",
       "big": [
+        "../image/design_gallery/39/39.1.jpg",
         "../image/design_gallery/39/39.2.jpg",
         "../image/design_gallery/39/39.3.jpg",
         "../image/design_gallery/39/39.5.jpg",
@@ -412,8 +451,9 @@
     {
       "name": "project",
       "id": 1.40,
-      "small": "../image/design_gallery/40/40.1.jpg",
+      "small": "../image/design_gallery/40/prev.jpg",
       "big": [
+        "../image/design_gallery/40/40.1.jpg",
         "../image/design_gallery/40/40.2.jpg",
         "../image/design_gallery/40/40.3.jpg",
         "../image/design_gallery/40/40.4.jpg",
@@ -423,8 +463,9 @@
     {
       "name": "project",
       "id": 1.41,
-      "small": "../image/design_gallery/12/12.1.jpg",
+      "small": "../image/design_gallery/12/prev.jpg",
       "big": [
+        "../image/design_gallery/12/12.1.jpg",
         "../image/design_gallery/41/41.2.jpg",
         "../image/design_gallery/41/41.3.jpg",
         "../image/design_gallery/41/41.4.jpg",
@@ -434,8 +475,9 @@
     {
       "name": "project",
       "id": 1.42,
-      "small": "../image/design_gallery/42/42.1.jpg",
+      "small": "../image/design_gallery/42/prev.jpg",
       "big": [
+        "../image/design_gallery/42/42.1.jpg",
         "../image/design_gallery/42/42.2.jpg",
         "../image/design_gallery/42/42.3.jpg",
         "../image/design_gallery/42/42.4.jpg",
@@ -445,23 +487,26 @@
     {
       "name": "project",
       "id": 1.43,
-      "small": "../image/design_gallery/43/43.1.jpg",
+      "small": "../image/design_gallery/43/prev.jpg",
       "big": [
+        "../image/design_gallery/43/43.1.jpg",
         "../image/design_gallery/43/43.2.jpg"
       ]
     },
     {
       "name": "project",
       "id": 1.44,
-      "small": "../image/design_gallery/44/44.1.jpg",
+      "small": "../image/design_gallery/44/prev.jpg",
       "big": [
+        "../image/design_gallery/44/44.1.jpg"
       ]
     },
     {
       "name": "project",
       "id": 1.45,
-      "small": "../image/design_gallery/45/45.1.jpg",
+      "small": "../image/design_gallery/45/prev.jpg",
       "big": [
+        "../image/design_gallery/45/45.1.jpg",
         "../image/design_gallery/45/45.2.jpg",
         "../image/design_gallery/45/45.3.jpg",
         "../image/design_gallery/45/45.4.jpg",
@@ -475,8 +520,9 @@
     {
       "name": "project",
       "id": 1.46,
-      "small": "../image/design_gallery/46/46.1.jpg",
+      "small": "../image/design_gallery/46/prev.jpg",
       "big": [
+        "../image/design_gallery/46/46.1.jpg",
         "../image/design_gallery/46/46.2.jpg",
         "../image/design_gallery/46/46.3.jpg",
         "../image/design_gallery/46/46.4.jpg",

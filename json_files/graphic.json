@@ -19,8 +19,9 @@
     {
       "name": "project",
       "id": 1.2,
-      "small": "../image/graphic_gallery/2/2.1.jpg",
+      "small": "../image/graphic_gallery/2/prev.jpg",
       "big": [
+        "../image/graphic_gallery/2/2.1.jpg",
         "../image/graphic_gallery/2/2.2.jpg",
         "../image/graphic_gallery/2/2.3.jpg",
         "../image/graphic_gallery/2/2.4.jpg",
@@ -57,8 +58,9 @@
     {
       "name": "project",
       "id": 1.3,
-      "small": "../image/graphic_gallery/3/3.1.jpg",
+      "small": "../image/graphic_gallery/3/prev.jpg",
       "big": [
+        "../image/graphic_gallery/3/3.1.jpg",
         "../image/graphic_gallery/3/3.2.jpg"
       ]
     },
@@ -66,15 +68,17 @@
     {
       "name": "project",
       "id": 1.4,
-      "small": "../image/graphic_gallery/5/5.1.jpg",
+      "small": "../image/graphic_gallery/5/prev.jpg",
       "big": [
+        "../image/graphic_gallery/5/5.1.jpg"
       ]
     },
     {
       "name": "project",
       "id": 1.5,
-      "small": "../image/graphic_gallery/6/6.1.jpg",
+      "small": "../image/graphic_gallery/6/prev.jpg",
       "big": [
+        "../image/graphic_gallery/6/6.1.jpg",
         "../image/graphic_gallery/6/6.2.jpg",
         "../image/graphic_gallery/6/6.3.jpg"
       ]
@@ -82,15 +86,17 @@
     {
       "name": "project",
       "id": 1.6,
-      "small": "../image/graphic_gallery/7/7.1.jpg",
+      "small": "../image/graphic_gallery/7/prev.jpg",
       "big": [
+        "../image/graphic_gallery/7/7.1.jpg"
       ]
     },
     {
       "name": "project",
       "id": 1.7,
-      "small": "../image/graphic_gallery/8/8.1.jpg",
+      "small": "../image/graphic_gallery/8/prev.jpg",
       "big": [
+        "../image/graphic_gallery/8/8.1.jpg",
         "../image/graphic_gallery/8/8.2.jpg",
         "../image/graphic_gallery/8/8.3.jpg",
         "../image/graphic_gallery/8/8.4.jpg",
@@ -105,29 +111,33 @@
     {
       "name": "project",
       "id": 1.8,
-      "small": "../image/graphic_gallery/9/9.1.jpg",
+      "small": "../image/graphic_gallery/9/prev.jpg",
       "big": [
+        "../image/graphic_gallery/9/9.1.jpg"
       ]
     },
     {
       "name": "project",
       "id": 1.9,
-      "small": "../image/graphic_gallery/10/10.1.jpg",
+      "small": "../image/graphic_gallery/10/prev.jpg",
       "big": [
+        "../image/graphic_gallery/10/10.1.jpg"
       ]
     },
     {
       "name": "project",
       "id": 1.10,
-      "small": "../image/graphic_gallery/11/11.1.jpg",
+      "small": "../image/graphic_gallery/11/prev.jpg",
       "big": [
+        "../image/graphic_gallery/11/11.1.jpg"
       ]
     },
     {
       "name": "project",
       "id": 1.11,
-      "small": "../image/graphic_gallery/4/4.1.jpg",
+      "small": "../image/graphic_gallery/4/prev.jpg",
       "big": [
+        "../image/graphic_gallery/4/4.1.jpg"
       ]
     }
   ]
