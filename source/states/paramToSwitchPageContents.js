@@ -1,7 +1,9 @@
-import {changeTextColor,openMainCategories,hideMainContentChildren,hideMainCategories} from '../main';
+import {openMainCategories,hideMainContentChildren,hideMainCategories} from '../main';
 import {paramToSwitchCategoryContents,paramToSwitchOtherContent} from './paramToSwitchCategoryContents';
 import {stateConfig} from './stateConfig';
 import {parseData} from '../loadComponents/mainComponent';
+
+import{changeTextColor} from '../animation/animationNavBar';
 
 import {setDesignContent} from '../design/setDesignContent';
 import {setPaintingContent} from '../painting/setPaintingContent';

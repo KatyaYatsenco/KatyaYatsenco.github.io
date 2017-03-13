@@ -93,18 +93,24 @@ function setContent(JSONObject, projects) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__loadComponents_mainComponent__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__design_setDesignContent__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__animation_animationNavBar__ = __webpack_require__(2);
-/* harmony export (immutable) */ __webpack_exports__["c"] = hideMainContentChildren;
-/* harmony export (immutable) */ __webpack_exports__["a"] = changeTextColor;
-/* harmony export (immutable) */ __webpack_exports__["f"] = hideElement;
-/* harmony export (immutable) */ __webpack_exports__["e"] = showElement;
-/* harmony export (immutable) */ __webpack_exports__["d"] = hideMainCategories;
-/* harmony export (immutable) */ __webpack_exports__["b"] = openMainCategories;
+/* harmony export (immutable) */ __webpack_exports__["b"] = hideMainContentChildren;
+/* harmony export (immutable) */ __webpack_exports__["e"] = hideElement;
+/* harmony export (immutable) */ __webpack_exports__["d"] = showElement;
+/* harmony export (immutable) */ __webpack_exports__["c"] = hideMainCategories;
+/* harmony export (immutable) */ __webpack_exports__["a"] = openMainCategories;
 
 
 
 
 
+// import {
+//     logo,
+//     navigationLinks,
+//     linkGalleryCategory,
+//     navMenuImg1,
+//     navMenuImg2,
+//     navMenuImg3
+// } from './animation/animationNavBar';
 
 
 const projects = document.querySelector('.projects'),
@@ -121,29 +127,6 @@ function hideMainContentChildren() {
         if (mainContentChildren[i].classList.contains('visible')) {
             mainContentChildren[i].classList.remove('visible');
         }
-    }
-}
-
-function changeTextColor(color) {
-    __WEBPACK_IMPORTED_MODULE_2__animation_animationNavBar__["a" /* logo */].style.color = color;
-    titleGalleryDivision.forEach(function (elem) {
-        elem.style.color = color;
-    });
-    __WEBPACK_IMPORTED_MODULE_2__animation_animationNavBar__["b" /* navigationLinks */].forEach(function (elem) {
-        elem.style.color = color;
-    });
-    __WEBPACK_IMPORTED_MODULE_2__animation_animationNavBar__["c" /* linkGalleryCategory */].forEach(function (elem) {
-        elem.style.color = color;
-    });
-
-    if (color === 'white') {
-        __WEBPACK_IMPORTED_MODULE_2__animation_animationNavBar__["d" /* navMenuImg1 */].style.backgroundImage = 'url(../image/menu_img_white.png)';
-        __WEBPACK_IMPORTED_MODULE_2__animation_animationNavBar__["e" /* navMenuImg2 */].style.backgroundImage = 'url(../image/menu_img_white.png)';
-        __WEBPACK_IMPORTED_MODULE_2__animation_animationNavBar__["f" /* navMenuImg3 */].style.backgroundImage = 'url(../image/menu_img_white.png)';
-    } else if (color === 'black') {
-        __WEBPACK_IMPORTED_MODULE_2__animation_animationNavBar__["d" /* navMenuImg1 */].style.backgroundImage = 'url(../image/menu_img_black.png)';
-        __WEBPACK_IMPORTED_MODULE_2__animation_animationNavBar__["e" /* navMenuImg2 */].style.backgroundImage = 'url(../image/menu_img_black.png)';
-        __WEBPACK_IMPORTED_MODULE_2__animation_animationNavBar__["f" /* navMenuImg3 */].style.backgroundImage = 'url(../image/menu_img_black.png)';
     }
 }
 
@@ -190,7 +173,7 @@ svgContainer.style.overflow = 'hidden';
 const navigation = document.querySelector('.navigation');
 navigation.style.animation = 'showNavBarMenu 4.5s';
 const logoName = document.querySelector('.logo_name');
-logoName.style.animation = 'appearanceLogo 3s';
+// logoName.style.animation = 'appearanceLogo 3s';
 const gallerySubcategoryDesign = document.querySelector('#design');
 gallerySubcategoryDesign.style.animation = 'moveDesignLink 4.1s';
 const gallerySubcategoryPainting = document.querySelector('#painting');
@@ -211,7 +194,8 @@ derevo.style.animation = 'derevoZoom 2s';
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["g"] = closeNavBarMenu;
+/* harmony export (immutable) */ __webpack_exports__["b"] = closeNavBarMenu;
+/* harmony export (immutable) */ __webpack_exports__["a"] = changeTextColor;
 const menuIcon = document.getElementById('menuIcon'),
       logo = document.querySelector('.logo_name'),
       navigationLinks = document.querySelectorAll('.navLinks'),
@@ -222,17 +206,17 @@ const menuIcon = document.getElementById('menuIcon'),
       navBar = document.querySelector('#navList');
 /* unused harmony export navBar */
 
-/* harmony export (immutable) */ __webpack_exports__["c"] = linkGalleryCategory;
+/* unused harmony export linkGalleryCategory */
 
-/* harmony export (immutable) */ __webpack_exports__["f"] = navMenuImg3;
+/* unused harmony export navMenuImg3 */
 
-/* harmony export (immutable) */ __webpack_exports__["e"] = navMenuImg2;
+/* unused harmony export navMenuImg2 */
 
-/* harmony export (immutable) */ __webpack_exports__["d"] = navMenuImg1;
+/* unused harmony export navMenuImg1 */
 
-/* harmony export (immutable) */ __webpack_exports__["b"] = navigationLinks;
+/* unused harmony export navigationLinks */
 
-/* harmony export (immutable) */ __webpack_exports__["a"] = logo;
+/* unused harmony export logo */
 
 /* unused harmony export menuIcon */
 
@@ -287,6 +271,31 @@ function closeNavBarMenu() {
     }
 }
 
+const titleGalleryDivision = document.querySelectorAll('.titleGalleryDivision');
+
+function changeTextColor(color) {
+    logo.style.color = color;
+    titleGalleryDivision.forEach(function (elem) {
+        elem.style.color = color;
+    });
+    navigationLinks.forEach(function (elem) {
+        elem.style.color = color;
+    });
+    linkGalleryCategory.forEach(function (elem) {
+        elem.style.color = color;
+    });
+
+    if (color === 'white') {
+        navMenuImg1.style.backgroundImage = 'url(../image/menu_img_white.png)';
+        navMenuImg2.style.backgroundImage = 'url(../image/menu_img_white.png)';
+        navMenuImg3.style.backgroundImage = 'url(../image/menu_img_white.png)';
+    } else if (color === 'black') {
+        navMenuImg1.style.backgroundImage = 'url(../image/menu_img_black.png)';
+        navMenuImg2.style.backgroundImage = 'url(../image/menu_img_black.png)';
+        navMenuImg3.style.backgroundImage = 'url(../image/menu_img_black.png)';
+    }
+}
+
 /***/ }),
 /* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -328,7 +337,7 @@ function parseData(loadProjects, path) {
             JSONObject = JSON.parse(xhr.responseText);
 
             loadProjects(JSONObject);
-            console.log(JSONObject.projects.length);
+            // console.log(JSONObject.projects.length)
         }
     };
     xhr.open("GET", path, true);
@@ -344,13 +353,16 @@ function parseData(loadProjects, path) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__paramToSwitchCategoryContents__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__stateConfig__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__loadComponents_mainComponent__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__design_setDesignContent__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__painting_setPaintingContent__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__graphic_setGraphicContent__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__digitalArt_setDigitalArtContent__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__others_setOthersContent__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__3d_set3dContent__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__animation_animationNavBar__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__design_setDesignContent__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__painting_setPaintingContent__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__graphic_setGraphicContent__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__digitalArt_setDigitalArtContent__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__others_setOthersContent__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__3d_set3dContent__ = __webpack_require__(14);
 /* harmony export (immutable) */ __webpack_exports__["a"] = paramToSwitchPageContents;
+
+
 
 
 
@@ -369,55 +381,55 @@ function paramToSwitchPageContents(currentPath) {
     switch (currentPath) {
 
         case '/':
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["a" /* changeTextColor */])('white');
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["b" /* openMainCategories */])();
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["c" /* hideMainContentChildren */])();
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__animation_animationNavBar__["a" /* changeTextColor */])('white');
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["a" /* openMainCategories */])();
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["b" /* hideMainContentChildren */])();
             body.style.backgroundImage = 'url(../image/backgrounds/main_page.png)';
             break;
 
         case '/design':
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["d" /* hideMainCategories */])();
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__loadComponents_mainComponent__["a" /* parseData */])(__WEBPACK_IMPORTED_MODULE_4__design_setDesignContent__["a" /* setDesignContent */], "json_files/design.json");
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["c" /* hideMainCategories */])();
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__loadComponents_mainComponent__["a" /* parseData */])(__WEBPACK_IMPORTED_MODULE_5__design_setDesignContent__["a" /* setDesignContent */], "json_files/design.json");
             __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__paramToSwitchCategoryContents__["a" /* paramToSwitchCategoryContents */])(__WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].design.color, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].design.index, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].design.animation, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].design.bg);
             break;
 
         case '/painting':
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["d" /* hideMainCategories */])();
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["c" /* hideMainCategories */])();
             __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__paramToSwitchCategoryContents__["a" /* paramToSwitchCategoryContents */])(__WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].painting.color, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].painting.index, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].painting.animation, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].painting.bg);
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__loadComponents_mainComponent__["a" /* parseData */])(__WEBPACK_IMPORTED_MODULE_5__painting_setPaintingContent__["a" /* setPaintingContent */], "json_files/painting.json");
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__loadComponents_mainComponent__["a" /* parseData */])(__WEBPACK_IMPORTED_MODULE_6__painting_setPaintingContent__["a" /* setPaintingContent */], "json_files/painting.json");
             break;
 
         case '/graphic':
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["d" /* hideMainCategories */])();
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["c" /* hideMainCategories */])();
             __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__paramToSwitchCategoryContents__["a" /* paramToSwitchCategoryContents */])(__WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].graphic.color, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].graphic.index, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].graphic.animation, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].graphic.bg);
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__loadComponents_mainComponent__["a" /* parseData */])(__WEBPACK_IMPORTED_MODULE_6__graphic_setGraphicContent__["a" /* setGraphicContent */], "json_files/graphic.json");
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__loadComponents_mainComponent__["a" /* parseData */])(__WEBPACK_IMPORTED_MODULE_7__graphic_setGraphicContent__["a" /* setGraphicContent */], "json_files/graphic.json");
             break;
 
         case '/digitalArt':
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["d" /* hideMainCategories */])();
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["c" /* hideMainCategories */])();
             __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__paramToSwitchCategoryContents__["a" /* paramToSwitchCategoryContents */])(__WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].digitalArt.color, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].digitalArt.index, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].digitalArt.animation, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].digitalArt.bg);
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__loadComponents_mainComponent__["a" /* parseData */])(__WEBPACK_IMPORTED_MODULE_7__digitalArt_setDigitalArtContent__["a" /* setDigitalArtContent */], "json_files/digital_art.json");
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__loadComponents_mainComponent__["a" /* parseData */])(__WEBPACK_IMPORTED_MODULE_8__digitalArt_setDigitalArtContent__["a" /* setDigitalArtContent */], "json_files/digital_art.json");
             break;
 
         case '/others':
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["d" /* hideMainCategories */])();
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["c" /* hideMainCategories */])();
             __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__paramToSwitchCategoryContents__["a" /* paramToSwitchCategoryContents */])(__WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].others.color, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].others.index, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].others.animation, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].others.bg);
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__loadComponents_mainComponent__["a" /* parseData */])(__WEBPACK_IMPORTED_MODULE_8__others_setOthersContent__["a" /* setOthersContent */], "json_files/others.json");
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__loadComponents_mainComponent__["a" /* parseData */])(__WEBPACK_IMPORTED_MODULE_9__others_setOthersContent__["a" /* setOthersContent */], "json_files/others.json");
             break;
 
         case '/3d':
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["d" /* hideMainCategories */])();
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["c" /* hideMainCategories */])();
             __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__paramToSwitchCategoryContents__["a" /* paramToSwitchCategoryContents */])(__WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */]._3d.color, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */]._3d.index, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */]._3d.animation, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */]._3d.bg);
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__loadComponents_mainComponent__["a" /* parseData */])(__WEBPACK_IMPORTED_MODULE_9__3d_set3dContent__["a" /* set3dContent */], "json_files/3d.json");
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__loadComponents_mainComponent__["a" /* parseData */])(__WEBPACK_IMPORTED_MODULE_10__3d_set3dContent__["a" /* set3dContent */], "json_files/3d.json");
             break;
 
         case '/aboutMe':
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["d" /* hideMainCategories */])();
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["c" /* hideMainCategories */])();
             __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__paramToSwitchCategoryContents__["b" /* paramToSwitchOtherContent */])(__WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].aboutMe.color, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].aboutMe.index, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].aboutMe.animation, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].aboutMe.bg);
             break;
 
         case '/contacts':
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["d" /* hideMainCategories */])();
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["c" /* hideMainCategories */])();
             __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__paramToSwitchCategoryContents__["b" /* paramToSwitchOtherContent */])(__WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].contacts.color, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].contacts.index, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].contacts.animation, __WEBPACK_IMPORTED_MODULE_2__stateConfig__["a" /* stateConfig */].contacts.bg);
             break;
     }
@@ -560,8 +572,11 @@ const categoriesPage = [categoryPainting, categoryDesign, categoryGraphic, categ
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__main__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__categories__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__animation_animationNavBar__ = __webpack_require__(2);
 /* harmony export (immutable) */ __webpack_exports__["a"] = paramToSwitchCategoryContents;
 /* harmony export (immutable) */ __webpack_exports__["b"] = paramToSwitchOtherContent;
+
+
 
 
 
@@ -569,7 +584,7 @@ const body = document.body;
 
 function paramToSwitchCategoryContents(textColor, categoriesPageIndex, animationName, bodyBgImg) {
 
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["a" /* changeTextColor */])(textColor);
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__animation_animationNavBar__["a" /* changeTextColor */])(textColor);
     __WEBPACK_IMPORTED_MODULE_1__categories__["a" /* categoriesPage */][categoriesPageIndex].classList.add('visible');
     body.style.animation = animationName;
     body.style.backgroundImage = bodyBgImg;
@@ -577,8 +592,8 @@ function paramToSwitchCategoryContents(textColor, categoriesPageIndex, animation
 
 function paramToSwitchOtherContent(textColor, categoriesPageIndex, animationName, bodyBgImg) {
 
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["a" /* changeTextColor */])(textColor);
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["c" /* hideMainContentChildren */])();
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__animation_animationNavBar__["a" /* changeTextColor */])(textColor);
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["b" /* hideMainContentChildren */])();
     __WEBPACK_IMPORTED_MODULE_1__categories__["a" /* categoriesPage */][categoriesPageIndex].classList.add('visible');
     body.style.animation = animationName;
     body.style.backgroundImage = bodyBgImg;
@@ -592,10 +607,10 @@ function paramToSwitchOtherContent(textColor, categoriesPageIndex, animationName
 
 const stateConfig = {
     'design': {
-        color: 'white',
+        color: 'black',
         index: 1,
         animation: 'designBg 0.2s',
-        bg: 'url(../image/backgrounds/gallery_design.png)'
+        bg: 'url(../image/backgrounds/gallery_design.jpg)'
     },
     'painting': {
         color: 'white',
@@ -664,14 +679,15 @@ const stateConfig = {
 
 
 const projectNavigation = {
-
     open(cols, projectCol, projects, project) {
+        const body = document.body;
 
         onceCol(cols, projectCol);
+        console.log(window.scrollTop);
 
-        findImgs(projects, 'prevImg', __WEBPACK_IMPORTED_MODULE_0__main__["f" /* hideElement */]);
+        findImgs(projects, 'prevImg', __WEBPACK_IMPORTED_MODULE_0__main__["e" /* hideElement */]);
 
-        findImgs(project, 'bigImg', __WEBPACK_IMPORTED_MODULE_0__main__["e" /* showElement */]);
+        findImgs(project, 'bigImg', __WEBPACK_IMPORTED_MODULE_0__main__["d" /* showElement */]);
     },
 
     close(cols, projectCol, projects, project) {
@@ -681,9 +697,9 @@ const projectNavigation = {
 
         threeCol(cols);
 
-        findImgs(projects, 'prevImg', __WEBPACK_IMPORTED_MODULE_0__main__["e" /* showElement */]);
+        findImgs(projects, 'prevImg', __WEBPACK_IMPORTED_MODULE_0__main__["d" /* showElement */]);
 
-        findImgs(project, 'bigImg', __WEBPACK_IMPORTED_MODULE_0__main__["f" /* hideElement */]);
+        findImgs(project, 'bigImg', __WEBPACK_IMPORTED_MODULE_0__main__["e" /* hideElement */]);
     }
 };
 /* unused harmony export projectNavigation */
@@ -697,8 +713,9 @@ mainContent.addEventListener('click', function (event) {
           //have class 'smallImg' or 'bigImg'
     project = targetImg.parentNode,
           prevImg = project.querySelector('.prevImg'),
-          closeButtonPrevImg = prevImg.querySelector('.closeButton'),
-          projectId = project.id,
+
+    // closeButtonPrevImg = prevImg.querySelector('.closeButton'),
+    projectId = project.id,
           projectCol = project.parentNode,
           projects = projectCol.parentNode,
           data = window.location.pathname,
@@ -706,11 +723,6 @@ mainContent.addEventListener('click', function (event) {
 
     if (targetImg.classList.contains('prevImg')) {
         const img = targetImg.firstChild;
-        // const targetOpenButton = targetImg.querySelector('.openButton');
-
-        img.style.filter = '';
-
-        // img.style.width = '100%';
 
         projectNavigation.open(cols, projectCol, projects, project);
 
@@ -725,7 +737,7 @@ mainContent.addEventListener('click', function (event) {
         const closeButtons = project.getElementsByClassName('closeButton');
         for (let i = 0; i < closeButtons.length; i++) {
             const button = closeButtons[i];
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["e" /* showElement */])(button);
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["d" /* showElement */])(button);
         }
     } else if (targetImg.classList.contains('bigImg')) {
 
@@ -741,18 +753,21 @@ mainContent.addEventListener('mouseover', function (event) {
 
     if (element.classList.contains('prevImg')) {
         const img = element.firstChild;
-        img.style.opacity = '1';
+        // img.style.opacity = '1';
+        element.style.border = '2px solid black';
 
-        console.log('prev Img');
-        element.style.cursor = "url(../image/open.png),auto";
+        // console.log('prev Img')
+        // element.style.cursor = "url(../image/open.png),auto";
 
         // const openButton = element.querySelector('.openButton');
         // openButton.style.display = 'block';
         // showElement(openButton);
     } else if (element.classList.contains('bigImg')) {
         const img = element.firstChild;
-        console.log('big Img');
-        element.style.cursor = "url(../image/close.png),auto";
+        // console.log('big Img')
+        element.style.border = '2px solid black';
+
+        // element.style.cursor = "url(../image/close.png),auto";
     }
 });
 
@@ -761,13 +776,14 @@ mainContent.addEventListener('mouseout', function (event) {
     const img = element.firstChild;
 
     if (element.classList.contains('prevImg')) {
-        img.style.opacity = '0.6';
-
-        element.style.cursor = "auto";
+        // img.style.opacity = '0.6';
+        element.style.border = '2px solid white';
+        // element.style.cursor = "auto";
     } else if (element.classList.contains('bigImg')) {
-        console.log('move out big Img');
-        img.style.filter = '';
-        element.style.cursor = "auto";
+        // console.log('move out big Img');
+        // img.style.filter = '';
+        // element.style.cursor = "auto";
+        element.style.border = '2px solid white';
     }
 });
 
@@ -1023,7 +1039,7 @@ function setPaintingContent(JSONObject) {
 
 if (history.state === null && window.location.pathname === '/') {
     history.pushState('home', null, '/');
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["c" /* hideMainContentChildren */])();
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__main__["b" /* hideMainContentChildren */])();
 }
 
 document.querySelector('body').addEventListener('click', function (event) {
@@ -1066,7 +1082,7 @@ const eventCheckStateChanges = function (type) {
 
 window.onpopstate = function (event) {
     const currentPath = window.location.pathname;
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__animation_animationNavBar__["g" /* closeNavBarMenu */])();
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__animation_animationNavBar__["b" /* closeNavBarMenu */])();
 
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__paramToSwitchPageContents__["a" /* paramToSwitchPageContents */])(currentPath);
 };
@@ -1077,13 +1093,13 @@ history.replaceState = eventCheckStateChanges('replaceState');
 
 window.addEventListener('pushState', function (e) {
     const currentPath = window.location.pathname;
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__animation_animationNavBar__["g" /* closeNavBarMenu */])();
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__animation_animationNavBar__["b" /* closeNavBarMenu */])();
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__paramToSwitchPageContents__["a" /* paramToSwitchPageContents */])(currentPath);
 });
 
 window.addEventListener('replaceState', function (e) {
     const currentPath = window.location.pathname;
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__animation_animationNavBar__["g" /* closeNavBarMenu */])();
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__animation_animationNavBar__["b" /* closeNavBarMenu */])();
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__paramToSwitchPageContents__["a" /* paramToSwitchPageContents */])(currentPath);
 });
 
@@ -1101,7 +1117,7 @@ window.addEventListener('replaceState', function (e) {
 
 window.onload = function () {
     const currentPath = window.location.pathname;
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__animation_animationNavBar__["g" /* closeNavBarMenu */])();
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__animation_animationNavBar__["b" /* closeNavBarMenu */])();
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__paramToSwitchPageContents__["a" /* paramToSwitchPageContents */])(currentPath);
 
     if (window.location.hash !== '') {
@@ -1115,12 +1131,12 @@ window.onload = function () {
         console.log(targetImg);
 
         projectNavigation.open(cols, targetCol, projects, project, targetImg);
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__main__["e" /* showElement */])(targetImg);
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__main__["d" /* showElement */])(targetImg);
 
         const closeButtons = project.getElementsByClassName('closeButton');
         for (let i = 0; i < closeButtons.length; i++) {
             const button = closeButtons[i];
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__main__["e" /* showElement */])(button);
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__main__["d" /* showElement */])(button);
         }
         const img = targetImg.firstChild;
 

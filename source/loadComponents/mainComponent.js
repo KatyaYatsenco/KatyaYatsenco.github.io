@@ -29,7 +29,7 @@ export function parseData(loadProjects, path) {
             JSONObject = JSON.parse(xhr.responseText);
 
             loadProjects(JSONObject);
-            console.log(JSONObject.projects.length)
+            // console.log(JSONObject.projects.length)
         }
     };
     xhr.open("GET", path, true);

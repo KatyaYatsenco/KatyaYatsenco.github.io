@@ -1,10 +1,10 @@
 
 export const stateConfig = {
     'design': {
-        color: 'white',
+        color: 'black',
         index: 1,
         animation: 'designBg 0.2s',
-        bg: 'url(../image/backgrounds/gallery_design.png)'
+        bg: 'url(../image/backgrounds/gallery_design.jpg)'
     },
     'painting': {
         color: 'white',

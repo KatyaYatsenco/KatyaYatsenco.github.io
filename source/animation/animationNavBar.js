@@ -61,3 +61,29 @@ export function closeNavBarMenu() {
         menuIcon.click();
     }
 }
+
+const titleGalleryDivision = document.querySelectorAll('.titleGalleryDivision');
+
+export function changeTextColor(color) {
+    logo.style.color = color;
+    titleGalleryDivision.forEach(function (elem) {
+        elem.style.color = color;
+    });
+    navigationLinks.forEach(function (elem) {
+        elem.style.color = color;
+    });
+    linkGalleryCategory.forEach(function (elem) {
+        elem.style.color = color;
+    });
+
+    if (color === 'white') {
+        navMenuImg1.style.backgroundImage = 'url(../image/menu_img_white.png)';
+        navMenuImg2.style.backgroundImage = 'url(../image/menu_img_white.png)';
+        navMenuImg3.style.backgroundImage = 'url(../image/menu_img_white.png)';
+    }
+    else if (color === 'black') {
+        navMenuImg1.style.backgroundImage = 'url(../image/menu_img_black.png)';
+        navMenuImg2.style.backgroundImage = 'url(../image/menu_img_black.png)';
+        navMenuImg3.style.backgroundImage = 'url(../image/menu_img_black.png)';
+    }
+}

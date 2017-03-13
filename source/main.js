@@ -6,14 +6,14 @@
 import  './loadComponents/mainComponent';
 import './design/setDesignContent';
 
-import {
-    logo,
-    navigationLinks,
-    linkGalleryCategory,
-    navMenuImg1,
-    navMenuImg2,
-    navMenuImg3
-} from './animation/animationNavBar';
+// import {
+//     logo,
+//     navigationLinks,
+//     linkGalleryCategory,
+//     navMenuImg1,
+//     navMenuImg2,
+//     navMenuImg3
+// } from './animation/animationNavBar';
 
 
 const projects = document.querySelector('.projects'),
@@ -33,29 +33,6 @@ export function hideMainContentChildren() {
     }
 }
 
-export function changeTextColor(color) {
-    logo.style.color = color;
-    titleGalleryDivision.forEach(function (elem) {
-        elem.style.color = color;
-    });
-    navigationLinks.forEach(function (elem) {
-        elem.style.color = color;
-    });
-    linkGalleryCategory.forEach(function (elem) {
-        elem.style.color = color;
-    });
-
-    if (color === 'white') {
-        navMenuImg1.style.backgroundImage = 'url(../image/menu_img_white.png)';
-        navMenuImg2.style.backgroundImage = 'url(../image/menu_img_white.png)';
-        navMenuImg3.style.backgroundImage = 'url(../image/menu_img_white.png)';
-    }
-    else if (color === 'black') {
-        navMenuImg1.style.backgroundImage = 'url(../image/menu_img_black.png)';
-        navMenuImg2.style.backgroundImage = 'url(../image/menu_img_black.png)';
-        navMenuImg3.style.backgroundImage = 'url(../image/menu_img_black.png)';
-    }
-}
 
 
 export function hideElement(element) {
@@ -108,7 +85,7 @@ svgContainer.style.overflow = 'hidden';
 const navigation = document.querySelector('.navigation');
 navigation.style.animation = 'showNavBarMenu 4.5s';
 const logoName = document.querySelector('.logo_name');
-logoName.style.animation = 'appearanceLogo 3s';
+// logoName.style.animation = 'appearanceLogo 3s';
 const gallerySubcategoryDesign = document.querySelector('#design');
 gallerySubcategoryDesign.style.animation = 'moveDesignLink 4.1s';
 const gallerySubcategoryPainting = document.querySelector('#painting');

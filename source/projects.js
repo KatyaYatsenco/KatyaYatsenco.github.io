@@ -2,7 +2,6 @@ import {showElement, hideElement} from './main';
 
 
 export const projectNavigation = {
-
     open(cols, projectCol, projects, project) {
 
         onceCol(cols, projectCol);
@@ -15,7 +14,6 @@ export const projectNavigation = {
     close(cols, projectCol, projects, project) {
 
         const img = project.children[0].firstChild;
-        // img.style.width = '100%';
 
         threeCol(cols);
 
@@ -32,7 +30,6 @@ mainContent.addEventListener('click', function (event) {
         targetImg = targetElement.parentNode, //have class 'smallImg' or 'bigImg'
         project = targetImg.parentNode,
         prevImg = project.querySelector('.prevImg'),
-        closeButtonPrevImg = prevImg.querySelector('.closeButton'),
         projectId = project.id,
         projectCol = project.parentNode,
         projects = projectCol.parentNode,
@@ -43,19 +40,8 @@ mainContent.addEventListener('click', function (event) {
 
     if (targetImg.classList.contains('prevImg')) {
         const img = targetImg.firstChild;
-        // const targetOpenButton = targetImg.querySelector('.openButton');
-
-        img.style.filter = '';
-
-        // img.style.width = '100%';
 
         projectNavigation.open(cols, projectCol, projects, project);
-
-        const targetPrevImg = project.children[0];
-        // showElement(targetPrevImg);
-
-        // targetOpenButton.style.display = 'none';
-        // hideElement(targetOpenButton);
 
         history.pushState('project' + projectId, null, '#' + projectId); // Add window location hash with number this project
 
@@ -69,8 +55,6 @@ mainContent.addEventListener('click', function (event) {
 
         projectNavigation.close(cols, projectCol, projects, project, targetImg);
         history.replaceState(data.slice(1), null, data);
-
-        // hideElement(closeButtonPrevImg);
     }
 });
 
@@ -80,20 +64,11 @@ mainContent.addEventListener('mouseover', function (event) {
 
     if (element.classList.contains('prevImg')) {
         const img = element.firstChild;
-        img.style.opacity = '1';
-
-        console.log('prev Img')
-       element.style.cursor = "url(../image/open.png),auto";
-
-        // const openButton = element.querySelector('.openButton');
-        // openButton.style.display = 'block';
-        // showElement(openButton);
+        element.style.border = '2px solid black';
     }
-    else if(element.classList.contains('bigImg')){
+    else if (element.classList.contains('bigImg')) {
         const img = element.firstChild;
-        console.log('big Img')
-        element.style.cursor = "url(../image/close.png),auto";
-
+        element.style.border = '2px solid black';
     }
 });
 
@@ -102,16 +77,10 @@ mainContent.addEventListener('mouseout', function (event) {
     const img = element.firstChild;
 
     if (element.classList.contains('prevImg')) {
-        img.style.opacity = '0.6';
-
-        element.style.cursor = "auto";
-
+        element.style.border = '2px solid white';
     }
-    else if(element.classList.contains('bigImg')){
-        console.log('move out big Img');
-        img.style.filter = '';
-        element.style.cursor = "auto";
-
+    else if (element.classList.contains('bigImg')) {
+        element.style.border = '2px solid white';
     }
 });
 
