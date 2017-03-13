@@ -59,30 +59,7 @@ mainContent.addEventListener('click', function (event) {
 });
 
 
-mainContent.addEventListener('mouseover', function (event) {
-    const element = event.target.parentNode;
 
-    if (element.classList.contains('prevImg')) {
-        const img = element.firstChild;
-        element.style.border = '2px solid black';
-    }
-    else if (element.classList.contains('bigImg')) {
-        const img = element.firstChild;
-        element.style.border = '2px solid black';
-    }
-});
-
-mainContent.addEventListener('mouseout', function (event) {
-    const element = event.target.parentNode;
-    const img = element.firstChild;
-
-    if (element.classList.contains('prevImg')) {
-        element.style.border = '2px solid white';
-    }
-    else if (element.classList.contains('bigImg')) {
-        element.style.border = '2px solid white';
-    }
-});
 
 
 function onceCol(cols, projectCol) {
