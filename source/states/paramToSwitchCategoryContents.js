@@ -1,7 +1,7 @@
 import {hideMainContentChildren} from '../main';
 import {categoriesPage} from './categories';
 
-import{changeTextColor} from '../animation/animationNavBar';
+import{changeTextColor} from '../animation/navBar/animationNavBar';
 
 
 const body = document.body;

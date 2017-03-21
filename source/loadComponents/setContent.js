@@ -7,7 +7,7 @@ export function setContent(JSONObject, projects) {
         const project = projects[i];
         if (!project.children.length) {
 
-            injectImages(JSONObject.projects[i], project);
+            injectImages(JSONObject[i], project);
         }
     }
 }

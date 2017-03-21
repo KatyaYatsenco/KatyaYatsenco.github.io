@@ -1,2 +1,2 @@
-import  './animationNavBar';
-import  './animationOnLoadPage';
+import  './navBar/animationNavBar';
+import  './onLoadPage/derevoColor';

@@ -1,19 +1,7 @@
 'use strict';
-
-
-
-
+import './animation/index';
 import  './loadComponents/mainComponent';
 import './design/setDesignContent';
-
-// import {
-//     logo,
-//     navigationLinks,
-//     linkGalleryCategory,
-//     navMenuImg1,
-//     navMenuImg2,
-//     navMenuImg3
-// } from './animation/animationNavBar';
 
 
 const projects = document.querySelector('.projects'),
@@ -32,7 +20,6 @@ export function hideMainContentChildren() {
         }
     }
 }
-
 
 
 export function hideElement(element) {

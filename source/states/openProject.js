@@ -1,9 +1,16 @@
-import {closeNavBarMenu} from '../animation/animationNavBar';
+import {closeNavBarMenu} from '../animation/navBar/animationNavBar';
 import {paramToSwitchPageContents} from './paramToSwitchPageContents';
 import {showElement} from '../main';
+import {projectNavigation} from '../projects';
+
+import {epilepsy} from '../animation/onLoadPage/epilepsy';
+import {stopEpilepsy} from '../animation/onLoadPage/stopEpilepsy'
+
 
 
 window.onload = function () {
+    epilepsy;
+    stopEpilepsy(2000);
     const currentPath = window.location.pathname;
     closeNavBarMenu();
     paramToSwitchPageContents(currentPath);
@@ -20,11 +27,6 @@ window.onload = function () {
         projectNavigation.open(cols, targetCol, projects, project, targetImg);
         showElement(targetImg);
 
-        const closeButtons = project.getElementsByClassName('closeButton');
-        for (let i = 0; i < closeButtons.length; i++) {
-            const button = closeButtons[i];
-            showElement(button);
-        }
         const img = targetImg.firstChild;
 
         img.style.width = '97%';

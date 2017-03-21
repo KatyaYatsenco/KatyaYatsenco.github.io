@@ -1,9 +1,10 @@
-import {openMainCategories,hideMainContentChildren,hideMainCategories} from '../main';
-import {paramToSwitchCategoryContents,paramToSwitchOtherContent} from './paramToSwitchCategoryContents';
+import {openMainCategories, hideMainContentChildren, hideMainCategories} from '../main';
+import {paramToSwitchCategoryContents, paramToSwitchOtherContent} from './paramToSwitchCategoryContents';
 import {stateConfig} from './stateConfig';
 import {parseData} from '../loadComponents/mainComponent';
 
-import{changeTextColor} from '../animation/animationNavBar';
+
+import{changeTextColor} from '../animation/navBar/animationNavBar';
 
 import {setDesignContent} from '../design/setDesignContent';
 import {setPaintingContent} from '../painting/setPaintingContent';
@@ -27,7 +28,7 @@ export function paramToSwitchPageContents(currentPath) {
 
         case '/design':
             hideMainCategories();
-            parseData(setDesignContent, "json_files/design.json");
+            parseData('small', setDesignContent, "json_files/design.json");
             paramToSwitchCategoryContents(stateConfig.design.color, stateConfig.design.index, stateConfig.design.animation, stateConfig.design.bg);
             break;
 

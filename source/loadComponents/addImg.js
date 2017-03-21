@@ -1,6 +1,3 @@
-import {addCloseButton, addOpenButton} from './buttons';
-
-
 export function addImg(className, elementValue, parent) { // Function create img covers
 
     const img = document.createElement('IMG');
@@ -18,12 +15,7 @@ export function addImg(className, elementValue, parent) { // Function create img
             break;
     }
 
-    // containerForImg.classList.add(className);
-
     containerForImg.appendChild(img);
 
     parent.appendChild(containerForImg);
-    //
-    // addCloseButton(parent);
-    // addOpenButton(parent);
 }

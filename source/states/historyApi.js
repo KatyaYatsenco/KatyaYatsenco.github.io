@@ -1,11 +1,16 @@
 import {hideMainContentChildren} from '../main';
-import {closeNavBarMenu} from '../animation/animationNavBar';
+import {closeNavBarMenu} from '../animation/navBar/animationNavBar';
 import {paramToSwitchPageContents} from './paramToSwitchPageContents';
+
+import {epilepsy} from '../animation/onLoadPage/epilepsy';
+import {stopEpilepsy} from '../animation/onLoadPage/stopEpilepsy';
 
 
 if (history.state === null && window.location.pathname === '/') {
     history.pushState('home', null, '/');
     hideMainContentChildren();
+    epilepsy;
+
 }
 
 document.querySelector('body').addEventListener('click', function (event) {
@@ -52,6 +57,7 @@ window.onpopstate = function (event) {
     closeNavBarMenu();
 
     paramToSwitchPageContents(currentPath);
+
 };
 
 history.pushState = eventCheckStateChanges('pushState');

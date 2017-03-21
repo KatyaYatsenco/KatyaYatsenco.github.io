@@ -6,6 +6,6 @@ export function setGraphicContent(JSONObject) {
     const categoryGraphic = document.getElementById('categoryGraphic'),
         projectsNode = categoryGraphic.querySelectorAll('.project');
 
-    setContent(JSONObject, projectsNode);
+        setContent(JSONObject, projectsNode);
 
 }

@@ -1,7 +1,10 @@
 import {showElement, hideElement} from './main';
 
+import {parseData} from './loadComponents/mainComponent';
+import {setDesignContent} from './design/setDesignContent';
 
 export const projectNavigation = {
+
     open(cols, projectCol, projects, project) {
 
         onceCol(cols, projectCol);
@@ -29,8 +32,8 @@ mainContent.addEventListener('click', function (event) {
     const targetElement = event.target,
         targetImg = targetElement.parentNode, //have class 'smallImg' or 'bigImg'
         project = targetImg.parentNode,
-        prevImg = project.querySelector('.prevImg'),
         projectId = project.id,
+        prevImg = project.querySelector('.prevImg'),
         projectCol = project.parentNode,
         projects = projectCol.parentNode,
         data = window.location.pathname,
@@ -41,15 +44,17 @@ mainContent.addEventListener('click', function (event) {
     if (targetImg.classList.contains('prevImg')) {
         const img = targetImg.firstChild;
 
-        projectNavigation.open(cols, projectCol, projects, project);
+        const projectParameters = {
+            cols: cols,
+            projectCol: projectCol,
+            targetProjects: projects
+        };
+
+        parseData('big', setDesignContent, "json_files/design.json", projectParameters);
+
 
         history.pushState('project' + projectId, null, '#' + projectId); // Add window location hash with number this project
 
-        const closeButtons = project.getElementsByClassName('closeButton');
-        for (let i = 0; i < closeButtons.length; i++) {
-            const button = closeButtons[i];
-            showElement(button);
-        }
 
     } else if (targetImg.classList.contains('bigImg')) {
 
@@ -57,9 +62,6 @@ mainContent.addEventListener('click', function (event) {
         history.replaceState(data.slice(1), null, data);
     }
 });
-
-
-
 
 
 function onceCol(cols, projectCol) {
@@ -90,21 +92,14 @@ function threeCol(cols) {
 }
 
 function findImgs(collectionProjectsTargetCategory, typeImg, operation) {
-
-    const desiredTypeImgs = collectionProjectsTargetCategory.getElementsByClassName(typeImg); //Collection
-    desiredTypeImgs.prototype = Object.create(Array.prototype); //Add Array prototype
+    const desiredTypeImgs = collectionProjectsTargetCategory.querySelectorAll('.' + typeImg);
 
     for (let i = 0; i < desiredTypeImgs.length; i++) {
         const desireTypeImg = desiredTypeImgs[i];
         operation(desireTypeImg);
     }
+
 }
 
 
-function closeButton(project, activity) {
-    const buttons = project.querySelectorAll('.closeButton');
-    buttons.forEach(function (elem) {
-        activity(elem);
-    })
-}
 
