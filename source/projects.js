@@ -53,7 +53,7 @@ mainContent.addEventListener('click', function (event) {
         parseData('big', setDesignContent, "json_files/design.json", projectParameters);
 
 
-        history.pushState('project' + projectId, null, '#' + projectId); // Add window location hash with number this project
+        location.hash = projectId; // Add window location hash with number this project
 
 
     } else if (targetImg.classList.contains('bigImg')) {

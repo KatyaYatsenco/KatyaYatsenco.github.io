@@ -2,6 +2,9 @@ import {hideMainContentChildren} from '../main';
 import {closeNavBarMenu} from '../animation/navBar/animationNavBar';
 import {paramToSwitchPageContents} from './paramToSwitchPageContents';
 
+import {projectNavigation} from '../projects';
+
+
 import {epilepsy} from '../animation/onLoadPage/epilepsy';
 import {stopEpilepsy} from '../animation/onLoadPage/stopEpilepsy';
 
@@ -62,9 +65,6 @@ window.onpopstate = function (event) {
 
 history.pushState = eventCheckStateChanges('pushState');
 
-history.replaceState = eventCheckStateChanges('replaceState');
-
-
 window.addEventListener('pushState', function (e) {
     const currentPath = window.location.pathname;
     closeNavBarMenu();
@@ -73,8 +73,4 @@ window.addEventListener('pushState', function (e) {
 });
 
 
-window.addEventListener('replaceState', function (e) {
-    const currentPath = window.location.pathname;
-    closeNavBarMenu();
-    paramToSwitchPageContents(currentPath);
-});
+
