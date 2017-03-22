@@ -2,8 +2,8 @@
   "projects": [
     {
       "name": "project",
-      "id": 5.1,
-      "small": "../image/others_gallery/1/prev.jpg",
+      "id": "5.1",
+      "small": "../image/others_gallery/1/0.1.jpg",
       "big": [
         "../image/others_gallery/1/1.1.jpg",
         "../image/others_gallery/1/1.2.gif"
@@ -11,9 +11,10 @@
     },
     {
       "name": "project",
-      "id": 5.2,
+      "id": "5.2",
       "small": "../image/others_gallery/2/prev.jpg",
       "big": [
+        "../image/others_gallery/2/prev.jpg"
       ]
     }
   ]

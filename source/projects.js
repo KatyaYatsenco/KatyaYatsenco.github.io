@@ -3,7 +3,6 @@ import {showElement, hideElement} from './main';
 import {parametersToParseData} from './states/parametersToParseData';
 
 
-
 export const projectNavigation = {
 
     open(cols, projectCol, projects, project) {
@@ -31,18 +30,16 @@ const mainContent = document.querySelector('.mainContent');
 
 mainContent.addEventListener('click', function (event) {
     const targetElement = event.target,
-        targetImg = targetElement.parentNode, //have class 'smallImg' or 'bigImg'
-        project = targetImg.parentNode,
-        projectId = project.id,
-        prevImg = project.querySelector('.prevImg'),
-        projectCol = project.parentNode,
-        projects = projectCol.parentNode,
-        data = window.location.pathname,
-
-        cols = projects.querySelectorAll('.projectsCol');
+        targetImg = targetElement.parentNode; //have class 'smallImg' or 'bigImg'
 
 
     if (targetImg.classList.contains('prevImg')) {
+        const project = targetImg.parentNode,
+            projectId = project.id,
+            prevImg = project.querySelector('.prevImg'),
+            projectCol = project.parentNode,
+            projects = projectCol.parentNode,
+            cols = projects.querySelectorAll('.projectsCol');
 // debugger
         const projectParameters = {
             cols: cols,
@@ -56,6 +53,12 @@ mainContent.addEventListener('click', function (event) {
         location.hash = projectId; // Add window location hash with number this project
 
     } else if (targetImg.classList.contains('bigImg')) {
+        const project = targetImg.parentNode,
+            prevImg = project.querySelector('.prevImg'),
+            projectCol = project.parentNode,
+            projects = projectCol.parentNode,
+            cols = projects.querySelectorAll('.projectsCol'),
+            data = window.location.pathname;
 
         projectNavigation.close(cols, projectCol, projects, project, targetImg);
         history.replaceState(data.slice(1), null, data);

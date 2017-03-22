@@ -35,25 +35,25 @@ export function paramToSwitchPageContents(currentPath) {
         case '/painting':
             hideMainCategories();
             paramToSwitchCategoryContents(stateConfig.painting.color, stateConfig.painting.index, stateConfig.painting.animation, stateConfig.painting.bg);
-            parseData(setPaintingContent, "json_files/painting.json");
+            parseData('small', setPaintingContent, "json_files/painting.json");
             break;
 
         case '/graphic':
             hideMainCategories();
             paramToSwitchCategoryContents(stateConfig.graphic.color, stateConfig.graphic.index, stateConfig.graphic.animation, stateConfig.graphic.bg);
-            parseData(setGraphicContent, "json_files/graphic.json");
+            parseData('small', setGraphicContent, "json_files/graphic.json");
             break;
 
         case  '/digitalArt':
             hideMainCategories();
             paramToSwitchCategoryContents(stateConfig.digitalArt.color, stateConfig.digitalArt.index, stateConfig.digitalArt.animation, stateConfig.digitalArt.bg);
-            parseData(setDigitalArtContent, "json_files/digital_art.json");
+            parseData('small', setDigitalArtContent, "json_files/digital_art.json");
             break;
 
         case  '/others':
             hideMainCategories();
             paramToSwitchCategoryContents(stateConfig.others.color, stateConfig.others.index, stateConfig.others.animation, stateConfig.others.bg);
-            parseData(setOthersContent, "json_files/others.json");
+            parseData('small', setOthersContent, "json_files/others.json");
             break;
 
         case  '/3d':

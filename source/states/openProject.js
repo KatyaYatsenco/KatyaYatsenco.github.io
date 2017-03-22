@@ -3,6 +3,7 @@ import {paramToSwitchPageContents} from './paramToSwitchPageContents';
 import {showElement} from '../main';
 import {projectNavigation} from '../projects';
 
+
 import {parametersToParseData} from './parametersToParseData';
 
 // import {epilepsy} from '../animation/onLoadPage/epilepsy';
@@ -13,39 +14,79 @@ window.onload = function () {
 
     // epilepsy;
     stopEpilepsy(3500);
-    const currentPath = window.location.pathname;
     closeNavBarMenu();
 
-    parametersToParseData(currentPath, 'small');
+    parametersToParseData(window.location.pathname, 'small');
 
 
     if (location.hash === '') {
-        paramToSwitchPageContents(currentPath);
+        paramToSwitchPageContents(window.location.pathname);
     }
 
     else if (location.hash !== '') {
-        paramToSwitchPageContents(currentPath);
+        // debugger
+        paramToSwitchPageContents(window.location.pathname);
+
         stopEpilepsy(0);
+        const projectNumber = window.location.hash.slice(3);
 
-        const hash = window.location.hash.slice(3);
-        const allProjects = document.querySelector('.' + 'projects'),
-            project = allProjects.getElementsByClassName('project'),
-            targetProject = project.item(hash - 1);
+        switch (window.location.pathname) {
 
-        const projectCol = targetProject.parentNode,
-            projects = projectCol.parentNode,
-            cols = projects.querySelectorAll('.projectsCol');
+            case "/design":
+                const categoryDesign = document.getElementById('categoryDesign');
+                const designProjects = categoryDesign.querySelector('.projects');
+                openProjectByHash(projectNumber, designProjects);
+                break;
 
-        const projectParameters = {
-            cols: cols,
-            projectCol: projectCol,
-            projects: projects
-        };
+            case "/3d":
+                const category3d = document.getElementById('category3d');
+                const _3dProjects = category3d.querySelector('.projects');
+                openProjectByHash(projectNumber, _3dProjects);
+                break;
 
-        parametersToParseData(location.pathname, 'big', projectParameters)
+            case "/digitalArt":
+                const categoryDigitalArt = document.getElementById('categoryDigitalArt');
+                const digitalArtProjects = categoryDigitalArt.querySelector('.projects');
+                openProjectByHash(projectNumber, digitalArtProjects);
+
+                break;
+
+            case "/painting":
+                const categoryPainting = document.getElementById('categoryPainting');
+                const paintingProjects = categoryPainting.querySelector('.projects');
+                openProjectByHash(projectNumber, paintingProjects);
+                break;
+
+            case "/others":
+                const categoryOthers = document.getElementById('categoryOthers');
+                const othersProjects = categoryOthers.querySelector('.projects');
+                openProjectByHash(projectNumber, othersProjects);
+                break;
+
+            case "/graphic":
+                const categoryGraphic = document.getElementById('categoryGraphic');
+                const graphicProjects = categoryGraphic.querySelector('.projects');
+                openProjectByHash(projectNumber, graphicProjects);
+                break;
+        }
 
     }
 };
 
 
+function openProjectByHash(projectNumber, allProjects) {
+    const project = allProjects.getElementsByClassName('project'),
+        targetProject = project.item(projectNumber - 1);
 
+    const projectCol = targetProject.parentNode,
+        projects = projectCol.parentNode,
+        cols = projects.querySelectorAll('.projectsCol');
+
+    const projectParameters = {
+        cols: cols,
+        projectCol: projectCol,
+        projects: projects
+    };
+
+    parametersToParseData(location.pathname, 'big', projectParameters)
+}

@@ -2,7 +2,7 @@
   "projects": [
     {
       "name": "project",
-      "id": 2.1,
+      "id": "2.1",
       "small": "../image/painting_gallery/1/prev.jpg",
       "big": [
         "../image/painting_gallery/1/1.1.jpg",
@@ -15,7 +15,7 @@
     },
     {
       "name": "project",
-      "id": 2.2,
+      "id": "2.2",
       "small": "../image/painting_gallery/2/prev.jpg",
       "big": [
         "../image/painting_gallery/2/2.1.jpg",
@@ -27,7 +27,7 @@
     },
     {
       "name": "project",
-      "id": 2.3,
+      "id": "2.3",
       "small": "../image/painting_gallery/3/prev.jpg",
       "big": [
         "../image/painting_gallery/3/3.1.jpg",

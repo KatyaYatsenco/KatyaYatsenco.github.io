@@ -2,7 +2,7 @@
   "projects": [
     {
       "name": "project",
-      "id": 4.1,
+      "id": "4.1",
       "small": "../image/digital_art_gallery/1/prev.jpg",
       "big": [
         "../image/digital_art_gallery/1/1.1.jpg",
@@ -13,7 +13,7 @@
     },
     {
       "name": "project",
-      "id": 4.2,
+      "id": "4.2",
       "small": "../image/digital_art_gallery/2/prev.jpg",
       "big": [
         "../image/digital_art_gallery/2/2.1.jpg",
@@ -23,7 +23,7 @@
     },
     {
       "name": "project",
-      "id": 4.3,
+      "id": "4.3",
       "small": "../image/digital_art_gallery/3/prev.jpg",
       "big": [
         "../image/digital_art_gallery/3/3.1.jpg"
@@ -31,7 +31,7 @@
     },
     {
       "name": "project",
-      "id": 4.4,
+      "id": "4.4",
       "small": "../image/digital_art_gallery/4/prev.jpg",
       "big": [
         "../image/digital_art_gallery/4/4.1.jpg"
@@ -39,7 +39,7 @@
     },
     {
       "name": "project",
-      "id": 4.5,
+      "id": "4.5",
       "small": "../image/digital_art_gallery/5/prev.png",
       "big": [
         "../image/digital_art_gallery/5/5.1.png"
@@ -47,7 +47,7 @@
     },
     {
       "name": "project",
-      "id": 4.6,
+      "id": "4.6",
       "small": "../image/digital_art_gallery/6/prev.jpg",
       "big": [
         "../image/digital_art_gallery/6/6.1.jpg"

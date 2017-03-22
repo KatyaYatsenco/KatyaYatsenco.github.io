@@ -29,3 +29,4 @@ export {
     categoryContacts,
     categoriesPage
 };
+
