@@ -59,7 +59,7 @@ export function paramToSwitchPageContents(currentPath) {
         case  '/3d':
             hideMainCategories();
             paramToSwitchCategoryContents(stateConfig._3d.color, stateConfig._3d.index, stateConfig._3d.animation, stateConfig._3d.bg);
-            parseData(set3dContent, "json_files/3d.json");
+            parseData('small', set3dContent, "json_files/3d.json");
             break;
 
         case  '/aboutMe':

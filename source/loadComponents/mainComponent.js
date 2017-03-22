@@ -48,6 +48,7 @@ export function parseData(imgSize, loadData, path, projectParameters) {
                 const bigImgs = [];
 
                 getData(jsonObject, 'big', bigImgs, projectId);
+
                 bigImgs.forEach(obj => {
 
                         if (obj.id === projectId) {
@@ -61,7 +62,7 @@ export function parseData(imgSize, loadData, path, projectParameters) {
                                 addImg('bigImg', bigImg, parent);
                             });
 
-                            projectNavigation.open(projectParameters.cols, projectParameters.projectCol, projectParameters.targetProjects, parent);
+                            projectNavigation.open(projectParameters.cols, projectParameters.projectCol, projectParameters.projects, parent);
 
                         }
                     }

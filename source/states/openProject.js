@@ -3,21 +3,21 @@ import {paramToSwitchPageContents} from './paramToSwitchPageContents';
 import {showElement} from '../main';
 import {projectNavigation} from '../projects';
 
-import {setDesignContent} from '../design/setDesignContent';
-import {parseData} from '../loadComponents/mainComponent';
+import {parametersToParseData} from './parametersToParseData';
 
-import {epilepsy} from '../animation/onLoadPage/epilepsy';
+// import {epilepsy} from '../animation/onLoadPage/epilepsy';
 import {stopEpilepsy} from '../animation/onLoadPage/stopEpilepsy'
 
 
 window.onload = function () {
 
     // epilepsy;
-    stopEpilepsy(2000);
+    stopEpilepsy(3500);
     const currentPath = window.location.pathname;
     closeNavBarMenu();
 
-    parseData('small', setDesignContent, "json_files/design.json");
+    parametersToParseData(currentPath, 'small');
+
 
     if (location.hash === '') {
         paramToSwitchPageContents(currentPath);
@@ -25,6 +25,7 @@ window.onload = function () {
 
     else if (location.hash !== '') {
         paramToSwitchPageContents(currentPath);
+        stopEpilepsy(0);
 
         const hash = window.location.hash.slice(3);
         const allProjects = document.querySelector('.' + 'projects'),
@@ -38,9 +39,13 @@ window.onload = function () {
         const projectParameters = {
             cols: cols,
             projectCol: projectCol,
-            targetProjects: projects
+            projects: projects
         };
-        parseData('big', setDesignContent, "json_files/design.json", projectParameters);
+
+        parametersToParseData(location.pathname, 'big', projectParameters)
+
     }
 };
+
+
 

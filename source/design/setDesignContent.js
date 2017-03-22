@@ -7,5 +7,4 @@ export function setDesignContent(JSONObject) {
         projectsNode = categoryDesign.querySelectorAll('.project');
 
     setContent(JSONObject, projectsNode);
-
 }

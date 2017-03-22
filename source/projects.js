@@ -1,7 +1,8 @@
 import {showElement, hideElement} from './main';
 
-import {parseData} from './loadComponents/mainComponent';
-import {setDesignContent} from './design/setDesignContent';
+import {parametersToParseData} from './states/parametersToParseData';
+
+
 
 export const projectNavigation = {
 
@@ -16,7 +17,7 @@ export const projectNavigation = {
 
     close(cols, projectCol, projects, project) {
 
-        const img = project.children[0].firstChild;
+        // const img = project.children[0].firstChild;
 
         threeCol(cols);
 
@@ -42,19 +43,17 @@ mainContent.addEventListener('click', function (event) {
 
 
     if (targetImg.classList.contains('prevImg')) {
-        const img = targetImg.firstChild;
-
+// debugger
         const projectParameters = {
             cols: cols,
             projectCol: projectCol,
-            targetProjects: projects
+            projects: projects
         };
 
-        parseData('big', setDesignContent, "json_files/design.json", projectParameters);
+        parametersToParseData(location.pathname, 'big', projectParameters);
 
 
         location.hash = projectId; // Add window location hash with number this project
-
 
     } else if (targetImg.classList.contains('bigImg')) {
 
@@ -91,8 +90,9 @@ function threeCol(cols) {
     });
 }
 
-function findImgs(collectionProjectsTargetCategory, typeImg, operation) {
-    const desiredTypeImgs = collectionProjectsTargetCategory.querySelectorAll('.' + typeImg);
+function findImgs(categoryProjects, typeImg, operation) {
+
+    const desiredTypeImgs = categoryProjects.querySelectorAll('.' + typeImg);
 
     for (let i = 0; i < desiredTypeImgs.length; i++) {
         const desireTypeImg = desiredTypeImgs[i];
