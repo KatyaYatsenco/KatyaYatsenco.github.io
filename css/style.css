@@ -10,6 +10,8 @@ a {
     padding: 0;
     border: 0;
     transition: all;
+    font-family: ISOCT2, 'sans-serif';
+
 }
 
 html {
@@ -32,106 +34,6 @@ body {
 }
 
 /* Main background */
-@keyframes mainBg {
-    from {
-        background-color: black;
-        opacity: 0;
-    }
-    to {
-        background: url(../image/backgrounds/main_page.png) right center no-repeat;
-        background-size: cover;
-        opacity: 1;
-    }
-}
-
-/* Main background */
-@keyframes paintingBg {
-    from {
-        background-image: url(../image/backgrounds/gallery_painting.png);
-        opacity: 0;
-    }
-    to {
-        background-image: url(../image/backgrounds/gallery_painting.png);
-        opacity: 1;
-    }
-}
-
-@keyframes graphicBg {
-    from {
-        background-image: url(../image/backgrounds/gallery_graphic.png);
-        opacity: 0;
-    }
-    to {
-        background-image: url(../image/backgrounds/gallery_graphic.png);
-        opacity: 1;
-    }
-}
-
-@keyframes designBg {
-    from {
-        background-image: url(../image/backgrounds/gallery_design.jpg);
-        opacity: 0;
-    }
-    to {
-        background-image: url(../image/backgrounds/gallery_design.jpg);
-        opacity: 1;
-    }
-}
-
-@keyframes digitalArtBg {
-    from {
-        background-image: url(../image/backgrounds/gallery_digital_art.png);
-        opacity: 0;
-    }
-    to {
-        background-image: url(../image/backgrounds/gallery_digital_art.png);
-        opacity: 1;
-    }
-}
-
-@keyframes othersBg {
-    from {
-        background-image: url(../image/backgrounds/gallery_others.png);
-        opacity: 0;
-    }
-    to {
-        background-image: url(../image/backgrounds/gallery_others.png);
-        opacity: 1;
-    }
-}
-
-@keyframes _3dBg {
-    from {
-        background-image: url(../image/backgrounds/gallery_3d.png);
-        opacity: 0;
-    }
-    to {
-        background-image: url(../image/backgrounds/gallery_3d.png);
-        opacity: 1;
-    }
-}
-
-@keyframes contactsBg {
-    from {
-        background-image: url(../image/backgrounds/contacts.png);
-        opacity: 0;
-    }
-    to {
-        background-image: url(../image/backgrounds/contacts.png);
-        opacity: 1;
-    }
-}
-
-@keyframes aboutMeBg {
-    from {
-        background-image: url(../image/backgrounds/about_me.png);
-        opacity: 0;
-    }
-    to {
-        background-image: url(../image/backgrounds/about_me.png);
-        opacity: 1;
-    }
-}
 
 .content {
     position: absolute;
@@ -178,10 +80,6 @@ body {
     url(../fonts/ISOCT2.ttf);
 }
 
-* {
-    font-family: ISOCT2, 'sans-serif';
-}
-
 /* Nav bar */
 .navigation {
     justify-content: space-between;
@@ -210,60 +108,62 @@ body {
     margin: 13px 10px 0 10px;
     text-shadow: 1px 1px 10px;
     z-index: 1;
+    animation: appearanceLogo 4s;
+
 }
 
-/*@keyframes appearanceLogo {*/
-    /*0% {*/
-        /*opacity: 1;*/
-        /*position: absolute;*/
-        /*top: 55%;*/
-        /*left: 50%;*/
-        /*word-wrap: break-word;*/
-        /*width: 80px;*/
-        /*display: inline-block;*/
-        /*margin: 6px -40px;*/
-    /*}*/
-    /*20% {*/
-        /*opacity: 0;*/
-    /*}*/
-    /*30% {*/
-        /*opacity: 1;*/
-        /*position: absolute;*/
-        /*top: 55%;*/
-        /*left: 50%;*/
-        /*word-wrap: break-word;*/
-        /*width: 205px;*/
-        /*display: block;*/
-        /*margin: 6px -40px;*/
-    /*}*/
-    /*45% {*/
-        /*opacity: 0;*/
-    /*}*/
-    /*70% {*/
-        /*opacity: 1;*/
-        /*position: absolute;*/
-        /*top: 55%;*/
-        /*left: 50%;*/
-        /*word-wrap: break-word;*/
-        /*width: 305px;*/
-        /*display: block;*/
-        /*margin: 6px -40px;*/
-    /*}*/
-    /*90% {*/
-        /*opacity: 1;*/
-        /*position: absolute;*/
-        /*top: 0;*/
-        /*left: 0;*/
-        /*word-wrap: break-word;*/
-        /*width: 405px;*/
-        /*display: block;*/
-    /*}*/
-    /*100% {*/
-        /*display: block;*/
-        /*margin: 30px 10px;*/
-        /*opacity: 1;*/
-    /*}*/
-/*}*/
+@keyframes appearanceLogo {
+    0% {
+        opacity: 1;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        word-wrap: break-word;
+        width: 80px;
+        display: inline-block;
+        margin: 6px -40px;
+    }
+    20% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        word-wrap: break-word;
+        width: 205px;
+        display: block;
+        margin: 6px -40px;
+    }
+    45% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 1;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        word-wrap: break-word;
+        width: 305px;
+        display: block;
+        margin: 6px -40px;
+    }
+    90% {
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        word-wrap: break-word;
+        width: 405px;
+        display: block;
+    }
+    100% {
+        display: block;
+        margin: 30px 10px;
+        opacity: 1;
+    }
+}
 
 .navWrapper {
     padding: 0;
@@ -287,6 +187,7 @@ body {
     width: 40px;
     display: inline-flex;
     align-items: center;
+    animation: showNavBarMenu 4.5s
 }
 
 #navList {
@@ -388,7 +289,7 @@ body {
     display: none;
     width: 100%;
     height: 100%;
-    /*overflow: hidden; */ /*        ---------------------------------------------- delete comments */
+    overflow: hidden;
     position: absolute;
     top: 0;
     left: 0;
@@ -417,7 +318,7 @@ body {
 #design {
     top: 9%;
     left: -18%;
-    /*animation: moveDesignLink 4.1s;*/
+    animation: moveDesignLink 4.1s;
 
 }
 
@@ -475,7 +376,7 @@ body {
 #painting {
     top: 30%;
     left: -45%;
-    /*animation: movePaintingLink 3.3s;*/
+    animation: movePaintingLink 3.3s;
 }
 
 @keyframes movePaintingLink {
@@ -497,7 +398,7 @@ body {
 #graphic {
     bottom: 17%;
     left: -49%;
-    /*animation: moveGraphicLink 4.4s;*/
+    animation: moveGraphicLink 4.4s;
 
 }
 
@@ -524,7 +425,7 @@ body {
     right: -19%;
     transform: rotate(0deg);
 
-    /*animation: moveDigitalArtLink 4.2s;*/
+    animation: moveDigitalArtLink 4.2s;
 
 }
 
@@ -549,7 +450,7 @@ body {
 #others {
     top: 46%;
     right: -47%;
-    /*animation: moveOthersLink 5s;*/
+    animation: moveOthersLink 5s;
 
 }
 
@@ -575,7 +476,7 @@ body {
 #_3d {
     bottom: 8%;
     right: -19%;
-    /*animation: move3dLink 4.7s;*/
+    animation: move3dLink 4.7s;
 
 }
 
@@ -607,7 +508,7 @@ body {
     width: 400px;
     height: 400px;
     opacity: 1;
-    /*animation: derevoZoom 2s;*/
+    animation: derevoZoom 2s;
 }
 
 @keyframes derevoZoom {
@@ -726,6 +627,10 @@ body {
     /*border: 2px solid white;*/
 }
 
+.bigImg:hover {
+    cursor: pointer;
+}
+
 .bigImg img {
     width: 100%;
 }
@@ -746,8 +651,10 @@ body {
     margin: 15px 0;
     background-color: white;
 }
+
 .prevImg:hover {
-    border: 1px solid rgba(0,0,0,0.15);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    cursor: pointer;
 }
 
 .prevImg img {
@@ -755,49 +662,45 @@ body {
 }
 
 /*.closeButton {*/
-    /*display: none;*/
-    /*width: 24px;*/
-    /*height: 24px;*/
-    /*opacity: 0.7;*/
-    /*font-size: 30px;*/
-    /*margin: 15px 0;*/
-    /*background-image: url("/image/close.png");*/
-    /*cursor: pointer;*/
+/*display: none;*/
+/*width: 24px;*/
+/*height: 24px;*/
+/*opacity: 0.7;*/
+/*font-size: 30px;*/
+/*margin: 15px 0;*/
+/*background-image: url("/image/close.png");*/
+/*cursor: pointer;*/
 /*}*/
 
 /*.openButton {*/
-    /*display: none;*/
-    /*position: absolute;*/
-    /*top: 43%;*/
-    /*left: 43%;*/
-    /*width: 24px;*/
-    /*height: 24px;*/
-    /*opacity: 1;*/
-    /*z-index: 1;*/
-    /*font-size: 45px;*/
-    /*margin: 15px 0;*/
-    /*background-image: url("/image/open.png");*/
-    /*cursor: pointer;*/
+/*display: none;*/
+/*position: absolute;*/
+/*top: 43%;*/
+/*left: 43%;*/
+/*width: 24px;*/
+/*height: 24px;*/
+/*opacity: 1;*/
+/*z-index: 1;*/
+/*font-size: 45px;*/
+/*margin: 15px 0;*/
+/*background-image: url("/image/open.png");*/
+/*cursor: pointer;*/
 /*}*/
-
-
 
 /* About me information */
 
 #aboutMeInfo {
     display: none;
-    margin: auto;
+    justify-content: flex-end;
     flex-direction: column;
 }
 
 #aboutMeInfo p {
-    width: 800px;
+    width: 100%;
     font-size: 25px;
     font-family: ISOCT2, 'sans-serif';
     color: white;
-    align-items: center;
-    margin: auto;
-    padding: 80px 10px;
+    padding: 50px 10px;
 }
 
 /* Contacts information */
@@ -809,7 +712,7 @@ body {
 
 }
 
-#contactsInfo p {
+#contactsInfo p , #contactsInfo a{
     font-family: ISOCT2, 'sans-serif';
     color: white;
     display: flex;

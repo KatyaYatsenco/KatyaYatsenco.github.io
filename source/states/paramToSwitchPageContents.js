@@ -14,6 +14,8 @@ import {setOthersContent} from '../others/setOthersContent';
 import {set3dContent} from '../3d/set3dContent';
 
 
+
+
 const body = document.body;
 
 export function paramToSwitchPageContents(currentPath) {
@@ -30,6 +32,7 @@ export function paramToSwitchPageContents(currentPath) {
             hideMainCategories();
             parseData('small', setDesignContent, "json_files/design.json");
             paramToSwitchCategoryContents(stateConfig.design.color, stateConfig.design.index, stateConfig.design.animation, stateConfig.design.bg);
+
             break;
 
         case '/painting':

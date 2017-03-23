@@ -3,11 +3,12 @@ import {paramToSwitchPageContents} from './paramToSwitchPageContents';
 import {showElement} from '../main';
 import {projectNavigation} from '../projects';
 
-
+import {changeTextColor} from '../animation/navBar/animationNavBar';
 import {parametersToParseData} from './parametersToParseData';
 
 // import {epilepsy} from '../animation/onLoadPage/epilepsy';
 import {stopEpilepsy} from '../animation/onLoadPage/stopEpilepsy'
+
 
 
 window.onload = function () {
@@ -17,7 +18,6 @@ window.onload = function () {
     closeNavBarMenu();
 
     parametersToParseData(window.location.pathname, 'small');
-
 
     if (location.hash === '') {
         paramToSwitchPageContents(window.location.pathname);
@@ -36,37 +36,42 @@ window.onload = function () {
                 const categoryDesign = document.getElementById('categoryDesign');
                 const designProjects = categoryDesign.querySelector('.projects');
                 openProjectByHash(projectNumber, designProjects);
+                changeTextColor('black');
                 break;
 
             case "/3d":
                 const category3d = document.getElementById('category3d');
                 const _3dProjects = category3d.querySelector('.projects');
                 openProjectByHash(projectNumber, _3dProjects);
+                changeTextColor('black');
                 break;
 
             case "/digitalArt":
                 const categoryDigitalArt = document.getElementById('categoryDigitalArt');
                 const digitalArtProjects = categoryDigitalArt.querySelector('.projects');
                 openProjectByHash(projectNumber, digitalArtProjects);
-
+                changeTextColor('white');
                 break;
 
             case "/painting":
                 const categoryPainting = document.getElementById('categoryPainting');
                 const paintingProjects = categoryPainting.querySelector('.projects');
                 openProjectByHash(projectNumber, paintingProjects);
+                changeTextColor('white');
                 break;
 
             case "/others":
                 const categoryOthers = document.getElementById('categoryOthers');
                 const othersProjects = categoryOthers.querySelector('.projects');
                 openProjectByHash(projectNumber, othersProjects);
+                changeTextColor('white');
                 break;
 
             case "/graphic":
                 const categoryGraphic = document.getElementById('categoryGraphic');
                 const graphicProjects = categoryGraphic.querySelector('.projects');
                 openProjectByHash(projectNumber, graphicProjects);
+                changeTextColor('white');
                 break;
         }
 

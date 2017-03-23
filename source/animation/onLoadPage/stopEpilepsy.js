@@ -13,7 +13,7 @@ export function stopEpilepsy(time) {
         body.style.backgroundColor = 'black';
         body.style.backgroundBlendMode = 'normal';
         document.querySelector('.svgContainer').style.overflow = 'auto';
-        changeTextColor('#fff');
+        // changeTextColor('#fff');
         changeDerevoColor('#fff');
     }, time);
 }

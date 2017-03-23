@@ -8,13 +8,16 @@ import {projectNavigation} from '../projects';
 import {epilepsy} from '../animation/onLoadPage/epilepsy';
 import {stopEpilepsy} from '../animation/onLoadPage/stopEpilepsy';
 
+import {runMainPageAnimation} from '../animation/onLoadPage/mainPage'
+import {stopMainPageAnimation} from '../animation/onLoadPage/mainPage'
 
 if (history.state === null && window.location.pathname === '/') {
     history.pushState('home', null, '/');
     hideMainContentChildren();
     epilepsy;
-
+    runMainPageAnimation();
 }
+
 
 document.querySelector('body').addEventListener('click', function (event) {
 
@@ -25,6 +28,7 @@ document.querySelector('body').addEventListener('click', function (event) {
         case 'home':
         case 'home_page':
             history.pushState('home', null, '/');
+            stopMainPageAnimation();
             break;
 
         case 'aboutMe':

@@ -44,5 +44,9 @@ export function parametersToParseData(expression, typeImg, projectParameters) {
             parseData(typeImg, setGraphicContent, "json_files/graphic.json", projectParameters);
             stopEpilepsy(0);
             break;
+        case "/contacts":
+        case "/aboutMe":
+            stopEpilepsy(0);
+            break;
     }
 }

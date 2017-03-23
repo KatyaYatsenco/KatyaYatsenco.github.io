@@ -12,6 +12,10 @@ export function paramToSwitchCategoryContents(textColor, categoriesPageIndex, an
     categoriesPage[categoriesPageIndex].classList.add('visible');
     body.style.animation = animationName;
     body.style.backgroundImage = bodyBgImg;
+    const logoName = document.querySelector('.logo_name'),
+        menuIcon = document.getElementById('menuIcon');
+    logoName.style.animation = 'none';
+    menuIcon.style.animation = 'none';
 }
 
 export function paramToSwitchOtherContent(textColor, categoriesPageIndex, animationName, bodyBgImg) {
@@ -21,4 +25,9 @@ export function paramToSwitchOtherContent(textColor, categoriesPageIndex, animat
     categoriesPage[categoriesPageIndex].classList.add('visible');
     body.style.animation = animationName;
     body.style.backgroundImage = bodyBgImg;
+
+    const logoName = document.querySelector('.logo_name'),
+        menuIcon = document.getElementById('menuIcon');
+    logoName.style.animation = 'none';
+    menuIcon.style.animation = 'none';
 }

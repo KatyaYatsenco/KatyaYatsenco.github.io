@@ -1,0 +1,88 @@
+@keyframes mainBg {
+    from {
+        background-color: black;
+        opacity: 0;
+    }
+    to {
+        background: url(../../../image/backgrounds/main_page.png) right center no-repeat;
+        background-size: cover;
+        opacity: 1;
+    }
+}
+
+@keyframes paintingBg {
+    from {
+        background-image: url(../../../image/backgrounds/gallery_painting.png);
+        opacity: 0;
+    }
+    to {
+        background-image: url(../../../image/backgrounds/gallery_painting.png);
+        opacity: 1;
+    }
+}
+
+@keyframes digitalArtBg {
+    from {
+        background-image: url(../../../image/backgrounds/gallery_digital_art.png);
+        opacity: 0;
+    }
+    to {
+        background-image: url(../../../image/backgrounds/gallery_digital_art.png);
+        opacity: 1;
+    }
+}
+
+@keyframes othersBg {
+    from {
+        background-image: url(../../../image/backgrounds/gallery_others.png);
+        opacity: 0;
+    }
+    to {
+        background-image: url(../../../image/backgrounds/gallery_others.png);
+        opacity: 1;
+    }
+}
+
+@keyframes contactsBg {
+    from {
+        background-image: url(../../../image/backgrounds/contacts.png);
+        opacity: 0;
+    }
+    to {
+        background-image: url(../../../image/backgrounds/contacts.png);
+        opacity: 1;
+    }
+}
+
+@keyframes aboutMeBg {
+    from {
+        background-image: url(../../../image/backgrounds/about_me.png);
+        opacity: 0;
+    }
+    to {
+        background-image: url(../../../image/backgrounds/about_me.png);
+        opacity: 1;
+    }
+}
+
+@keyframes designBg {
+    from {
+        background-image: url(../../../image/backgrounds/gallery_design.jpg);
+        opacity: 0;
+    }
+    to {
+        background-image: url(../../../image/backgrounds/gallery_design.jpg);
+        opacity: 1;
+    }
+}
+
+@keyframes _3dBg {
+    from {
+        background-image: url(../../../image/backgrounds/gallery_3d.png);
+        opacity: 0;
+    }
+    to {
+        background-image: url(../../../image/backgrounds/gallery_3d.png);
+        opacity: 1;
+    }
+}
