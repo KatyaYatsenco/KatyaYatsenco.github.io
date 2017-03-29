@@ -1,0 +1,205 @@
+/*Main styles*/
+a {
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: all;
+    font: 25px ISOCT2, 'sans-serif';
+
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 1;
+    background-size: cover;
+    background-position: right top;
+    background-repeat: no-repeat;
+    /*animation: showBackground 4s;*/
+}
+
+/* Main background */
+
+.content {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.mainBackground {
+    background: url(image/backgrounds/main_page.png) black right center; /* Main background */
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.mainContent {
+    width: 100%;
+    height: 92%;
+    display: flex;
+    margin: 0;
+    overflow: auto;
+    justify-content: center;
+    padding-right: 30px;
+    overflow-anchor: none;
+}
+
+.hide {
+    display: none !important;
+}
+
+.visible {
+    display: flex !important;
+}
+
+/* Fonts */
+@font-face {
+    font-family: ISOCT2;
+    src: local("ISOCT2"),
+    local("ISOCT2"),
+    url(./build/fonts/ISOCT2.ttf);
+}
+
+
+
+
+
+
+
+
+
+
+/* Projects */
+.projects {
+    display: flex;
+    padding: 0;
+    width: 1000px;
+
+}
+
+#categoryDesign, #categoryGraphic, #categoryDigitalArt, #category3d, #categoryOthers, #categoryPainting {
+    display: none;
+    flex-direction: column;
+    padding: 0;
+    width: 1000px;
+}
+
+#categoryDesign {
+    display: none;
+    /*background: url('../image/graphic_gallery_background.png') right center; !* Gallery background *!*/
+    background-size: cover;
+    opacity: 1;
+    /*animation: showGraphicBackground 1s;*/
+}
+
+@keyframes showGraphicBackground {
+    from {
+        background: url('image/backgrounds/main_page.png') black right center; /* Main background */
+        background-size: cover;
+        opacity: 0;
+    }
+    to {
+        background: url('image/backgrounds/gallery_graphic.png') right center; /* Gallery background */
+        background-size: cover;
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* About me information */
+
+
+
+/* Contacts information */
+
+
+/*@media only screen and (max-width: 640px) {*/
+/*!* Media *!*/
+/*.logo_name {*/
+/*font-size: 27px;*/
+/*}*/
+
+/*}*/
+
+/*@media (max-width: 640px) {*/
+/*!* Media *!*/
+/*.navigation a {*/
+/*font-size: 20px;*/
+/*margin: 18px 8px;*/
+/*}*/
+/*}*/
+
+/*@media (max-width: 640px) {*/
+/*!* Media *!*/
+/*.galleryMenuCategories {*/
+/*width: 340px;*/
+/*height: 340px;*/
+/*margin: -100px 0 0 -180px;*/
+/*}*/
+/*}*/
+
+/*@media (max-width: 640px) {*/
+/*!* Media *!*/
+/*.linkGalleryCategory {*/
+/*font-size: 20px;*/
+/*}*/
+/*}*/
+
+/*@media only screen and (max-width: 640px) {*/
+/*!* Media *!*/
+/*#galleryCategoryPainting {*/
+/*left: -29%;*/
+/*}*/
+/*}*/
+
+/*@media only screen and (max-width: 640px) {*/
+/*!* Media *!*/
+/*#galleryCategoryDesign {*/
+/*left: -9%;*/
+/*}*/
+/*}*/
+
+/*@media only screen and (max-width: 640px) {*/
+/*!* Media *!*/
+/*#galleryCategoryGraphic {*/
+/*left: -27%;*/
+/*}*/
+/*}*/
+
+/*@media only screen and (max-width: 640px) {*/
+/*!* Media *!*/
+/*#galleryCategoryDigitalArt {*/
+/*right: -28%;*/
+/*}*/
+
+/*}*/

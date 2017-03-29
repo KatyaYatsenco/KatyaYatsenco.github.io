@@ -1,0 +1,12 @@
+#aboutMeInfo {
+  display: none;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+#aboutMeInfo p {
+  width: 100%;
+  font: 25px ISOCT2, 'sans-serif';
+  color: white;
+  padding: 50px 10px;
+}

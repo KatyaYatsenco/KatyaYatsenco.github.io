@@ -1,0 +1,23 @@
+#others {
+  top: 46%;
+  right: -47%;
+  animation: moveOthersLink 5s;
+}
+
+@keyframes moveOthersLink {
+  0% {
+    top: 46%;
+    right: -54%;
+    opacity: 0;
+  }
+  60% {
+    top: 46%;
+    right: -54%;
+    opacity: 0;
+  }
+  100% {
+    top: 46%;
+    right: -47%;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,23 @@
+#graphic {
+  bottom: 17%;
+  left: -49%;
+  animation: moveGraphicLink 4.4s;
+}
+
+@keyframes moveGraphicLink {
+  0% {
+    bottom: 12%;
+    left: -50%;
+    opacity: 0;
+  }
+  60% {
+    bottom: 12%;
+    left: -50%;
+    opacity: 0;
+  }
+  100% {
+    bottom: 17%;
+    left: -49%;
+    opacity: 1;
+  }
+}

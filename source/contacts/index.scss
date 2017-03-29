@@ -1,0 +1,17 @@
+#contactsInfo {
+  display: none;
+  flex-direction: column;
+  width: 1000px;
+  margin: auto;
+
+}
+
+#contactsInfo p , #contactsInfo a{
+  font: 25px ISOCT2, 'sans-serif';
+  color: white;
+  display: flex;
+  padding: 20px;
+  height: 150px;
+  align-items: center;
+  margin: auto;
+}

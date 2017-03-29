@@ -1,0 +1,18 @@
+
+.galleryMenuCategories {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin: -100px 0 0 -200px;
+}
+
+.linkGalleryCategory {
+  font-size: 26px;
+  position: absolute;
+  color: white;
+  text-shadow: 1px 1px 10px white;
+  cursor: pointer;
+}

@@ -1,0 +1,44 @@
+.svgContainer {
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#derevo {
+  position: absolute;
+  display: block;
+
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -200px;
+  width: 400px;
+  height: 400px;
+  opacity: 1;
+  animation: derevoZoom 2s;
+}
+
+@keyframes derevoZoom {
+  from {
+    top: 50%;
+    left: 50%;
+    margin: -6800px 0 0 -7000px;
+    width: 14000px;
+    height: 14000px;
+    opacity: 0;
+    transform: rotate(360deg);
+  }
+  to {
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -200px;
+    width: 400px;
+    height: 400px;
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}

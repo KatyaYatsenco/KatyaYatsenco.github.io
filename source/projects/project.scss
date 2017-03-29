@@ -1,0 +1,48 @@
+.project img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.bigImg {
+  flex-direction: row;
+  align-items: flex-start;
+  display: none;
+  width: 100%;
+  height: 100%;
+  margin: 20px 0;
+}
+
+.bigImg:hover {
+  cursor: pointer;
+}
+
+.bigImg img {
+  width: 100%;
+}
+
+.smallImg {
+  flex-direction: row;
+  display: flex;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.prevImg {
+  position: relative;
+  cursor: auto;
+  border: 1px solid transparent;
+  margin: 15px 0;
+  background-color: white;
+}
+
+.prevImg:hover {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.prevImg img {
+  vertical-align: bottom;
+}

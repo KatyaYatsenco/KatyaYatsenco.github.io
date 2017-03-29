@@ -1,7 +1,7 @@
 import {closeNavBarMenu} from '../animation/navBar/animationNavBar';
 import {paramToSwitchPageContents} from './paramToSwitchPageContents';
 import {showElement} from '../main';
-import {projectNavigation} from '../projects';
+import {projectNavigation} from '../projects/projects';
 
 import {changeTextColor} from '../animation/navBar/animationNavBar';
 import {parametersToParseData} from './parametersToParseData';

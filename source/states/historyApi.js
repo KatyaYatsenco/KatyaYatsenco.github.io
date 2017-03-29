@@ -2,7 +2,7 @@ import {hideMainContentChildren} from '../main';
 import {closeNavBarMenu} from '../animation/navBar/animationNavBar';
 import {paramToSwitchPageContents} from './paramToSwitchPageContents';
 
-import {projectNavigation} from '../projects';
+import {projectNavigation} from '../projects/projects';
 
 
 import {epilepsy} from '../animation/onLoadPage/epilepsy';

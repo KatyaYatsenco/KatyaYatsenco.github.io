@@ -1,0 +1,51 @@
+#design {
+  top: 9%;
+  left: -18%;
+  animation: moveDesignLink 4.1s;
+
+}
+
+@keyframes moveDesignLink {
+  0% {
+    top: 9%;
+    left: -18%;
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  61% {
+    left: -28%;
+    opacity: 1;
+  }
+  65% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  74% {
+    opacity: 0;
+  }
+  84% {
+    top: 9%;
+    left: -18%;
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  92% {
+    top: 9%;
+    left: -18%;
+    opacity: 1;
+  }
+  96% {
+    opacity: 0;
+  }
+  100% {
+    top: 9%;
+    left: -18%;
+    opacity: 1;
+  }
+}

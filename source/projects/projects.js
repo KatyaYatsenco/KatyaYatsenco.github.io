@@ -1,7 +1,9 @@
-import {showElement, hideElement} from './main';
+import {showElement, hideElement} from '../main';
 
-import {parametersToParseData} from './states/parametersToParseData';
+import {parametersToParseData} from '../states/parametersToParseData';
 
+import './index.scss';
+import './project.scss';
 
 export const projectNavigation = {
 

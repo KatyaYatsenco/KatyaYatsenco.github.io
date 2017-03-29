@@ -1,0 +1,23 @@
+#_3d {
+  bottom: 8%;
+  right: -19%;
+  animation: move3dLink 4.7s;
+}
+
+@keyframes move3dLink {
+  0% {
+    bottom: 10%;
+    right: -38%;
+    opacity: 0;
+  }
+  60% {
+    bottom: 17%;
+    right: -28%;
+    opacity: 0;
+  }
+  100% {
+    bottom: 8%;
+    right: -19%;
+    opacity: 1;
+  }
+}

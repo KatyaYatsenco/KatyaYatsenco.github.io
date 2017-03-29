@@ -3,7 +3,11 @@ import './animation/index';
 import  './loadComponents/mainComponent';
 import './design/setDesignContent';
 
+import './navigation/navBar.scss';
+import './navigation/header.scss';
 
+import './contacts/index.scss';
+import './aboutMe/index.scss';
 
 const projects = document.querySelector('.projects'),
     svgContainer = document.querySelector('.svgContainer'),
@@ -67,27 +71,6 @@ export function openMainCategories() {
 }
 
 
-// On css animation
-// const svgContainer = document.querySelector('.svgContainer');
-// svgContainer.style.overflow = 'hidden';
-const navigation = document.querySelector('.navigation');
-// navigation.style.animation = 'showNavBarMenu 4.5s';
-const logoName = document.querySelector('.logo_name');
-// logoName.style.animation = 'appearanceLogo 3s';
-// const gallerySubcategoryDesign = document.querySelector('#design');
-// gallerySubcategoryDesign.style.animation = 'moveDesignLink 4.1s';
-// const gallerySubcategoryPainting = document.querySelector('#painting');
-// gallerySubcategoryPainting.style.animation = 'movePaintingLink 3.3s';
-// const gallerySubcategoryGraphic = document.querySelector('#graphic');
-// gallerySubcategoryGraphic.style.animation = 'moveGraphicLink 4.4s';
-// const gallerySubcategoryDigitalArt = document.querySelector('#digitalArt');
-// gallerySubcategoryDigitalArt.style.animation = 'moveDigitalArtLink 4.2s';
-// const gallerySubcategoryOthers = document.querySelector('#others');
-// gallerySubcategoryOthers.style.animation = 'moveOthersLink 5s';
-// const gallerySubcategory3d = document.querySelector('#_3d');
-// gallerySubcategory3d.style.animation = 'move3dLink 4.7s';
-// const derevo = document.querySelector('#derevo');
-// derevo.style.animation = 'derevoZoom 2s';
 
 
 

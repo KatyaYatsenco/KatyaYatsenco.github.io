@@ -1,3 +1,4 @@
+import './backgrounds.scss';
 
 export const stateConfig = {
     'design': {

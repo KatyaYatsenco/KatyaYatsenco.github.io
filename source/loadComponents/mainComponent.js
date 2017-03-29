@@ -4,7 +4,7 @@ import './setContent';
 
 import {addImg} from './addImg';
 
-import {projectNavigation} from '../projects';
+import {projectNavigation} from '../projects/projects';
 
 export function injectImages(project, parent) { //Rename function
 
