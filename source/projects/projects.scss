@@ -1,0 +1,26 @@
+.projects {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0;
+  overflow: auto;
+  overflow-anchor: none;
+  scroll-snap-align: start;
+
+}
+
+.projects::-webkit-scrollbar {
+  display: none;
+}
+
+.projectsCol1, .projectsCol2, .projectsCol3 {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 20px 16px;
+  padding: 0;
+  height: 100%;
+  width: 30%;
+}
+

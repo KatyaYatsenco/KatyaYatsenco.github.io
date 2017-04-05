@@ -1,5 +1,4 @@
 import './addImg';
-import './buttons';
 import './setContent';
 
 import {addImg} from './addImg';
@@ -7,7 +6,6 @@ import {addImg} from './addImg';
 import {projectNavigation} from '../projects/projects';
 
 export function injectImages(project, parent) { //Rename function
-
     const id = project['id'];
     const smallImg = project['small'];
     const bigImgs = project['big'];
@@ -20,9 +18,7 @@ export function injectImages(project, parent) { //Rename function
         bigImgs.forEach(function (bigImg) {
             addImg('bigImg', bigImg, parent);
         })
-
     }
-
 }
 
 
@@ -36,9 +32,12 @@ export function parseData(imgSize, loadData, path, projectParameters) {
             if (imgSize === 'small') {
 
                 const jsonObject = JSON.parse(xhr.responseText).projects;
+                const projectsCount = jsonObject.length;
+
                 const smallImgs = [];
                 getData(jsonObject, 'small', smallImgs);
-                loadData(smallImgs);
+
+                loadData(smallImgs, projectsCount);
             }
 
             else if (imgSize === 'big') {

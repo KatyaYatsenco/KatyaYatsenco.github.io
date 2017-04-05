@@ -13,7 +13,7 @@ export function paramToSwitchCategoryContents(textColor, categoriesPageIndex, an
     body.style.animation = animationName;
     body.style.backgroundImage = bodyBgImg;
     const logoName = document.querySelector('.logo_name'),
-        menuIcon = document.getElementById('menuIcon');
+        menuIcon = document.getElementById('menu_img_box');
     logoName.style.animation = 'none';
     menuIcon.style.animation = 'none';
 }
@@ -27,7 +27,7 @@ export function paramToSwitchOtherContent(textColor, categoriesPageIndex, animat
     body.style.backgroundImage = bodyBgImg;
 
     const logoName = document.querySelector('.logo_name'),
-        menuIcon = document.getElementById('menuIcon');
+        menuIcon = document.getElementById('menu_img_box');
     logoName.style.animation = 'none';
     menuIcon.style.animation = 'none';
 }

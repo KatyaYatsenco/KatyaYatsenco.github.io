@@ -33,11 +33,14 @@ module.exports = {
                 })
             },
             {
-                test: /\.(jpe?g|png|gif|svg)$/i, loader: "file-loader?name=[name].[ext]&publicPath=assets/foo/&outputPath=images/"
+                test: /\.(jpe?g|png|gif)$/i, loader: "file-loader?name=[name].[ext]&publicPath=assets/foo/&outputPath=images/"
             },
             {
                 test: /\.(ttf)$/i, loader: "file-loader?name=fonts/[name].[ext]"
             }
+            // {
+            //     test: /\.(svg)$/i, loader: "file-loader?name=svg/[name].[ext]"
+            // }
 
         ]
     },

@@ -1,10 +1,14 @@
 import {setContent} from '../loadComponents/setContent';
+import {structureGenerationProjects} from '../loadComponents/structureGenerationProjects';
 
+import './index.scss';
 
-export function setOthersContent(JSONObject) {
+export function setOthersContent(JSONObject,projectsCount) {
 
-    const categoryOthers = document.getElementById('categoryOthers'),
-        projectsNode = categoryOthers.querySelectorAll('.project');
+    const categoryOthers = document.getElementById('categoryOthers');
+    structureGenerationProjects(categoryOthers, projectsCount);
+
+    const projectsNode = categoryOthers.querySelectorAll('.project');
 
     setContent(JSONObject, projectsNode);
 

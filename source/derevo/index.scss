@@ -1,0 +1,35 @@
+.str0 {
+  stroke: white;
+  stroke-width: 7.62;
+}
+
+.str1 {
+  stroke: white;
+  stroke-width: 50;
+}
+
+.fil3 {
+  fill: none;
+}
+
+.fil1 {
+  fill: white
+}
+
+.fil0 {
+  fill: white;
+  fill-rule: nonzero
+}
+
+.stroke-dash {
+  stroke-dasharray: 75 68;
+}
+
+@media only screen and (max-width: 640px) {
+  /* Media */
+  #derevo {
+    width: 340px;
+    height: 340px;
+    margin: -100px 0 0 -165px;
+  }
+}

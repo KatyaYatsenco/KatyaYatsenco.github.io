@@ -1,0 +1,20 @@
+<svg style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" width="40px" height="40px" viewBox="9380 12522 4000 4000" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <style type="text/css">
+
+   .str0 {stroke:#fff;stroke-width:30}
+   .str1 {stroke:#fff;stroke-width:30}
+   .fil0 {fill:none}
+
+  </style>
+ </defs>
+ <g id="Слой_x0020_1">
+  <path class="fil0 str0" d="M12580 14304c-163,73 -3364,-104 -2239,253 1950,617 3432,-209 1728,-87 -167,12 -1139,71 -1766,74 -2100,12 2724,453 2324,13 -204,-223 -5698,-429 -911,53 505,51 1099,172 981,-99"/>
+ </g>
+ <g id="Слой_x0020_1_0">
+  <path class="fil0 str1" d="M11930 15479c164,73 1443,-178 318,178 -1949,618 -3431,-208 -1727,-86 246,18 2313,-9 2307,24 -44,221 -3210,442 -2865,63 203,-223 5692,-412 911,53 -506,49 -1100,171 -981,-100 96,-219 2571,-378 3246,-110"/>
+ </g>
+ <g id="Слой_x0020_1_1">
+  <path class="fil0 str1" d="M11897 13871c164,-73 1381,-165 257,-521 -1950,-618 -3432,208 -1728,86 246,-17 2313,9 2307,-24 -44,-221 -3210,-442 -2865,-63 110,121 5500,419 1526,-89 -91,-11 -1783,-291 -1596,136 79,180 2211,250 2568,295 182,23 527,105 699,37"/>
+ </g>
+</svg>

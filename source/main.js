@@ -9,6 +9,8 @@ import './navigation/header.scss';
 import './contacts/index.scss';
 import './aboutMe/index.scss';
 
+import './derevo/index.scss';
+
 const projects = document.querySelector('.projects'),
     svgContainer = document.querySelector('.svgContainer'),
     derevo = document.getElementById('derevo'), // used in another file

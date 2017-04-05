@@ -1,3 +1,5 @@
+
+
 .project img {
   width: 100%;
   height: 100%;
@@ -31,7 +33,7 @@
 }
 
 .prevImg {
-  position: relative;
+  //position: relative;
   cursor: auto;
   border: 1px solid transparent;
   margin: 15px 0;
@@ -41,8 +43,61 @@
 .prevImg:hover {
   border: 1px solid rgba(0, 0, 0, 0.15);
   cursor: pointer;
+  //animation: riseImg 5s;
+}
+
+@keyframes riseImg {
+  0% {
+    //display: flex;
+    position: absolute;
+    top: 20px;
+    width: 295px;
+
+  }
+
+  100% {
+    //display: flex;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    width: 1000px;
+  }
 }
 
 .prevImg img {
-  vertical-align: bottom;
+  vertical-align: text-bottom;
 }
+
+.fullWidth {
+  animation: showBigImg 2s;
+}
+
+.smallWidth {
+  width: 30%;
+  animation: hideBigImg 2s;
+}
+
+@keyframes showBigImg {
+  from {
+    width: 300px;
+    //opacity: 0.7;
+  }
+  to {
+    width: 1000px;
+    //opacity: 1;
+  }
+}
+
+@keyframes hideBigImg {
+  from {
+    width: 1000px;
+    //opacity: 0.7;
+  }
+  to {
+    width: 300px;
+    //opacity: 1;
+  }
+}
+
+

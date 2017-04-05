@@ -1,7 +1,7 @@
 .navWrapper {
   padding: 0;
   display: inline-flex;
-  margin-right: 20px;
+  align-items: center;
 }
 
 .navLinks {
@@ -12,15 +12,14 @@
   display: flex;
   align-items: center;
   color: white;
-  font-family: ISOCT2;
+  font: 20px ISOCT2;
   text-shadow: 1px 1px 10px;
 }
 
-#menuIcon {
-  width: 40px;
-  display: inline-flex;
-  align-items: center;
+#menu_img_box {
+  margin: 0 10px;
   animation: showNavBarMenu 4.5s
+
 }
 
 @keyframes showNavBarMenu {
@@ -37,7 +36,6 @@
 
 #navList {
   display: inline-flex;
-  margin: 30px 10px;
   font-size: 20px;
   visibility: hidden;
 }

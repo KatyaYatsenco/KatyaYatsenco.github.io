@@ -12,7 +12,6 @@ import {stopEpilepsy} from '../animation/onLoadPage/stopEpilepsy'
 
 
 window.onload = function () {
-
     // epilepsy;
     stopEpilepsy(3500);
     closeNavBarMenu();
@@ -24,7 +23,6 @@ window.onload = function () {
     }
 
     else if (location.hash !== '') {
-        // debugger
         paramToSwitchPageContents(window.location.pathname);
 
         stopEpilepsy(0);
@@ -42,8 +40,13 @@ window.onload = function () {
             case "/3d":
                 const category3d = document.getElementById('category3d');
                 const _3dProjects = category3d.querySelector('.projects');
-                openProjectByHash(projectNumber, _3dProjects);
-                changeTextColor('black');
+                try {
+                    openProjectByHash(projectNumber, _3dProjects);
+                }
+                catch(error) {
+                    console.log(error)
+                }
+                changeTextColor('white');
                 break;
 
             case "/digitalArt":
@@ -80,6 +83,7 @@ window.onload = function () {
 
 
 function openProjectByHash(projectNumber, allProjects) {
+    console.log(allProjects)
     const project = allProjects.getElementsByClassName('project'),
         targetProject = project.item(projectNumber - 1);
 

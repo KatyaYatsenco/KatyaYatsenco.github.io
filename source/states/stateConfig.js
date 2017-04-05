@@ -4,50 +4,50 @@ export const stateConfig = {
     'design': {
         color: 'black',
         index: 1,
-        animation: 'designBg 0.2s',
+        animation: '',
         bg: 'url(../image/backgrounds/gallery_design.jpg)'
     },
     'painting': {
         color: 'white',
         index: 0,
         animation: 'paintingBg 0.2s',
-        bg: 'url(../image/backgrounds/gallery_painting.png)'
+        bg: 'url(../image/backgrounds/main.jpg)'
     },
     'graphic': {
         color: 'white',
         index: 2,
         animation: 'graphicBg 0.2s',
-        bg: 'url(../image/backgrounds/gallery_graphic.png)'
+        bg: 'url(../image/backgrounds/main.jpg)'
     },
     'digitalArt': {
         color: 'white',
         index: 3,
         animation: 'digitalArtBg 0.2s',
-        bg: 'url(../image/backgrounds/gallery_digital_art.png)'
+        bg: 'url(../image/backgrounds/main.jpg)'
     },
     'others': {
         color: 'white',
         index: 4,
-        animation: 'othersBg 0.2s',
-        bg: 'url(../image/backgrounds/gallery_others.png)'
+        animation: '',
+        bg: 'url(../../build/images/gallery_others.jpg)'
     },
     '_3d': {
-        color: 'black',
+        color: 'white',
         index: 5,
         animation: '_3dBg 0.2s',
-        bg: 'url(../image/backgrounds/gallery_3d.png)'
+        bg: 'url(../image/backgrounds/main.jpg)'
     },
     'aboutMe': {
         color: 'white',
         index: 6,
         animation: 'aboutMeBg 0.2s',
-        bg: 'url(../image/backgrounds/about_me.png)'
+        bg: 'url(../image/backgrounds/about_me.jpg)'
     },
     'contacts': {
         color: 'white',
         index: 7,
         animation: 'contactsBg 0.2s',
-        bg: 'url(../image/backgrounds/contacts.png)'
+        bg: 'url(../image/backgrounds/main.jpg)'
     }
 
 };

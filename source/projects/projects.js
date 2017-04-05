@@ -4,21 +4,30 @@ import {parametersToParseData} from '../states/parametersToParseData';
 
 import './index.scss';
 import './project.scss';
+import './projects.scss';
 
 export const projectNavigation = {
-
     open(cols, projectCol, projects, project) {
 
-        onceCol(cols, projectCol);
+        // console.log('open')
+        // const img = project.querySelector('.prevImg');
+        // console.log(img)
+        // animateImg(img, 'small');
 
+
+        oneCol(cols, projectCol);
+        //    setTimeout(()=>{
         findImgs(projects, 'prevImg', hideElement);
 
         findImgs(project, 'bigImg', showElement);
+        // },2000)
+
     },
 
     close(cols, projectCol, projects, project) {
 
-        // const img = project.children[0].firstChild;
+        const img = project.querySelector('.bigImg')
+        // animateImg(img, 'big');
 
         threeCol(cols);
 
@@ -68,7 +77,7 @@ mainContent.addEventListener('click', function (event) {
 });
 
 
-function onceCol(cols, projectCol) {
+function oneCol(cols, projectCol) {
     cols.prototype = Object.create(Array.prototype);
     cols.forEach(function (elem) {
         if (projectCol === elem) {
@@ -106,5 +115,19 @@ function findImgs(categoryProjects, typeImg, operation) {
 
 }
 
+function animateImg(img, imgType) {
+    if (imgType === 'small') {
+        if (img.classList.contains('smallWidth')) {
+            img.classList.remove('.smallWidth');
+        }
+        img.classList.add('fullWidth');
 
+    }
+    else if (imgType === 'big') {
+        if (img.classList.contains('fullWidth')) {
+            img.classList.remove('.fullWidth');
+        }
+        img.classList.add('smallWidth');
+    }
+}
 

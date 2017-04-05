@@ -1,4 +1,4 @@
-export const menuIcon = document.getElementById('menuIcon'),
+export const menuIcon = document.getElementById('menu_img_box'),
     logo = document.querySelector('.logo_name'),
     navigationLinks = document.querySelectorAll('.navLinks'),
     navMenuImg1 = document.getElementById('menu_img1'),
@@ -43,11 +43,11 @@ function show(navMenuImg2) {
 function delay(show, ms) {
 
     return function() {
-        const savedThis = this;
+        const self = this;
         const savedArgs = arguments;
 
         setTimeout(function() {
-            show.apply(savedThis, savedArgs);
+            show.apply(self, savedArgs);
         }, ms);
     };
 

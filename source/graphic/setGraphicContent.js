@@ -1,11 +1,16 @@
 import {setContent} from '../loadComponents/setContent';
+import {structureGenerationProjects} from '../loadComponents/structureGenerationProjects';
 
 
-export function setGraphicContent(JSONObject) {
+import './index.scss';
 
-    const categoryGraphic = document.getElementById('categoryGraphic'),
-        projectsNode = categoryGraphic.querySelectorAll('.project');
+export function setGraphicContent(JSONObject, projectsCount) {
 
-        setContent(JSONObject, projectsNode);
+    const categoryGraphic = document.getElementById('categoryGraphic');
+    structureGenerationProjects(categoryGraphic, projectsCount);
+
+    const projectsNode = categoryGraphic.querySelectorAll('.project');
+
+    setContent(JSONObject, projectsNode);
 
 }

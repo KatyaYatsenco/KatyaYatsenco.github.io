@@ -1,22 +1,10 @@
-.titleGalleryDivision {
-  display: block;
-  width: 1000px;
-  color: white;
-  text-shadow: 1px 1px 10px;
-}
-
-.titleGalleryDivision h2, .titleGalleryDivision p {
-  width: 245px;
+.titleCategory {
+  display: flex;
   margin: 20px auto;
   font: 28px ISOCT2, 'sans-serif';
   text-shadow: 1px 1px 10px;
 }
 
-.projectsCol1, .projectsCol2, .projectsCol3 {
-  flex-flow: column wrap;
-  display: flex;
-  margin: 20px 16px;
-  padding: 0;
-  height: 100%;
-  width: 30%;
-}
+
+
+

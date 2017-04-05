@@ -31,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/KatyaYatsenco/gorpinich.com/issues"
   },
-  "homepage": "https://github.com/KatyaYatsenco/gorpinich.com#readme"
+  "homepage": "https://github.com/KatyaYatsenco/gorpinich.com#readme",
+  "dependencies": {
+    "flexboxgrid": "^6.3.1"
+  }
 }
