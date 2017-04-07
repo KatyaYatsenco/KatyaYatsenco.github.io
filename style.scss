@@ -48,7 +48,6 @@ a {
   z-index: -1;
 }
 
-
 .mainContent {
   width: 100%;
   height: 92%;
@@ -75,8 +74,6 @@ a {
   local("ISOCT2"),
   url(./fonts/ISOCT2.ttf);
 }
-
-
 
 #categoryDesign, #categoryGraphic, #categoryDigitalArt, #category3d, #categoryOthers, #categoryPainting {
   display: none;
@@ -117,63 +114,104 @@ a {
   height: 40px;
 }
 
-/*@media only screen and (max-width: 640px) {*/
-/*!* Media *!*/
-/*.logo_name {*/
-/*font-size: 27px;*/
-/*}*/
+@media only screen and (max-width: 640px) {
+  .logo_name {
+    font-size: 20px;
+  }
+  .linkGalleryCategory {
+    font-size: 18px;
+  }
+  #derevo {
+    width: 300px;
+    height: 300px;
+    margin: -100px 0 0 -159px;
+  }
+  .galleryMenuCategories {
+    width: 300px;
+    height: 300px;
+    margin: -100px 0 0 -143px;
+  }
+  #others {
+    right: -30%;
+  }
+  #digitalArt {
+    top: -15px;
+  }
+  #_3d {
+    right: 0;
+  }
+  #graphic {
+    bottom: 44px;
+    left: -87px;
+  }
+  #contactsInfo p, #contactsInfo a {
+    font: 20px ISOCT2, 'sans-serif';
+    padding: 0;
+  }
+  #aboutMeInfo p {
+    font: 20px ISOCT2, 'sans-serif';
+  }
+  .titleCategory {
+    margin: 10px auto;
+    font: 18px ISOCT2, 'sans-serif';
+  }
+}
 
-/*}*/
+@media only screen and (max-width: 400px) {
+  .logo_name {
+    font-size: 17px;
+    margin: auto;
+  }
+  .navigation a {
+    font: 14px ISOCT2;
+  }
+  .navLinks {
+    margin: 0 5px;
+  }
+  .navLinks {
+    margin: 0 3px;
+  }
+  .linkGalleryCategory {
+    font-size: 15px;
+  }
+  #menu_img_box {
+    margin-left: -10px;
+  }
+  #derevo {
+    width: 200px;
+    height: 200px;
+    margin: -86px 0 0 -90px;
+  }
+  .galleryMenuCategories {
+    width: 205px;
+    height: 203px;
+    margin: -89px 0 0 -87px;
+  }
+  #others {
+    right: -30%;
+  }
+  #digitalArt {
+    top: -15px;
+  }
+  #_3d {
+    right: 0;
+  }
+  #graphic {
+    bottom: 44px;
+    left: -87px;
+  }
+  #contactsInfo p, #contactsInfo a {
+    font: 15px ISOCT2, 'sans-serif';
+    padding: 0;
+    height: 100px;
+  }
+  #aboutMeInfo p {
+    font: 13px ISOCT2, 'sans-serif';
+    padding: 80px 10px;
 
-/*@media (max-width: 640px) {*/
-/*!* Media *!*/
-/*.navigation a {*/
-/*font-size: 20px;*/
-/*margin: 18px 8px;*/
-/*}*/
-/*}*/
-
-/*@media (max-width: 640px) {*/
-/*!* Media *!*/
-/*.galleryMenuCategories {*/
-/*width: 340px;*/
-/*height: 340px;*/
-/*margin: -100px 0 0 -180px;*/
-/*}*/
-/*}*/
-
-/*@media (max-width: 640px) {*/
-/*!* Media *!*/
-/*.linkGalleryCategory {*/
-/*font-size: 20px;*/
-/*}*/
-/*}*/
-
-/*@media only screen and (max-width: 640px) {*/
-/*!* Media *!*/
-/*#galleryCategoryPainting {*/
-/*left: -29%;*/
-/*}*/
-/*}*/
-
-/*@media only screen and (max-width: 640px) {*/
-/*!* Media *!*/
-/*#galleryCategoryDesign {*/
-/*left: -9%;*/
-/*}*/
-/*}*/
-
-/*@media only screen and (max-width: 640px) {*/
-/*!* Media *!*/
-/*#galleryCategoryGraphic {*/
-/*left: -27%;*/
-/*}*/
-/*}*/
-
-/*@media only screen and (max-width: 640px) {*/
-/*!* Media *!*/
-/*#galleryCategoryDigitalArt {*/
-/*right: -28%;*/
-/*}*/
-
-/*}*/
+  }
+  .titleCategory {
+    margin: 0 auto;
+    font: 16px ISOCT2, 'sans-serif';
+  }
+}

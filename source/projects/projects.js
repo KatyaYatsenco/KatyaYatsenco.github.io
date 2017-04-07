@@ -9,25 +9,16 @@ import './projects.scss';
 export const projectNavigation = {
     open(cols, projectCol, projects, project) {
 
-        // console.log('open')
-        // const img = project.querySelector('.prevImg');
-        // console.log(img)
-        // animateImg(img, 'small');
-
-
         oneCol(cols, projectCol);
-        //    setTimeout(()=>{
         findImgs(projects, 'prevImg', hideElement);
 
         findImgs(project, 'bigImg', showElement);
-        // },2000)
 
     },
 
     close(cols, projectCol, projects, project) {
 
         const img = project.querySelector('.bigImg')
-        // animateImg(img, 'big');
 
         threeCol(cols);
 
@@ -51,13 +42,13 @@ mainContent.addEventListener('click', function (event) {
             projectCol = project.parentNode,
             projects = projectCol.parentNode,
             cols = projects.querySelectorAll('.projectsCol');
-// debugger
+
         const projectParameters = {
             cols: cols,
             projectCol: projectCol,
             projects: projects
         };
-
+        projects.scrollTop = 0;
         parametersToParseData(location.pathname, 'big', projectParameters);
 
 
@@ -70,6 +61,8 @@ mainContent.addEventListener('click', function (event) {
             projects = projectCol.parentNode,
             cols = projects.querySelectorAll('.projectsCol'),
             data = window.location.pathname;
+
+        projects.scrollTop = 0;
 
         projectNavigation.close(cols, projectCol, projects, project, targetImg);
         history.replaceState(data.slice(1), null, data);
@@ -115,19 +108,5 @@ function findImgs(categoryProjects, typeImg, operation) {
 
 }
 
-function animateImg(img, imgType) {
-    if (imgType === 'small') {
-        if (img.classList.contains('smallWidth')) {
-            img.classList.remove('.smallWidth');
-        }
-        img.classList.add('fullWidth');
 
-    }
-    else if (imgType === 'big') {
-        if (img.classList.contains('fullWidth')) {
-            img.classList.remove('.fullWidth');
-        }
-        img.classList.add('smallWidth');
-    }
-}
 

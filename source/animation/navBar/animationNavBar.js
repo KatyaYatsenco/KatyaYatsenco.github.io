@@ -7,7 +7,6 @@ export const menuIcon = document.getElementById('menu_img_box'),
     linkGalleryCategory = document.querySelectorAll('titleGalleryCategory'),
 
 
-
     navBar = document.querySelector('#navList');
 
 //Navigation menu
@@ -28,7 +27,7 @@ menuIcon.addEventListener('click', function () {
         navMenuImg1.style.animation = 'backRotateImg1 0.3s';
         navMenuImg1.style.transform = 'rotate(0deg)';
         navMenuImg1.style.marginTop = '0';
-        const showImg2 = delay(show,200);
+        const showImg2 = delay(show, 200);
         showImg2(navMenuImg2);
 
         navMenuImg3.style.animation = 'backRotateImg3 0.3s';
@@ -42,11 +41,11 @@ function show(navMenuImg2) {
 }
 function delay(show, ms) {
 
-    return function() {
+    return function () {
         const self = this;
         const savedArgs = arguments;
 
-        setTimeout(function() {
+        setTimeout(function () {
             show.apply(self, savedArgs);
         }, ms);
     };

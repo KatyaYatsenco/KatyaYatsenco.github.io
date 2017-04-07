@@ -1,7 +1,6 @@
 import {setContent} from '../loadComponents/setContent';
 import {structureGenerationProjects} from '../loadComponents/structureGenerationProjects';
 
-
 import './index.scss';
 
 export function setPaintingContent(JSONObject, projectsCount) {

@@ -454,7 +454,7 @@
 
 #menu_img_box {
   margin: 0 10px;
-  animation: showNavBarMenu 4.5s;
+  animation: showNavBarMenu 5.5s;
 }
 
 @keyframes showNavBarMenu {
@@ -749,105 +749,130 @@ a {
   height: 40px;
 }
 
-/*@media only screen and (max-width: 640px) {*/
+@media only screen and (max-width: 640px) {
+  .logo_name {
+    font-size: 20px;
+  }
 
-/*!* Media *!*/
+  .linkGalleryCategory {
+    font-size: 18px;
+  }
 
-/*.logo_name {*/
+  #derevo {
+    width: 300px;
+    height: 300px;
+    margin: -100px 0 0 -159px;
+  }
 
-/*font-size: 27px;*/
+  .galleryMenuCategories {
+    width: 300px;
+    height: 300px;
+    margin: -100px 0 0 -143px;
+  }
 
-/*}*/
+  #others {
+    right: -30%;
+  }
 
-/*}*/
+  #digitalArt {
+    top: -15px;
+  }
 
-/*@media (max-width: 640px) {*/
+  #_3d {
+    right: 0;
+  }
 
-/*!* Media *!*/
+  #graphic {
+    bottom: 44px;
+    left: -87px;
+  }
 
-/*.navigation a {*/
+  #contactsInfo p,
+  #contactsInfo a {
+    font: 20px ISOCT2, 'sans-serif';
+    padding: 0;
+  }
 
-/*font-size: 20px;*/
+  #aboutMeInfo p {
+    font: 20px ISOCT2, 'sans-serif';
+  }
 
-/*margin: 18px 8px;*/
+  .titleCategory {
+    margin: 10px auto;
+    font: 18px ISOCT2, 'sans-serif';
+  }
+}
 
-/*}*/
+@media only screen and (max-width: 400px) {
+  .logo_name {
+    font-size: 17px;
+    margin: auto;
+  }
 
-/*}*/
+  .navigation a {
+    font: 14px ISOCT2;
+  }
 
-/*@media (max-width: 640px) {*/
+  .navLinks {
+    margin: 0 5px;
+  }
 
-/*!* Media *!*/
+  .navLinks {
+    margin: 0 3px;
+  }
 
-/*.galleryMenuCategories {*/
+  .linkGalleryCategory {
+    font-size: 15px;
+  }
 
-/*width: 340px;*/
+  #menu_img_box {
+    margin-left: -10px;
+  }
 
-/*height: 340px;*/
+  #derevo {
+    width: 200px;
+    height: 200px;
+    margin: -86px 0 0 -90px;
+  }
 
-/*margin: -100px 0 0 -180px;*/
+  .galleryMenuCategories {
+    width: 205px;
+    height: 203px;
+    margin: -89px 0 0 -87px;
+  }
 
-/*}*/
+  #others {
+    right: -30%;
+  }
 
-/*}*/
+  #digitalArt {
+    top: -15px;
+  }
 
-/*@media (max-width: 640px) {*/
+  #_3d {
+    right: 0;
+  }
 
-/*!* Media *!*/
+  #graphic {
+    bottom: 44px;
+    left: -87px;
+  }
 
-/*.linkGalleryCategory {*/
+  #contactsInfo p,
+  #contactsInfo a {
+    font: 15px ISOCT2, 'sans-serif';
+    padding: 0;
+    height: 100px;
+  }
 
-/*font-size: 20px;*/
+  #aboutMeInfo p {
+    font: 13px ISOCT2, 'sans-serif';
+    padding: 80px 10px;
+  }
 
-/*}*/
-
-/*}*/
-
-/*@media only screen and (max-width: 640px) {*/
-
-/*!* Media *!*/
-
-/*#galleryCategoryPainting {*/
-
-/*left: -29%;*/
-
-/*}*/
-
-/*}*/
-
-/*@media only screen and (max-width: 640px) {*/
-
-/*!* Media *!*/
-
-/*#galleryCategoryDesign {*/
-
-/*left: -9%;*/
-
-/*}*/
-
-/*}*/
-
-/*@media only screen and (max-width: 640px) {*/
-
-/*!* Media *!*/
-
-/*#galleryCategoryGraphic {*/
-
-/*left: -27%;*/
-
-/*}*/
-
-/*}*/
-
-/*@media only screen and (max-width: 640px) {*/
-
-/*!* Media *!*/
-
-/*#galleryCategoryDigitalArt {*/
-
-/*right: -28%;*/
-
-/*}*/
-
-/*}*/
+  .titleCategory {
+    margin: 0 auto;
+    font: 16px ISOCT2, 'sans-serif';
+  }
+}
 /*# sourceMappingURL=main.css.map*/

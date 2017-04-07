@@ -27,11 +27,3 @@ export const structureGenerationProjects = function (parent, projectCount) { // 
         }
     }
 };
-
-// const testBox = document.getElementById('test');
-
-// structureGenerationProjects(testBox, 13);
-// console.log(testBox)
-// console.log(testBox.querySelector('.projectsCol1').querySelectorAll('.project').length);
-// console.log(testBox.querySelector('.projectsCol2').querySelectorAll('.project').length);
-// console.log(testBox.querySelector('.projectsCol3').querySelectorAll('.project').length);
