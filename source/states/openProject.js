@@ -83,7 +83,6 @@ window.onload = function () {
 
 
 function openProjectByHash(projectNumber, allProjects) {
-    console.log(allProjects)
     const project = allProjects.getElementsByClassName('project'),
         targetProject = project.item(projectNumber - 1);
 

@@ -109,6 +109,205 @@
     opacity: 1;
     transform: rotate(0deg);
   }
+}
+
+@keyframes derevoAnimation1 {
+  from {
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  to {
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+@keyframes derevoAnimation2 {
+  0% {
+    width: 400px;
+    height: 400px;
+  }
+
+  5% {
+    width: 200px;
+    height: 400px;
+  }
+
+  10% {
+    width: 400px;
+    height: 400px;
+    transform: rotate(90deg);
+  }
+
+  30% {
+    width: 300px;
+    height: 300px;
+    transform: rotate(0deg);
+  }
+
+  40% {
+    width: 200px;
+    height: 200px;
+    transform: rotate(180deg);
+  }
+
+  60% {
+    width: 0;
+    height: 0;
+    transform: rotate(360deg);
+  }
+
+  100% {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@keyframes derevoAnimation3 {
+  from {
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  to {
+    width: 0;
+    height: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+  }
+}
+
+@keyframes derevoAnimation4 {
+  from {
+    transform: rotate(0deg);
+    margin: -100px 0 0 -200px;
+    overflow: hidden;
+  }
+
+  to {
+    transform: rotate(19000deg);
+    margin: -100px 0 0 -180px;
+    overflow: hidden;
+  }
+}
+
+@keyframes derevoAnimation5 {
+  from {
+    margin: 100px 0 0 -400px;
+    overflow: hidden;
+  }
+
+  to {
+    margin: 0 0 0 1400px;
+    overflow: hidden;
+  }
+}
+
+@keyframes derevoAnimation6 {
+  from {
+    margin: -100px 0 0 -200px;
+    overflow: hidden;
+  }
+
+  to {
+    margin: 300px 0 0 1400px;
+    overflow: hidden;
+  }
+}
+
+@keyframes derevoAnimation7 {
+  from {
+    margin: -100px 0 0 -200px;
+    transform: rotate(90deg);
+    overflow: hidden;
+  }
+
+  to {
+    margin: 0 0 0 1400px;
+    transform: rotate(0deg);
+    overflow: hidden;
+  }
+}
+
+@keyframes derevoAnimation8 {
+  from {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  to {
+    width: 400px;
+    height: 400px;
+    right: 0;
+    bottom: 40px;
+    overflow: hidden;
+  }
+}
+
+@keyframes derevoAnimation9 {
+  from {
+    transform: rotate(0deg);
+    margin: -100px 0 0 -200px;
+    overflow: hidden;
+  }
+
+  to {
+    transform: rotate(19000deg);
+    margin: -100px 0 0 -180px;
+    overflow: hidden;
+  }
+}
+
+@keyframes derevoAnimation10 {
+  from {
+    transform: rotate(0deg);
+    margin: -80px 0 0 -200px;
+    overflow: hidden;
+  }
+
+  to {
+    transform: rotate(19000deg);
+    margin: -100px 0 0 -180px;
+    overflow: hidden;
+  }
+}
+
+@keyframes derevoAnimation11 {
+  from {
+    transform: rotate(0deg);
+    margin: -80px 0 0 -210px;
+    overflow: hidden;
+  }
+
+  to {
+    transform: rotate(19000deg);
+    margin: -100px 0 0 -200px;
+    overflow: hidden;
+  }
+}
+
+@keyframes derevoAnimation12 {
+  from {
+    transform: rotate(0deg);
+    margin: -80px 0 0 -200px;
+    overflow: hidden;
+  }
+
+  to {
+    transform: rotate(19000deg);
+    margin: -90px 0 0 -180px;
+    overflow: hidden;
+  }
 }.galleryMenuCategories {
   display: none;
   position: absolute;

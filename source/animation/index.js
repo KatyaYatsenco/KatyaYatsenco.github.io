@@ -14,3 +14,4 @@ import './categoryLinks/others.scss';
 import './categoryLinks/painting.scss';
 
 
+import './randomAnimation/index';
