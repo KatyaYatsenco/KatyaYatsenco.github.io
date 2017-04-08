@@ -18,7 +18,7 @@ export const projectNavigation = {
 
     close(cols, projectCol, projects, project) {
 
-        const img = project.querySelector('.bigImg')
+        const img = project.querySelector('.bigImg');
 
         threeCol(cols);
 

@@ -70,7 +70,7 @@
   display: none;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: hidden !important;
   position: absolute;
   top: 0;
   left: 0;
@@ -561,22 +561,6 @@
   cursor: pointer;
 }
 
-@keyframes riseImg {
-  0% {
-    position: absolute;
-    top: 20px;
-    width: 295px;
-  }
-
-  100% {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    width: 1000px;
-  }
-}
-
 .prevImg img {
   vertical-align: text-bottom;
 }
@@ -588,26 +572,6 @@
 .smallWidth {
   width: 30%;
   animation: hideBigImg 2s;
-}
-
-@keyframes showBigImg {
-  from {
-    width: 300px;
-  }
-
-  to {
-    width: 1000px;
-  }
-}
-
-@keyframes hideBigImg {
-  from {
-    width: 1000px;
-  }
-
-  to {
-    width: 300px;
-  }
 }.projects {
   display: flex;
   position: relative;
@@ -616,7 +580,6 @@
   padding: 0;
   overflow: auto;
   overflow-anchor: none;
-  scroll-snap-align: start;
 }
 
 .projects::-webkit-scrollbar {
@@ -723,7 +686,6 @@
 #menu_img2 {
   width: 40px;
   height: 10px;
-  /*background-image: url("../image/menu_img_grey.png");*/
   background-size: cover;
   margin: 5px 0;
 }
@@ -731,9 +693,7 @@
 #menu_img3 {
   width: 40px;
   height: 10px;
-  /*background-image: url("../image/menu_img_grey.png");*/
   background-size: cover;
-  /*animation: rotateImg3 0.5s;*/
   animation: backRotateImg3;
 }
 
@@ -858,7 +818,6 @@
 }
 
 html {
-  overflow-anchor: none;
   height: 100%;
   width: 100%;
   overflow: hidden;

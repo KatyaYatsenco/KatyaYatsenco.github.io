@@ -7,8 +7,6 @@
 }
 
 html {
-  overflow-anchor: none;
-
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -80,14 +78,6 @@ a {
   flex-direction: column;
   padding: 0;
   width: 1000px;
-  //@media screen and (min-width: 800px) and (max-width: 1000px) {
-  //  width: 800px;
-  //
-  //}
-  //@media screen and (min-width: 600px) and (max-width: 800px) {
-  //  width: 600px;
-  //
-  //}
 }
 
 #categoryDesign {
@@ -97,16 +87,7 @@ a {
 }
 
 @keyframes showGraphicBackground {
-  //from {
-  //  background: url('image/backgrounds/main_page.png') black right center; /* Main background */
-  //  background-size: cover;
-  //  opacity: 0;
-  //}
-  //to {
-  //  background: url('image/backgrounds/gallery_graphic.png') right center; /* Gallery background */
-  //  background-size: cover;
-  //  opacity: 1;
-  //}
+
 }
 
 #navBarMenuSvg {

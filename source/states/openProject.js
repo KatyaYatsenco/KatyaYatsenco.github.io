@@ -6,13 +6,11 @@ import {projectNavigation} from '../projects/projects';
 import {changeTextColor} from '../animation/navBar/animationNavBar';
 import {parametersToParseData} from './parametersToParseData';
 
-// import {epilepsy} from '../animation/onLoadPage/epilepsy';
 import {stopEpilepsy} from '../animation/onLoadPage/stopEpilepsy'
 
 
 
 window.onload = function () {
-    // epilepsy;
     stopEpilepsy(3500);
     closeNavBarMenu();
 
