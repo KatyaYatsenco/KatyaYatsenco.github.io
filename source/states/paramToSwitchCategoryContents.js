@@ -6,11 +6,10 @@ import{changeTextColor} from '../animation/navBar/animationNavBar';
 
 const body = document.body;
 
-export function paramToSwitchCategoryContents(textColor, categoriesPageIndex, animationName, bodyBgImg) {
+export function paramToSwitchCategoryContents(textColor, categoriesPageIndex, bodyBgImg) {
 
     changeTextColor(textColor);
     categoriesPage[categoriesPageIndex].classList.add('visible');
-    body.style.animation = animationName;
     body.style.backgroundImage = bodyBgImg;
     const logoName = document.querySelector('.logo_name'),
         menuIcon = document.getElementById('menu_img_box');
@@ -18,12 +17,11 @@ export function paramToSwitchCategoryContents(textColor, categoriesPageIndex, an
     menuIcon.style.animation = 'none';
 }
 
-export function paramToSwitchOtherContent(textColor, categoriesPageIndex, animationName, bodyBgImg) {
+export function paramToSwitchOtherContent(textColor, categoriesPageIndex, bodyBgImg) {
 
     changeTextColor(textColor);
     hideMainContentChildren();
     categoriesPage[categoriesPageIndex].classList.add('visible');
-    body.style.animation = animationName;
     body.style.backgroundImage = bodyBgImg;
 
     const logoName = document.querySelector('.logo_name'),

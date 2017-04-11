@@ -38,9 +38,6 @@ module.exports = {
             {
                 test: /\.(ttf)$/i, loader: "file-loader?name=fonts/[name].[ext]"
             }
-            // {
-            //     test: /\.(svg)$/i, loader: "file-loader?name=svg/[name].[ext]"
-            // }
 
         ]
     },

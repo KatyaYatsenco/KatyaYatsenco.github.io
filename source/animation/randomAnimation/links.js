@@ -30,24 +30,21 @@ const derevoAnimate = setInterval(() => {
 }, Math.floor(Math.random() * 3000));
 
 
-(function () {
-    setTimeout(function () {
+setTimeout(function () {
 
-        setInterval(function () {
-            derevo.style.animation = 'derevoAnimation' + (Math.floor(Math.random() * 17)) + ' 0.' + (Math.floor(Math.random() * 9)) + 's';
-        }, Math.floor(Math.random() * 3000))
-    }, 6000);
-})();
-
-(function () {
     setInterval(function () {
-        let link = links[Math.floor(Math.random() * 10)];
-        let linkColor = links[Math.floor(Math.random() * 10)].style.color;
-        randomLinksAnimation(link);
+        derevo.style.animation = 'derevoAnimation' + (Math.floor(Math.random() * 8)) + ' 0.' + (Math.floor(Math.random() * 9)) + 's';
+    }, Math.floor(Math.random() * 3000))
+}, 5000);
 
-        setTimeout(function () {
-            link.style.color = linkColor;
-        }, Math.floor(Math.random() * 500))
 
-    }, Math.floor(Math.random() * 5000))
-})();
+setInterval(function () {
+    let link = links[Math.floor(Math.random() * 10)];
+    let linkColor = links[Math.floor(Math.random() * 10)].style.color;
+    randomLinksAnimation(link);
+
+    setTimeout(function () {
+        link.style.color = linkColor;
+    }, Math.floor(Math.random() * 500))
+
+}, Math.floor(Math.random() * 5000));
