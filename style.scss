@@ -51,10 +51,8 @@ a {
   height: 92%;
   display: flex;
   margin: 0;
-  //overflow: auto;
   justify-content: center;
   padding-right: 30px;
-  //overflow-anchor: none;
 }
 
 .hide {
@@ -102,6 +100,10 @@ a {
   .linkGalleryCategory {
     font-size: 18px;
   }
+  .menu_img {
+    width: 30px !important;
+    height: 7px !important;
+  }
   #derevo {
     width: 300px;
     height: 300px;
@@ -142,6 +144,10 @@ a {
   .logo_name {
     font-size: 17px;
     margin: auto;
+  }
+  .menu_img {
+    width: 25px;
+    height: 6px;
   }
   .navigation a {
     font: 14px ISOCT2;

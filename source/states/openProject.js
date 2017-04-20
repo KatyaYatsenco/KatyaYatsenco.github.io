@@ -1,13 +1,10 @@
 import {closeNavBarMenu} from '../animation/navBar/animationNavBar';
 import {paramToSwitchPageContents} from './paramToSwitchPageContents';
-import {showElement} from '../main';
-import {projectNavigation} from '../projects/projects';
 
 import {changeTextColor} from '../animation/navBar/animationNavBar';
 import {parametersToParseData} from './parametersToParseData';
 
 import {stopEpilepsy} from '../animation/onLoadPage/stopEpilepsy'
-
 
 
 window.onload = function () {
@@ -41,7 +38,7 @@ window.onload = function () {
                 try {
                     openProjectByHash(projectNumber, _3dProjects);
                 }
-                catch(error) {
+                catch (error) {
                     console.log(error)
                 }
                 changeTextColor('white');
@@ -81,18 +78,21 @@ window.onload = function () {
 
 
 function openProjectByHash(projectNumber, allProjects) {
-    const project = allProjects.getElementsByClassName('project'),
-        targetProject = project.item(projectNumber - 1);
+    history.pushState('', null, window.location.pathname);
+    const figures = allProjects.getElementsByTagName('FIGURE');
+    // const project = allProjects.getElementsByClassName('project'),
 
-    const projectCol = targetProject.parentNode,
-        projects = projectCol.parentNode,
-        cols = projects.querySelectorAll('.projectsCol');
-
-    const projectParameters = {
-        cols: cols,
-        projectCol: projectCol,
-        projects: projects
-    };
-
-    parametersToParseData(location.pathname, 'big', projectParameters)
+    //     targetProject = project.item(projectNumber - 1);
+    //
+    // const projectCol = targetProject.parentNode,
+    //     projects = projectCol.parentNode,
+    //     cols = projects.querySelectorAll('.projectsCol');
+    //
+    // const projectParameters = {
+    //     cols: cols,
+    //     projectCol: projectCol,
+    //     projects: projects
+    // };
+    //
+    // parametersToParseData(location.pathname, 'big', projectParameters)
 }

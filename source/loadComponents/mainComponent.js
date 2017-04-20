@@ -57,9 +57,15 @@ export function parseData(imgSize, loadData, path, projectParameters) {
                             const parent = document.getElementById(window.location.hash.substr(1));
                             const bigImgs = obj.big;
 
-                            bigImgs.forEach(function (bigImg) {
-                                addImg('bigImg', bigImg, parent);
-                            });
+                            try {
+                                bigImgs.forEach(function (bigImg) {
+                                    addImg('bigImg', bigImg, parent);
+                                });
+                            }
+                            catch (e) {
+                                console.log(e);
+                            }
+
 
                             projectNavigation.open(projectParameters.cols, projectParameters.projectCol, projectParameters.projects, parent);
 
@@ -67,6 +73,24 @@ export function parseData(imgSize, loadData, path, projectParameters) {
                     }
                 )
             }
+            else if (imgSize === 'video') {
+                const jsonObject = JSON.parse(xhr.responseText).projects;
+
+                const projectId = window.location.hash.substr(1);
+                let video;
+                getData(jsonObject, 'video', video, projectId);
+                if (video.id === projectId) {
+                    loadData(video);
+
+                    const parent = document.getElementById(window.location.hash.substr(1));
+                    const video = video.video;
+
+                    addImg('bigImg', video, parent);
+
+                    projectNavigation.open(projectParameters.cols, projectParameters.projectCol, projectParameters.projects, parent);
+                }
+            }
+
 
         }
     };
@@ -85,6 +109,9 @@ function getData(jsonObject, element, addTo) {
         }
         else if (element === 'big') {
             obj['big'] = jsonObject[i].big;
+        }
+        else if (element === 'video') {
+            obj['video'] = jsonObject[i].video;
         }
         addTo[i] = obj;
     }

@@ -21,3 +21,43 @@
     opacity: 1;
   }
 }
+
+@keyframes move3dLink1 {
+  0% {
+    bottom: 8%;
+    right: -19%;
+  }
+  60% {
+    bottom: 8%;
+    right: -19%;
+  }
+  100% {
+    bottom: 8%;
+    right: -19%;
+  }
+}
+
+@keyframes move3dLink2 {
+  0% {
+    bottom: 6%;
+    right: -23%;
+  }
+  20% {
+    bottom: 8%;
+    right: -19%;
+  }
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    bottom:  6%;
+    right: -23%;
+  }
+  100% {
+    bottom:  8%;
+    right: -19%;
+  }
+}

@@ -9,7 +9,10 @@ import './navigation/header.scss';
 import './contacts/index.scss';
 import './aboutMe/index.scss';
 
-import './derevo/index.scss';
+import './derevo/index';
+
+const audio = document.getElementById('mainAudio');
+audio.volume = 0.4;
 
 const projects = document.querySelector('.projects'),
     svgContainer = document.querySelector('.svgContainer'),

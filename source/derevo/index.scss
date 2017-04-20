@@ -1,35 +1,36 @@
+
 .str0 {
-  stroke: white;
-  stroke-width: 7.62;
+  stroke: #2B2A29;
+  stroke-width: 7.62
 }
 
 .str1 {
-  stroke: white;
-  stroke-width: 50;
+  stroke: #2B2A29;
+  stroke-width: 50
 }
 
 .fil3 {
-  fill: none;
+  fill: none
 }
 
 .fil1 {
-  fill: white
+  fill: #C5C6C6
+}
+
+.fil2 {
+  fill: #FEFEFE
 }
 
 .fil0 {
-  fill: white;
+  fill: #C5C6C6;
   fill-rule: nonzero
+}
+
+.fnt0 {
+  font-weight: normal;
+  font: 846.67px 'ISOCT2'
 }
 
 .stroke-dash {
   stroke-dasharray: 75 68;
-}
-
-@media only screen and (max-width: 640px) {
-  /* Media */
-  #derevo {
-    width: 340px;
-    height: 340px;
-    margin: -100px 0 0 -165px;
-  }
 }

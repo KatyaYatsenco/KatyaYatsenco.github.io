@@ -219,6 +219,53 @@
     right: -19%;
     opacity: 1;
   }
+}
+
+@keyframes move3dLink1 {
+  0% {
+    bottom: 8%;
+    right: -19%;
+  }
+
+  60% {
+    bottom: 8%;
+    right: -19%;
+  }
+
+  100% {
+    bottom: 8%;
+    right: -19%;
+  }
+}
+
+@keyframes move3dLink2 {
+  0% {
+    bottom: 6%;
+    right: -23%;
+  }
+
+  20% {
+    bottom: 8%;
+    right: -19%;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  80% {
+    bottom: 6%;
+    right: -23%;
+  }
+
+  100% {
+    bottom: 8%;
+    right: -19%;
+  }
 }#design {
   top: 9%;
   left: -18%;
@@ -278,6 +325,118 @@
     left: -18%;
     opacity: 1;
   }
+}
+
+@keyframes moveDesignLink1 {
+  0% {
+    opacity: 0;
+  }
+
+  60% {
+    top: 9%;
+    left: -18%;
+    opacity: 1;
+  }
+
+  61% {
+    top: 5%;
+    left: -23%;
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  74% {
+    opacity: 0;
+  }
+
+  84% {
+    top: 9%;
+    left: -18%;
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0;
+  }
+
+  92% {
+    top: 5%;
+    left: -23%;
+    opacity: 1;
+  }
+
+  96% {
+    opacity: 0;
+  }
+
+  100% {
+    top: 9%;
+    left: -18%;
+    opacity: 1;
+  }
+}
+
+@keyframes moveDesignLink2 {
+  0% {
+    top: 9%;
+    left: -18%;
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  61% {
+    top: 2%;
+    left: -20%;
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  74% {
+    opacity: 0;
+  }
+
+  84% {
+    top: 9%;
+    left: -18%;
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0;
+  }
+
+  92% {
+    top: 2%;
+    left: -20%;
+    opacity: 1;
+  }
+
+  96% {
+    opacity: 0;
+  }
+
+  100% {
+    top: 9%;
+    left: -18%;
+    opacity: 1;
+  }
 }#digitalArt {
   top: -21%;
   right: -19%;
@@ -303,6 +462,78 @@
     opacity: 1;
     transform: rotate(0deg);
   }
+}
+
+@keyframes moveDigitalArtLink1 {
+  0% {
+    top: -21%;
+    right: -19%;
+  }
+
+  20% {
+    top: -23%;
+    right: -23%;
+  }
+
+  40% {
+    top: -21%;
+    right: -19%;
+  }
+
+  45% {
+    opacity: 0;
+  }
+
+  60% {
+    top: -20%;
+    right: -23%;
+  }
+
+  80% {
+    top: -21%;
+    right: -19%;
+  }
+
+  100% {
+    top: -23%;
+    right: -23%;
+  }
+}
+
+@keyframes moveDigitalArtLink2 {
+  0% {
+    top: -20%;
+    right: -21%;
+  }
+
+  20% {
+    top: -21%;
+    right: -19%;
+  }
+
+  40% {
+    top: -20%;
+    right: -21%;
+  }
+
+  45% {
+    opacity: 0;
+  }
+
+  60% {
+    top: -22%;
+    right: -18%;
+  }
+
+  80% {
+    top: -21%;
+    right: -19%;
+  }
+
+  100% {
+    top: -20%;
+    right: -21%;
+  }
 }#graphic {
   bottom: 17%;
   left: -49%;
@@ -326,6 +557,91 @@
     bottom: 17%;
     left: -49%;
     opacity: 1;
+  }
+}
+
+@keyframes moveGraphicLink1 {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes moveGraphicLink2 {
+  0% {
+    bottom: 17%;
+    left: -49%;
+  }
+
+  10% {
+    bottom: 13%;
+    left: -30%;
+  }
+
+  20% {
+    bottom: 17%;
+    left: -49%;
+  }
+
+  30% {
+    bottom: 13%;
+    left: -30%;
+  }
+
+  40% {
+    bottom: 17%;
+    left: -49%;
+  }
+
+  50% {
+    bottom: 13%;
+    left: -30%;
+  }
+
+  60% {
+    bottom: 17%;
+    left: -49%;
+  }
+
+  80% {
+    bottom: 13%;
+    left: -30%;
+  }
+
+  100% {
+    bottom: 17%;
+    left: -49%;
   }
 }#others {
   top: 46%;
@@ -351,6 +667,44 @@
     right: -47%;
     opacity: 1;
   }
+}
+
+@keyframes moveOthersLink1 {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }#painting {
   top: 30%;
   left: -45%;
@@ -372,6 +726,44 @@
     top: 30%;
     left: -45%;
     opacity: 1;
+  }
+}
+
+@keyframes movePaintingLink1 {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }#category3d .titleCategory {
   color: white;
@@ -608,8 +1000,8 @@
   font: 25px ISOCT2, 'sans-serif';
   color: white;
   display: flex;
-  padding: 20px;
-  height: 150px;
+  padding: 10px;
+  height: 100px;
   align-items: center;
   margin: auto;
 }#aboutMeInfo {
@@ -624,12 +1016,12 @@
   color: white;
   padding: 50px 10px;
 }.str0 {
-  stroke: white;
+  stroke: #2B2A29;
   stroke-width: 7.62;
 }
 
 .str1 {
-  stroke: white;
+  stroke: #2B2A29;
   stroke-width: 50;
 }
 
@@ -638,26 +1030,25 @@
 }
 
 .fil1 {
-  fill: white;
+  fill: #C5C6C6;
+}
+
+.fil2 {
+  fill: #FEFEFE;
 }
 
 .fil0 {
-  fill: white;
+  fill: #C5C6C6;
   fill-rule: nonzero;
+}
+
+.fnt0 {
+  font-weight: normal;
+  font: 846.67px 'ISOCT2';
 }
 
 .stroke-dash {
   stroke-dasharray: 75 68;
-}
-
-@media only screen and (max-width: 640px) {
-  /* Media */
-
-  #derevo {
-    width: 340px;
-    height: 340px;
-    margin: -100px 0 0 -165px;
-  }
 }* {
   margin: 0;
   padding: 0;
@@ -765,6 +1156,11 @@ a {
     font-size: 18px;
   }
 
+  .menu_img {
+    width: 30px !important;
+    height: 7px !important;
+  }
+
   #derevo {
     width: 300px;
     height: 300px;
@@ -814,6 +1210,11 @@ a {
   .logo_name {
     font-size: 17px;
     margin: auto;
+  }
+
+  .menu_img {
+    width: 25px;
+    height: 6px;
   }
 
   .navigation a {

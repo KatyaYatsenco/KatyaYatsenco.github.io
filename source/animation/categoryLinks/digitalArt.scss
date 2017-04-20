@@ -22,3 +22,63 @@
     transform: rotate(0deg);
   }
 }
+
+@keyframes moveDigitalArtLink1 {
+  0% {
+    top: -21%;
+    right: -19%;
+  }
+  20% {
+    top: -23%;
+    right: -23%;
+  }
+  40% {
+    top: -21%;
+    right: -19%;
+  }
+  45% {
+    opacity: 0;
+  }
+  60% {
+    top: -20%;
+    right: -23%;
+  }
+  80% {
+    top: -21%;
+    right: -19%;
+  }
+  100% {
+    top: -23%;
+    right: -23%;
+  }
+}
+
+@keyframes moveDigitalArtLink2 {
+  0% {
+    top: -20%;
+    right: -21%;
+  }
+  20% {
+    top: -21%;
+    right: -19%;
+  }
+  40% {
+    top: -20%;
+    right: -21%;
+  }
+  45% {
+    opacity: 0;
+  }
+  60% {
+    top: -22%;
+    right: -18%;
+  }
+  80% {
+    top: -21%;
+    right: -19%;
+  }
+  100% {
+    top: -20%;
+    right: -21%;
+  }
+}

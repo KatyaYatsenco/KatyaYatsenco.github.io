@@ -18,7 +18,6 @@ export const structureGenerationProjects = function (parent, projectCount) { // 
         }
 
         const projectsCountCol3 = projectCount - parent.getElementsByClassName('project').length;
-        console.log(projectsCountCol3);
 
         for (let i = 0; i < projectsCountCol3; i++) {
             const project = document.createElement('figure');

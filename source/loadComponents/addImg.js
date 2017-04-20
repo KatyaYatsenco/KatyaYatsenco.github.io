@@ -4,18 +4,29 @@ export function addImg(className, elementValue, parent) { // Function create img
 
     img.setAttribute('src', elementValue);
 
-    const containerForImg = document.createElement('DIV');
+    const projectContainer = document.createElement('DIV');
+
+    const video = document.createElement('VIDEO');
+    video.setAttribute('src', elementValue);
+
 
     switch (className) {
         case 'smallImg':
-            containerForImg.classList.add('prevImg');
+            projectContainer.classList.add('prevImg');
+            projectContainer.appendChild(img);
             break;
         case 'bigImg':
-            containerForImg.classList.add('bigImg');
+            projectContainer.classList.add('bigImg');
+            projectContainer.appendChild(img);
+
+            break;
+        case 'video':
+            projectContainer.classList.add('gorpinichVideo');
+            projectContainer.appendChild(video);
+
             break;
     }
+    parent.appendChild(projectContainer);
 
-    containerForImg.appendChild(img);
 
-    parent.appendChild(containerForImg);
 }

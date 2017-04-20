@@ -9,56 +9,12 @@
 </head>
 <body>
 
-<audio autoplay loop src="./audio/gorpinich.mp3"></audio>
+<audio autoplay loop src="./media/gorpinich.mp3" id="mainAudio"></audio>
 
-<!--Tree svg picture -->
 <div class='svgContainer row'>
     <svg id='derevo' class='derevo-start hide_gallery_menu visible'
          style='shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd'
          viewBox='1893 7746 14517 14611'>
-        <use x="400" y="400" xlink:href="./source/derevo/derevo.svg#picture"/>
-        <defs>
-            <style type="text/css">
-
-                .str0 {
-                    stroke: #2B2A29;
-                    stroke-width: 7.62
-                }
-
-                .str1 {
-                    stroke: #2B2A29;
-                    stroke-width: 50
-                }
-
-                .fil3 {
-                    fill: none
-                }
-
-                .fil1 {
-                    fill: #C5C6C6
-                }
-
-                .fil2 {
-                    fill: #FEFEFE
-                }
-
-                .fil0 {
-                    fill: #C5C6C6;
-                    fill-rule: nonzero
-                }
-
-                .fnt0 {
-                    font-weight: normal;
-                    font-size: 846.67px;
-                    font-family: 'ISOCT2'
-                }
-
-                .stroke-dash {
-                    stroke-dasharray: 75 68;
-                }
-
-            </style>
-        </defs>
         <g>
             <path class='fil0 str0 stroke'
                   d='M4188 13216c-470,973 -671,1889 -605,2749 66,858 401,1660 1002,2408 430,496 861,882 1296,1156 433,273 871,435 1315,488l0 0c218,26 479,29 742,32 192,2 386,5 562,16 138,8 272,11 401,7 130,-4 255,-13 376,-29 181,-23 254,-6 388,27l0 0c29,7 61,15 111,26 363,78 686,137 967,175 282,38 524,56 725,54 375,-3 722,-226 1042,-431l0 0 87 -56 0 0c370,-235 677,-485 921,-750 243,-264 425,-542 544,-836 763,-1878 657,-2553 448,-3879 -64,-406 -138,-873 -199,-1451 -54,-511 -262,-979 -624,-1403 -364,-427 -884,-811 -1560,-1151 -189,-95 -297,-172 -450,-281l0 0 -78 -55 0 0c-492,-346 -933,-577 -1323,-693 -384,-114 -719,-114 -1003,-3l0 0c-650,248 -1167,428 -1548,539 -380,111 -629,153 -749,127 -289,19 -532,85 -730,197 -198,113 -351,273 -459,480 -132,253 -384,581 -631,902 -208,271 -413,538 -537,748 -97,164 -213,415 -317,638 -41,89 -81,174 -116,248zm-707 2756c-68,-877 137,-1811 615,-2801 34,-71 74,-156 116,-246 104,-225 222,-479 322,-647 126,-214 333,-484 544,-758 245,-319 494,-643 621,-888 118,-226 284,-400 499,-522 213,-122 474,-192 782,-211l8 0 7 2c99,25 334,-16 703,-124 376,-110 890,-289 1540,-537l0 0c306,-120 662,-120 1069,0 401,118 852,354 1353,707l0 0 78 55 0 0c149,106 254,181 437,272 688,346 1219,739 1592,1176 376,440 592,927 648,1459l0 0c61,578 134,1042 198,1446 212,1344 320,2030 -454,3933 -124,305 -312,594 -564,867 -251,272 -565,527 -942,767l0 0 -87 56 0 0c-332,213 -692,444 -1097,447 -207,2 -454,-17 -740,-55 -286,-39 -612,-97 -975,-176 -36,-8 -77,-18 -113,-26l0 0c-122,-29 -189,-45 -351,-25 -125,16 -254,26 -386,30 -133,4 -270,1 -409,-7 -178,-11 -368,-13 -558,-16 -267,-3 -532,-7 -753,-33 -460,-54 -912,-222 -1358,-503 -444,-280 -884,-672 -1320,-1176l-1 -1c-615,-764 -957,-1586 -1025,-2465z'/>
@@ -89,8 +45,8 @@
         <path d='M 6311.816 5211.446 Z' style='stroke: black; fill: none;'/>
         <path d='M 15032.413 3891.882 Z' style='stroke: black; fill: none;'/>
         <path d='M 15032.413 3891.882 Z' style='stroke: black; fill: none;'/>
-        </symbol>
     </svg>
+
 </div>
 
 <div class='galleryMenuCategories' id="scene">
@@ -114,9 +70,9 @@
         </div>
 
         <div id='menu_img_box'>
-            <div id='menu_img1'></div>
-            <div id='menu_img2'></div>
-            <div id='menu_img3'></div>
+            <div id='menu_img1' class="menu_img"></div>
+            <div id='menu_img2' class="menu_img"></div>
+            <div id='menu_img3' class="menu_img"></div>
 
         </div>
     </div>
@@ -144,7 +100,7 @@
     </section>
 
     <section id='categoryPainting'>
-        <h2 class='titleCategory'>PAINTING</h2>
+        <h1 class='titleCategory'>PAINTING</h1>
 
         <div class='projects'>
             <div class=' projectsCol1 projectsCol'>
@@ -163,7 +119,7 @@
     </section>
 
     <section id='categoryGraphic'>
-        <h2 class='titleCategory'>GRAPHIC</h2>
+        <h1 class='titleCategory'>GRAPHIC</h1>
 
         <div class='projects'>
             <div class=' projectsCol1 projectsCol'>
@@ -181,7 +137,7 @@
     </section>
 
     <section id='categoryDigitalArt'>
-        <h2 class='titleCategory'>DIGITAL ART</h2>
+        <h1 class='titleCategory'>DIGITAL ART</h1>
         <div class='projects'>
             <div class=' projectsCol1 projectsCol'>
 
@@ -198,7 +154,7 @@
     </section>
 
     <section id='categoryOthers'>
-        <h2 class='titleCategory'>OTHERS</h2>
+        <h1 class='titleCategory'>OTHERS</h1>
         <div class='projects'>
             <div class=' projectsCol1 projectsCol'>
 
@@ -215,7 +171,7 @@
 
     </section>
     <section id='category3d'>
-        <h2 class='titleCategory'>3 D</h2>
+        <h1 class='titleCategory'>3 D</h1>
         <div class='projects'>
             <div class=' projectsCol1 projectsCol'>
 
@@ -238,8 +194,8 @@
 
     <div id='contactsInfo'>
         <p>Ukr.- Cherkasy</p>
-        <a href="http://derevo.gorpinich@gmail.com">derevo.gorpinich@gmail.com</a>
-        <p>fb/bogdan gorpinich</p>
+        <a href="mailto:derevo.gorpinich@gmail.com">derevo.gorpinich@gmail.com</a>
+        <p><a href="https://www.facebook.com/bogdan.gorpinich">fb/ bogdan gorpinich</a></p>
     </div>
 
 </div>

@@ -37,6 +37,8 @@ export function parametersToParseData(expression, typeImg, projectParameters) {
 
         case "/others":
             parseData(typeImg, setOthersContent, "json_files/others.json", projectParameters);
+            // parseData("video", setOthersContent, "json_files/others.json", projectParameters);
+
             stopEpilepsy(0);
             break;
 
